@@ -27,10 +27,3 @@ This repository is designed to:
 
 ---
 
-## Getting Started
-
-### Clone the Repository
-To get started, clone the repository:
-```bash
-git clone https://github.com/your-org/support-golden-examples.git
-cd support-golden-examples
