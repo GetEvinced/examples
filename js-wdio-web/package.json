@@ -8,5 +8,8 @@
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "@evinced/webdriverio-sdk": "^2.16.0"
   }
 }
