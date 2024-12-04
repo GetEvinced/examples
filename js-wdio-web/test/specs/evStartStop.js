@@ -1,5 +1,4 @@
 import { expect, browser, $ } from "@wdio/globals";
-import assert from "assert";
 
 describe("Using the Evinced WDIO SDK", () => {
   beforeEach(async () => {
