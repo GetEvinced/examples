@@ -63,7 +63,7 @@ describe("Using the Evinced WDIO SDK", () => {
     // Save issues to a report file
     // await browser.evSaveFile(issues, "json", "./test/issues.json");
     // await browser.evSaveFile(issues, "sarif", "./test/issues.sarif.json");
-    await browser.evSaveFile(issues, "html", "./test/noHookIssues.html");
+    await browser.evSaveFile(issues, "html", "./test/issues.html");
     // await browser.evSaveFile(issues, "csv", "./test/issues.csv");
   });
 });
