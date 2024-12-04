@@ -15,7 +15,8 @@ This repository contains examples demonstrating how to integrate and use the Evi
 ## How to Use
 
 ### Prerequisites
-- Install the Evinced SDK. Refer to the official [Evinced Documentation](https://www.evinced.com) for installation instructions.
+- Install the Evinced SDK. Refer to the official [Evinced WDIO Documentation](https://developer.evinced.com/sdks-for-web-apps/webdriverio-sdk) for installation instructions.
+- Please note, this project is using a local .npmrc file to install this project from the remote repository
 
 ### Running the Examples
 ```bash
