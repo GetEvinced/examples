@@ -4,6 +4,12 @@ This repository contains examples demonstrating how to integrate and use the Evi
 
 ## How to Use
 
+### Running the Examples
+```bash
+npm i
+npm run wdio
+```
+
 ### Prerequisites
 - Install the Evinced SDK. Refer to the official [Evinced WDIO Documentation](https://developer.evinced.com/sdks-for-web-apps/webdriverio-sdk) for installation instructions.
 - Please note, this project is using a local .npmrc file to install this project from the remote repository
@@ -17,8 +23,3 @@ This repository contains examples demonstrating how to integrate and use the Evi
 ### 2. **Advanced Example: Hooks and `evStart`/`evStop`**
    - Showcases a more comprehensive approach, utilizing hooks for dynamic SDK integration.
    - Demonstrates how to use `evStart` and `evStop` for managing the lifecycle of accessibility analysis.
-
-### Running the Examples
-```bash
-npm i
-npm run wdio
