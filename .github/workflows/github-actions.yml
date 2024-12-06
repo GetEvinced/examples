@@ -34,7 +34,7 @@ jobs:
             sudo apt-get install -y nodejs
           fi
 
-      # Install Chrome and ChromeDriver
+            # Install Chrome and ChromeDriver
       - name: Install Chrome and ChromeDriver
         run: |
           sudo apt-get update
@@ -52,15 +52,15 @@ jobs:
             libxcomposite1 \
             libxdamage1 \
             libxrandr2 \
-            xdg-utils
-          
-          # Download ChromeDriver
-          CHROME_VERSION=$(google-chrome --version | grep -oP '[0-9.]+' | head -1)
-          CHROMEDRIVER_VERSION=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)
+            xdg-utils \
+            unzip
+
+          # Parse Chrome version and fetch the correct ChromeDriver version
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+' | head -1)
+          CHROMEDRIVER_VERSION=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$(echo $CHROME_VERSION | cut -d. -f1))
+
+          # Download and install ChromeDriver
           wget -N https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
-          
-          # Install ChromeDriver
-          sudo apt-get install -y unzip
           unzip chromedriver_linux64.zip
           sudo mv chromedriver /usr/local/bin/
           sudo chmod +x /usr/local/bin/chromedriver
