@@ -14,6 +14,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
     strategy:
       matrix:
         language-folder:
@@ -21,11 +24,19 @@ jobs:
           - { language: "typescript", folder: "ts-wdio-web" }
 
     steps:
+      # Send Slack notification for workflow start
+      - uses: act10ns/slack@v2
+        with:
+          status: starting
+          channel: '#workflows'
+          message: "Starting tests for folder: ${{ matrix.language-folder.folder }}"
+        if: always()
+
       # Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up the environment based on the language, this is to handle additional languages, configure later for Java tests
+      # Set up the environment based on the language
       - name: Set up environment for ${{ matrix.language-folder.language }}
         run: |
           if [ "${{ matrix.language-folder.language }}" == "javascript" ] || [ "${{ matrix.language-folder.language }}" == "typescript" ]; then
@@ -47,6 +58,7 @@ jobs:
 
       # Run tests
       - name: Run tests
+        id: run-tests
         env:
           EVINCED_SERVICE_ID: ${{ secrets.EVINCED_SERVICE_ID }}
           EVINCED_API_KEY: ${{ secrets.EVINCED_API_KEY }}
@@ -59,3 +71,12 @@ jobs:
             echo "Running standard tests"
             npm run test
           fi
+
+      # Send Slack notification for success or failure
+      - uses: act10ns/slack@v2
+        with:
+          status: ${{ job.status }}
+          channel: '#workflows'
+          message: |
+            ${{ job.status == 'success' && 'All tests passed! :white_check_mark:' || 'THIS FAILED FIX THE DOCS LOSER :x:' }}
+        if: always()
