@@ -10,27 +10,7 @@ export const config = {
       secret: process.env.EVINCED_API_KEY,
     });
   },
-  //
-  // ====================
-  // Runner Configuration
-  // ====================
-  // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: "local",
-  //
-  // ==================
-  // Specify Test Files
-  // ==================
-  // Define which test specs should run. The pattern is relative to the directory
-  // of the configuration file being run.
-  //
-  // The specs are defined as an array of spec files (optionally using wildcards
-  // that will be expanded). The test for each spec file will be run in a separate
-  // worker process. In order to have a group of spec files run in the same worker
-  // process simply enclose them in an array within the specs array.
-  //
-  // The path of the spec files will be resolved relative from the directory of
-  // of the config file unless it's absolute.
-  //
   specs: ["./test/specs/**/*.js"],
   // Patterns to exclude.
   exclude: [
@@ -60,8 +40,17 @@ export const config = {
   //
   capabilities: [
     {
-      // capabilities for local browser web tests
-      browserName: "chrome", // or "firefox", "microsoftedge", "safari"
+      browserName: "chrome",
+      "goog:chromeOptions": {
+        args: [
+          "--headless",
+          "--disable-gpu",
+          "--no-sandbox",
+          "--disable-dev-shm-usage",
+          "--window-size=1920,1080",
+          "--disable-extensions",
+        ],
+      },
     },
   ],
 
@@ -72,7 +61,7 @@ export const config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "info",
+  logLevel: "error",
   //
   // Set specific log levels per logger
   // loggers:

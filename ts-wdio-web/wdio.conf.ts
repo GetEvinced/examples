@@ -44,10 +44,18 @@ export const config: WebdriverIO.Config = {
   capabilities: [
     {
       browserName: "chrome",
-      browserVersion: "131",
+      "goog:chromeOptions": {
+        args: [
+          "--headless",
+          "--disable-gpu",
+          "--no-sandbox",
+          "--disable-dev-shm-usage",
+          "--window-size=1920,1080",
+          "--disable-extensions",
+        ],
+      },
     },
   ],
-
   //
   // ===================
   // Test Configurations
@@ -55,7 +63,7 @@ export const config: WebdriverIO.Config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "info",
+  logLevel: "error",
   //
   // Set specific log levels per logger
   // loggers:
