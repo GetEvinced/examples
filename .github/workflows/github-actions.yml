@@ -45,6 +45,13 @@ jobs:
           cd ${{ matrix.language-folder.folder }}
           npm install
 
+        # Set environment variables for Evinced credentials
+      - name: Set Evinced credentials
+        env:
+          EVINCED_SERVICE_ID: ${{ secrets.EVINCED_SERVICE_ID }}
+          EVINCED_API_KEY: ${{ secrets.EVINCED_API_KEY }}
+        run: echo "Evinced credentials set for this workflow."
+
       # Run tests
       - name: Run tests
         run: |
