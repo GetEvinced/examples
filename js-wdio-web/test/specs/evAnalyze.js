@@ -14,6 +14,6 @@ describe("Using the Evinced WDIO SDK", () => {
       (issue) => issue.severity.name === "Critical"
     );
     // In our case, we want it to equal 0 but the test will deliberately fail as there are issues present on the page
-    await assert(criticalIssues.length !== 0, "found critical issues");
+    await assert(criticalIssues.length === 0, "found critical issues");
   });
 });
