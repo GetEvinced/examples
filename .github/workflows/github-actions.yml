@@ -25,7 +25,6 @@ jobs:
           - { language: "javascript", folder: "js-playwright" }
 
     steps:
-      # Send Slack notification for workflow start
       - uses: act10ns/slack@v2
         with:
           status: starting
@@ -33,11 +32,9 @@ jobs:
           message: "Starting tests for folder: ${{ matrix.language-folder.folder }}"
         if: always()
 
-      # Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up the environment based on the language
       - name: Set up environment for ${{ matrix.language-folder.language }}
         run: |
           if [ "${{ matrix.language-folder.language }}" == "javascript" ] || [ "${{ matrix.language-folder.language }}" == "typescript" ]; then
@@ -46,18 +43,20 @@ jobs:
             sudo apt-get install -y nodejs
           fi
 
-      # Inject .npmrc with the secret from GitHub secrets
       - name: Configure .npmrc
         run: |
           echo "${{ secrets.EVINCED_NPM_TOKEN }}" > ~/.npmrc
 
-      # Install dependencies for the test
       - name: Install dependencies
         run: |
           cd ${{ matrix.language-folder.folder }}
           npm install
 
-      # Run tests
+      - name: Install Playwright browsers
+        run: |
+          cd ${{ matrix.language-folder.folder }}
+          npx playwright install
+
       - name: Run tests
         id: run-tests
         env:
@@ -76,9 +75,8 @@ jobs:
             npm run test
           fi
 
-      # Send Slack notification for success or failure
       - uses: act10ns/slack@v2
         with:
-            status: ${{ job.status }}
-            steps: ${{ toJson(steps) }}
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
         if: always()
