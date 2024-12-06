@@ -22,6 +22,7 @@ jobs:
         language-folder:
           - { language: "javascript", folder: "js-wdio-web" }
           - { language: "typescript", folder: "ts-wdio-web" }
+          - { language: "javascript", folder: "js-playwright" }
 
     steps:
       # Send Slack notification for workflow start
@@ -67,6 +68,9 @@ jobs:
           if [ -f "wdio.conf.js" ] || [ -f "wdio.conf.ts" ]; then
             echo "Running WebDriverIO tests"
             npm run wdio
+          if [ -f "playwright.config.js" ] || [ -f "playwright.config.ts" ]; then
+            echo "Running Playwright tests"
+            npx playwright test
           else
             echo "Running standard tests"
             npm run test
