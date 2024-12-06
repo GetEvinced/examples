@@ -49,7 +49,7 @@ jobs:
       - name: Run tests
         run: |
           cd ${{ matrix.language-folder.folder }}
-          if [ -f "wdio.conf.js" ]; then
+          if [ -f "wdio.conf.js" ] || [ -f "wdio.conf.ts" ]; then
             echo "Running WebDriverIO tests"
             npm run wdio
           else
