@@ -34,13 +34,12 @@ jobs:
             sudo apt-get install -y nodejs
           fi
 
-      # Install Chrome and dependencies
+      # Install Chrome and ChromeDriver
       - name: Install Chrome and ChromeDriver
         run: |
           sudo apt-get update
           sudo apt-get install -y \
             google-chrome-stable \
-            chromedriver \
             fonts-liberation \
             libappindicator3-1 \
             libasound2 \
@@ -54,9 +53,17 @@ jobs:
             libxdamage1 \
             libxrandr2 \
             xdg-utils
-
-      - name: Add ChromeDriver to PATH
-        run: sudo ln -s /usr/bin/chromedriver /usr/local/bin/chromedriver
+          
+          # Download ChromeDriver
+          CHROME_VERSION=$(google-chrome --version | grep -oP '[0-9.]+' | head -1)
+          CHROMEDRIVER_VERSION=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)
+          wget -N https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+          
+          # Install ChromeDriver
+          sudo apt-get install -y unzip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
 
       # Inject .npmrc with the secret from GitHub secrets
       - name: Configure .npmrc
@@ -80,10 +87,3 @@ jobs:
             echo "Running standard tests"
             npm run test
           fi
-
-      # Debugging Chrome and ChromeDriver versions (Optional)
-      - name: Check Chrome version
-        run: google-chrome --version
-
-      - name: Check ChromeDriver version
-        run: chromedriver --version
