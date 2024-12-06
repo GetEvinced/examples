@@ -75,9 +75,9 @@ jobs:
       # Send Slack notification for success or failure
       - uses: act10ns/slack@v2
         with:
-          status: ${{ job.status }}
+          status: failure
           steps: ${{ toJson(steps) }}
           channel: '#workflows'
           message: |
-            ${{ job.status == 'success' && 'All tests passed! :white_check_mark:' || 'THIS FAILED FIX THE DOCS LOSER :x:' }}
-        if: always()
+            "Job *${{ matrix.language-folder.folder }}* failed during tests. :x: FIX THE DOCS LOSER :x:"
+        if: failure()
