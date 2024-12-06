@@ -1,4 +1,4 @@
-name: Run Tests
+name: Evinced Examples CI/CD tests
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up the environment based on the language
+      # Set up the environment based on the language, this is to handle additional languages, configure later for Java tests
       - name: Set up environment for ${{ matrix.language-folder.language }}
         run: |
           if [ "${{ matrix.language-folder.language }}" == "javascript" ] || [ "${{ matrix.language-folder.language }}" == "typescript" ]; then
@@ -34,19 +34,25 @@ jobs:
             sudo apt-get install -y nodejs
           fi
 
-      # Inject .npmrc with the secret
+      # Inject .npmrc with the secret from Github secrets
       - name: Configure .npmrc
         run: |
           echo "${{ secrets.EVINCED_NPM_TOKEN }}" > ~/.npmrc
 
-      # Install dependencies
+      # Install dependencies for the test
       - name: Install dependencies
         run: |
           cd ${{ matrix.language-folder.folder }}
           npm install
 
-      # Run tests
+        # Run tests
       - name: Run tests
         run: |
           cd ${{ matrix.language-folder.folder }}
-          npm test
+          if [ -f "wdio.conf.js" ]; then
+            echo "Running WebDriverIO tests"
+            npm run wdio
+          else
+            echo "Running standard tests"
+            npm run test
+          fi
