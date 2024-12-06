@@ -68,7 +68,7 @@ jobs:
           if [ -f "wdio.conf.js" ] || [ -f "wdio.conf.ts" ]; then
             echo "Running WebDriverIO tests"
             npm run wdio
-          if [ -f "playwright.config.js" ] || [ -f "playwright.config.ts" ]; then
+          elif [ -f "playwright.config.js" ] || [ -f "playwright.config.ts" ]; then
             echo "Running Playwright tests"
             npx playwright test
           else
