@@ -1,0 +1,62 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    # Run daily at 12:00 AM UTC
+    - cron: "0 0 * * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        language-folder:
+          - { language: "javascript", folder: "js-wdio-web" }
+          - { language: "typescript", folder: "ts-wdio-web" }
+          # Add other language tests here, ensure folder is correct
+          # - { language: "java", folder: "java-tests" }
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up the environment based on the language, this is to handle future cases with Java, Python, etc, follow the same format
+      - name: Set up environment for ${{ matrix.language-folder.language }}
+        run: |
+          if [ "${{ matrix.language-folder.language }}" == "javascript" ] || [ "${{ matrix.language-folder.language }}" == "typescript" ]; then
+            echo "Setting up Node.js environment"
+            curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+          elif [ "${{ matrix.language-folder.language }}" == "java" ]; then
+            echo "Setting up Java environment"
+            sudo apt-get install -y openjdk-11-jdk
+          fi
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          if [ "${{ matrix.language-folder.language }}" == "javascript" ] || [ "${{ matrix.language-folder.language }}" == "typescript" ]; then
+            cd ${{ matrix.language-folder.folder }}
+            npm install
+          elif [ "${{ matrix.language-folder.language }}" == "java" ]; then
+            echo "Java dependencies installation will go here"
+          fi
+
+      # Run tests
+      - name: Run tests
+        run: |
+          if [ "${{ matrix.language-folder.language }}" == "javascript" ] || [ "${{ matrix.language-folder.language }}" == "typescript" ]; then
+            cd ${{ matrix.language-folder.folder }}
+            npm test
+          elif [ "${{ matrix.language-folder.language }}" == "java" ]; then
+            cd ${{ matrix.language-folder.folder }}
+            ./gradlew test
+          fi
