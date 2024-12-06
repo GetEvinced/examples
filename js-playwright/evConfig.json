@@ -1,0 +1,6 @@
+{
+  "uploadToPlatformOptions": {
+    "enableUploadToPlatform": true,
+    "setUploadToPlatformDefault": false
+  }
+}
