@@ -1,0 +1,14 @@
+{
+  "uploadToPlatformOptions": {
+    "enableUploadToPlatform": true,
+    "setUploadToPlatformDefault": false
+  },
+  "switchOn": true,
+  "reporterOptions": {
+    "reportFormat": "html",
+    "fileName": "aggregatedReportExample.html",
+    "outputDir": "./evincedReports",
+    "tmpDir": "./evincedReports/tmp"
+  },
+  "enableScreenshots": true
+}
