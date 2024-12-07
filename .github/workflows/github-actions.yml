@@ -23,6 +23,7 @@ jobs:
           - { language: "javascript", folder: "js-wdio-web" }
           - { language: "typescript", folder: "ts-wdio-web" }
           - { language: "javascript", folder: "js-playwright" }
+          - { language: "typescript", folder: "ts-playwright" }
 
     steps:
       - uses: act10ns/slack@v2
