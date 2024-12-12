@@ -2,3 +2,4 @@
 package-lock.json
 **/.npmrc/
 .npmrc
+.DS_Store
