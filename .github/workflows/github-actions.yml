@@ -25,6 +25,8 @@ jobs:
           - { language: "javascript", folder: "js-playwright" }
           - { language: "typescript", folder: "ts-playwright" }
           - { language: "javascript", folder: "js-cypress" }
+          # - { language: "typescript", folder: "ts-cypress" }
+          - { language: "javascript", folder: "react-unit-tester" }
 
     steps:
       - uses: act10ns/slack@v2
