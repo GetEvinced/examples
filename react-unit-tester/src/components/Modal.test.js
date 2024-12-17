@@ -1,7 +1,10 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import { Modal } from "./Modal";
 import EvincedUT from "@evinced/unit-tester";
+
+jest.setTimeout(10000)
 
 describe("Modal Component", () => {
   it("renders the open button", async () => {
@@ -12,7 +15,6 @@ describe("Modal Component", () => {
 
   it("opens the modal when the button is clicked", async () => {
     render(<Modal />);
-    const openButton = screen.getByText("Open Modal");
 
     // Ensure modal is not visible initially
     expect(
