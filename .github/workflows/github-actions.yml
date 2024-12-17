@@ -24,6 +24,7 @@ jobs:
           - { language: "typescript", folder: "ts-wdio-web" }
           - { language: "javascript", folder: "js-playwright" }
           - { language: "typescript", folder: "ts-playwright" }
+          - { language: "javascript", folder: "js-cypress" }
 
     steps:
       - uses: act10ns/slack@v2
@@ -71,6 +72,9 @@ jobs:
           elif [ -f "playwright.config.js" ] || [ -f "playwright.config.ts" ]; then
             echo "Running Playwright tests"
             npx playwright test
+          elif [ -f "cypress.config.js" ] || [ -f "cypress.config.ts" ]; then
+            echo "Running Cypress tests"
+            npx cypress run
           else
             echo "Running standard tests"
             npm run test

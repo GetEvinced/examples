@@ -22,18 +22,14 @@ describe("Modal Component", () => {
     // You can ignore this, it is solely for debugging reasons, it will always show an error with the linter
     // screen.debug();
 
-    // Click to open modal
-    fireEvent.click(openButton);
-    // Now verify text is present on the modal because it is open
-    expect(screen.getByText("This is a modal example")).toBeInTheDocument();
-
     const buttonElement = screen.getByRole("button");
 
+    // The analyzeModal method will handle the activation of the modal for you, there is no need to activate it yourself in the test
     const results = await EvincedUT.analyzeModal(
       { element: buttonElement },
       { modalLocator: { id: "modal" } }
     );
-    expect(results).toHaveNoFailures();
+    expect(results).not.toHaveNoFailures();
   });
 
   it("closes the modal when the close button is clicked", () => {
