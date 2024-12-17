@@ -57,6 +57,7 @@ jobs:
           npm install
 
       - name: Install Playwright browsers
+        if: contains(matrix.language-folder.folder, 'playwright')
         run: |
           cd ${{ matrix.language-folder.folder }}
           npx playwright install
