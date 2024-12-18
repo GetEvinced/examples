@@ -35,6 +35,10 @@ jobs:
             curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
             sudo apt-get install -y nodejs
 
+        - name: Configure .npmrc
+          run: |
+            echo "${{ secrets.EVINCED_NPM_TOKEN }}" > ~/.npmrc
+
         - name: Install dependencies
           run: |
             cd react-unit-tester
