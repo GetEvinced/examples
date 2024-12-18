@@ -10,7 +10,6 @@ const Popup = ({ isOpen, closeModal }) => {
         visibility: isOpen ? "visible" : "hidden",
       }}
       aria-hidden={!isOpen}
-      inert="true"
       className={isOpen ? "open" : ""}
     >
       <div tabIndex={"-1"}>

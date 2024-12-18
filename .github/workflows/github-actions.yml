@@ -62,7 +62,7 @@ jobs:
           cd ${{ matrix.language-folder.folder }}
           npx playwright install
 
-      - name: Run tests
+      - name: Run Evinced Smoke tests
         id: run-tests
         env:
           EVINCED_SERVICE_ID: ${{ secrets.EVINCED_SERVICE_ID }}
