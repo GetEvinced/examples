@@ -3,9 +3,19 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
-
 import * as React from 'react';
 import { act } from 'react-dom/test-utils';
+import EvincedUT, { configure } from '@evinced/unit-tester';
+
+configure({
+    serviceAccountId: process.env.EVINCED_SERVICE_ID,
+    serviceAccountSecret: process.env.EVINCED_API_KEY,
+    suppressAnonymousAuthenticationWarning: true
+})
+
+Object.defineProperty(global, "EvincedUT", {
+    value: EvincedUT,
+});
 
 /* eslint-disable no-undef */
 globalThis.act = React.act || act;
