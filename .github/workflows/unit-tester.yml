@@ -1,0 +1,57 @@
+name: Evinced Unit Tester
+
+on:
+  workflow_call:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+    - main
+  schedule:
+    - cron: "0 0 * * 1"
+    
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      
+    steps:
+        - uses: act10ns/slack@v2
+          with:
+            status: starting
+            channel: "#workflows"
+            message: "Starting Unit Tester"
+          if: always()
+  
+        - name: Checkout code
+          uses: actions/checkout@v3
+  
+        - name: Set up environment
+          run: |
+            echo "Setting up Node.js environment"
+            curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+    
+        - name: Install dependencies
+          run: |
+            cd react-unit-tester
+            npm install --userconfig ../.npmrc
+    
+        - name: Run Tests
+          id: run-tests
+          env:
+            EVINCED_SERVICE_ID: ${{ secrets.EVINCED_SERVICE_ID }}
+            EVINCED_API_KEY: ${{ secrets.EVINCED_API_KEY }}
+          run: |
+            cd react-unit-tester
+            npm run test
+
+        - uses: act10ns/slack@v2
+          with:
+            status: ${{ job.status }}
+            steps: ${{ toJson(steps) }}
+          if: always()
+  
