@@ -3,5 +3,7 @@ node_modules
 package-lock.json
 .DS_Store
 .cache/
+.cache
+*cache/*
 userToken
 anonymousToken
