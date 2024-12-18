@@ -1,4 +1,4 @@
-name: Evinced Unit Tester
+name: Unit Tester
 
 on:
   workflow_call:
@@ -38,7 +38,7 @@ jobs:
         - name: Install dependencies
           run: |
             cd react-unit-tester
-            npm install --userconfig ../.npmrc
+            npm install --userconfig=../.npmrc
     
         - name: Run Tests
           id: run-tests
