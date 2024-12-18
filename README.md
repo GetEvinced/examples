@@ -9,6 +9,9 @@ This repository is designed to:
 - Ensure all examples are **validated and maintained** using automated smoke tests.
 - Enable seamless integration of the latest SDK features with minimal effort.
 
+
+Install dependencies for a folder with `npm i . --userconfig=.../.npmrc`.  
+
 ---
 
 ## Features
