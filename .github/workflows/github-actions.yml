@@ -11,6 +11,8 @@ on:
     - cron: "0 0 * * 1"
 
 jobs:
+  call-UT-workflow: 
+    uses: ./.github/workflows/unit-tester.yml
   test:
     runs-on: ubuntu-latest
 
@@ -26,7 +28,7 @@ jobs:
           - { language: "typescript", folder: "ts-playwright" }
           - { language: "javascript", folder: "js-cypress" }
           # - { language: "typescript", folder: "ts-cypress" }
-          - { language: "javascript", folder: "react-unit-tester" }
+          # - { language: "javascript", folder: "react-unit-tester" }
 
     steps:
       - uses: act10ns/slack@v2
