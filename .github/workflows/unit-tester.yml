@@ -38,10 +38,10 @@ jobs:
         - name: Install dependencies
           run: |
             cd react-unit-tester
-            npm i . --userconfig=../.npmrc
+            npm i --userconfig=../.npmrc
     
-        - name: Run Tests
-          id: run-tests
+        - name: Run UT Tests
+          id: run-UT-tests
           env:
             EVINCED_SERVICE_ID: ${{ secrets.EVINCED_SERVICE_ID }}
             EVINCED_API_KEY: ${{ secrets.EVINCED_API_KEY }}
