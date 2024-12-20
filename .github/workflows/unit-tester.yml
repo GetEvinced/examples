@@ -38,7 +38,7 @@ jobs:
         - name: Install dependencies
           run: |
             cd react-unit-tester
-            npm i . --verbose --userconfig=../.npmrc
+            npm i . --verbose
     
         - name: Run UT Tests
           id: run-UT-tests
