@@ -51,7 +51,7 @@ jobs:
 
       - name: Configure .npmrc
         run: |
-          echo "${{ secrets.EVINCED_NPM_TOKEN }}" > ~/.npmrc
+          echo "${{ secrets.EVINCED_NPM_TOKEN }}" >> ~/.npmrc
 
       - name: Install dependencies
         run: |
