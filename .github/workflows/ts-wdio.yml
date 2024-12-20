@@ -36,8 +36,8 @@ jobs:
 
       - name: Configure .npmrc
         run: |
-          echo "@evinced:registry=https://evinced.jfrog.io/artifactory/api/npm/restricted-npm/" > ~/.npmrc
-          echo "//evinced.jfrog.io/artifactory/api/npm/restricted-npm/:_authToken=${{ secrets.EVINCED_NPM_TOKEN }}" >> ~/.npmrc
+          echo "@evinced:registry=https://evinced.jfrog.io/artifactory/api/npm/restricted-npm-local/" > ~/.npmrc
+          echo "//evinced.jfrog.io/artifactory/api/npm/restricted-npm-local/:_authToken=${{ secrets.EVINCED_NPM_TOKEN }}" >> ~/.npmrc
 
       - name: Debug .npmrc
         run: cat ~/.npmrc
