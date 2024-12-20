@@ -2,6 +2,14 @@ name: TypeScript WebDriverIO Tests
 
 on:
   workflow_call:
+    # push:
+    #   branches:
+    #     - main
+    # pull_request:
+    #   branches:
+    #   - main
+    # schedule:
+    #  - cron: "0 0 * * 1"
 
 jobs:
   ts-wdio-tests:
@@ -27,4 +35,4 @@ jobs:
           sudo apt-get install -y nodejs
 
       - name: Configure .npmrc
-        run: 
+        run:
