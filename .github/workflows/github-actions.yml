@@ -11,7 +11,7 @@ on:
     - cron: "0 0 * * 1"
 
 jobs:
-  call-UT-workflow: 
+  call-UT-workflow:
     uses: ./.github/workflows/unit-tester.yml
   test:
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
 
       - name: Configure .npmrc
         run: |
-          echo "${{ secrets.EVINCED_NPM_TOKEN }}" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.EVINCED_NPM_TOKEN }}" > ~/.npmrc
 
       - name: Install dependencies
         run: |
