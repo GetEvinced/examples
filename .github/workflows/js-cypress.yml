@@ -2,13 +2,19 @@ name: JavaScript Cypress Tests
 
 on:
   workflow_call:
+    secrets:
+      EVINCED_NPM_TOKEN:
+        required: true
+      EVINCED_SERVICE_ID:
+        required: true
+      EVINCED_API_KEY:
+        required: true
+      SLACK_WEBHOOK_URL:
+        required: true
 
 jobs:
   js-cypress-tests:
     runs-on: ubuntu-latest
-
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
     steps:
       - uses: act10ns/slack@v2
@@ -26,10 +32,15 @@ jobs:
           curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
           sudo apt-get install -y nodejs
 
-      - name: Debug token
-        run: echo ${{ secrets.EVINCED_NPM_TOKEN }}
+      - name: Debug token length
+        run: |
+          echo "Token length: ${#EVINCED_NPM_TOKEN}"
+        env:
+          EVINCED_NPM_TOKEN: ${{ secrets.EVINCED_NPM_TOKEN }}
 
       - name: Configure .npmrc
+        env:
+          EVINCED_NPM_TOKEN: ${{ secrets.EVINCED_NPM_TOKEN }}
         run: |
           echo "@evinced:registry=https://evinced.jfrog.io/artifactory/api/npm/restricted-npm-local/" > ~/.npmrc
           echo "//evinced.jfrog.io/artifactory/api/npm/restricted-npm-local/:_authToken=${{ secrets.EVINCED_NPM_TOKEN }}" >> ~/.npmrc
