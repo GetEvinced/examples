@@ -35,4 +35,30 @@ jobs:
           sudo apt-get install -y nodejs
 
       - name: Configure .npmrc
-        run:
+        run: |
+          echo "@evinced:registry=https://evinced.jfrog.io/artifactory/api/npm/restricted-npm/" > ~/.npmrc
+          echo "//evinced.jfrog.io/artifactory/api/npm/restricted-npm/:_authToken=${{ secrets.EVINCED_NPM_TOKEN }}" >> ~/.npmrc
+
+      - name: Debug .npmrc
+        run: cat ~/.npmrc
+
+      - name: Install dependencies
+        run: |
+          cd ts-wdio-web
+          npm install --userconfig=~/.npmrc
+
+      - name: Run WebDriverIO Tests
+        id: run-ts-wdio-tests
+        env:
+          EVINCED_SERVICE_ID: ${{ secrets.EVINCED_SERVICE_ID }}
+          EVINCED_API_KEY: ${{ secrets.EVINCED_API_KEY }}
+        run: |
+          cd ts-wdio-web
+          npm run wdio
+
+      - uses: act10ns/slack@v2
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+        if: always()
+
