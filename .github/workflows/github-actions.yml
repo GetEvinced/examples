@@ -13,84 +13,18 @@ on:
 jobs:
   call-UT-workflow:
     uses: ./.github/workflows/unit-tester.yml
-  test:
-    runs-on: ubuntu-latest
 
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+  call-JS-wdio:
+    uses: ./.github/workflows/js-wdio.yml
 
-    strategy:
-      matrix:
-        language-folder:
-          - { language: "javascript", folder: "js-wdio-web" }
-          - { language: "typescript", folder: "ts-wdio-web" }
-          - { language: "javascript", folder: "js-playwright" }
-          - { language: "typescript", folder: "ts-playwright" }
-          - { language: "javascript", folder: "js-cypress" }
-          # - { language: "typescript", folder: "ts-cypress" }
-          # - { language: "javascript", folder: "react-unit-tester" }
+  call-TS-wdio:
+    uses: ./.github/workflows/ts-wdio.yml
 
-    steps:
-      - uses: act10ns/slack@v2
-        with:
-          status: starting
-          channel: "#workflows"
-          message: "Starting tests for folder: ${{ matrix.language-folder.folder }}"
-        if: always()
+  call-JS-cypress:
+    uses: ./.github/workflows/js-cypress.yml
 
-      - name: Checkout code
-        uses: actions/checkout@v3
+  call-JS-playwright:
+    uses: ./.github/workflows/js-playwright.yml
 
-      - name: Set up environment for ${{ matrix.language-folder.language }}
-        run: |
-          if [ "${{ matrix.language-folder.language }}" == "javascript" ] || [ "${{ matrix.language-folder.language }}" == "typescript" ]; then
-            echo "Setting up Node.js environment"
-            curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-            sudo apt-get install -y nodejs
-          fi
-
-      - name: Configure .npmrc
-        run: |
-          echo "@evinced:registry=https://evinced.jfrog.io/artifactory/api/npm/restricted-npm/" > ~/.npmrc
-          echo "//evinced.jfrog.io/artifactory/api/npm/restricted-npm/:_authToken=${{ secrets.EVINCED_NPM_TOKEN }}" >> ~/.npmrc
-
-      - name: Debug .npmrc
-        run: cat ~/.npmrc
-
-      - name: Install dependencies
-        run: |
-          cd ${{ matrix.language-folder.folder }}
-          npm install --userconfig=~/.npmrc
-
-      - name: Install Playwright browsers
-        if: contains(matrix.language-folder.folder, 'playwright')
-        run: |
-          cd ${{ matrix.language-folder.folder }}
-          npx playwright install
-
-      - name: Run Evinced Smoke tests
-        id: run-tests
-        env:
-          EVINCED_SERVICE_ID: ${{ secrets.EVINCED_SERVICE_ID }}
-          EVINCED_API_KEY: ${{ secrets.EVINCED_API_KEY }}
-        run: |
-          cd ${{ matrix.language-folder.folder }}
-          if [ -f "wdio.conf.js" ] || [ -f "wdio.conf.ts" ]; then
-            echo "Running WebDriverIO tests"
-            npm run wdio
-          elif [ -f "playwright.config.js" ] || [ -f "playwright.config.ts" ]; then
-            echo "Running Playwright tests"
-            npx playwright test
-          elif [ -f "cypress.config.js" ] || [ -f "cypress.config.ts" ]; then
-            echo "Running Cypress tests"
-            npx cypress run
-          else
-            echo "Running standard tests"
-            npm run test
-          fi
-
-      - uses: act10ns/slack@v2
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-        if: always()
+  call-TS-playwright:
+    uses: ./.github/workflows/ts-playwright.yml
