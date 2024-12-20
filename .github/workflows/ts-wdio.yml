@@ -2,8 +2,6 @@ name: TypeScript WebDriverIO Tests
 
 on:
   workflow_call:
-  schedule:
-    - cron: "0 0 * * 1"
 
 jobs:
   ts-wdio-tests:
