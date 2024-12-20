@@ -2,14 +2,14 @@ name: Unit Tester
 
 on:
   workflow_call:
-  # push:
-  #   branches:
-  #     - main
-  # pull_request:
-  #   branches:
-  #   - main
-  # schedule:
-  #  - cron: "0 0 * * 1"
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+    - main
+  schedule:
+   - cron: "0 0 * * 1"
     
 jobs:
   UT-test:
