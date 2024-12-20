@@ -26,7 +26,6 @@ jobs:
       EVINCED_NPM_TOKEN: ${{ secrets.EVINCED_NPM_TOKEN }}
       EVINCED_SERVICE_ID: ${{ secrets.EVINCED_SERVICE_ID }}
       EVINCED_API_KEY: ${{ secrets.EVINCED_API_KEY }}
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
   call-JS-playwright:
     uses: ./.github/workflows/js-playwright.yml
