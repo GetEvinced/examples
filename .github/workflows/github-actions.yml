@@ -54,10 +54,13 @@ jobs:
           echo "@evinced:registry=https://evinced.jfrog.io/artifactory/api/npm/restricted-npm/" > ~/.npmrc
           echo "//evinced.jfrog.io/artifactory/api/npm/restricted-npm/:_authToken=${{ secrets.EVINCED_NPM_TOKEN }}" >> ~/.npmrc
 
+      - name: Debug .npmrc
+        run: cat ~/.npmrc
+
       - name: Install dependencies
         run: |
           cd ${{ matrix.language-folder.folder }}
-          npm install
+          npm install --userconfig=~/.npmrc
 
       - name: Install Playwright browsers
         if: contains(matrix.language-folder.folder, 'playwright')
