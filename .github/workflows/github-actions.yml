@@ -1,7 +1,7 @@
 name: Evinced Examples CI/CD tests
 
 on:
-  push:
+  # push:
     # branches:
     #   - main
   pull_request:
