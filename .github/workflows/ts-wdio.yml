@@ -1,0 +1,32 @@
+name: TypeScript WebDriverIO Tests
+
+on:
+  workflow_call:
+  schedule:
+    - cron: "0 0 * * 1"
+
+jobs:
+  ts-wdio-tests:
+    runs-on: ubuntu-latest
+
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+    steps:
+      - uses: act10ns/slack@v2
+        with:
+          status: starting
+          channel: "#workflows"
+          message: "Starting TypeScript WebDriverIO Tests"
+        if: always()
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js environment
+        run: |
+          curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+          sudo apt-get install -y nodejs
+
+      - name: Configure .npmrc
+        run: 
