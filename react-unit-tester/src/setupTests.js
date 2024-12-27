@@ -6,6 +6,13 @@ import '@testing-library/jest-dom';
 
 import * as React from 'react';
 import { act } from 'react-dom/test-utils';
+import { configure } from "@evinced/unit-tester";
+
+configure({
+    serviceAccountId: process.env.EVINCED_SERVICE_ID,
+    serviceAccountSecret:
+        process.env.EVINCED_API_KEY,
+});
 
 /* eslint-disable no-undef */
 globalThis.act = React.act || act;
