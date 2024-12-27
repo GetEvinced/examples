@@ -83,12 +83,10 @@ jobs:
             npm run test
           fi
 
-      - name: Upload HTML reports
-        uses: actions/upload-artifact@v3
-        with:
-            name: ${{ matrix.language-folder.folder }}-report
-            path: |
-              ${{ matrix.language-folder.folder }}/**/*.html
+      - name: Copy HTML reports for GitHub Pages
+        run: |
+          mkdir -p public/reports/${{ matrix.language-folder.folder }}
+          find ${{ matrix.language-folder.folder }} -name '*.html' -exec cp --parents {} public/reports/${{ matrix.language-folder.folder }} \;
 
       - uses: act10ns/slack@v2
         with:
@@ -96,15 +94,16 @@ jobs:
           steps: ${{ toJson(steps) }}
         if: always()
 
-  download-reports:
+  deploy:
     needs: test
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download all reports
-        uses: actions/download-artifact@v3
-        with:
-          path: reports
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: List downloaded reports
-        run: ls -R reports
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public/reports
