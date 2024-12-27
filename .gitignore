@@ -1,5 +1,8 @@
 **/node_modules/
 package-lock.json
 **/.npmrc/
+**/.cache/
+**/userToken
 .npmrc
 .DS_Store
+react-unit-tester/.cache
