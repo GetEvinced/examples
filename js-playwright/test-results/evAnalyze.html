@@ -1,0 +1,971 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Evinced Accessibility Report</title>
+    <style>
+      html {
+        background-color: #f5f5f5;
+        color: #131516;
+        font-family: 'Outfit', sans-serif;
+        font-size: 12px;
+        line-height: 30px;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .flexGrow {
+        flex-grow: 1;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .clickable {
+        cursor: pointer;
+      }
+      .sr-only {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+
+      #header {
+        background-color: #ffffff;
+        padding: 30px;
+        margin-bottom: 40px;
+        color: #131516;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 14px;
+      }
+
+      #header #reportTitle {
+        font-weight: 600;
+        font-size: 16px;
+        margin-left: 40px;
+        color: #1b3050;
+      }
+
+      #logo {
+        height: 20px;
+      }
+
+      #content {
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+      }
+
+      #table {
+        max-width: 1420px;
+        background-color: #ffffff;
+        border: 1px solid #8392a6;
+        border-top: none;
+        border-spacing: 0;
+      }
+
+      #table thead {
+        font-size: 14px;
+        font-weight: 600;
+        height: 45px;
+        color: #ffffff;
+        background-color: #1b3050;
+        opacity: 0.85;
+      }
+
+      #issuesCount {
+        font-size: 14px;
+        color: #607085;
+        text-align: left;
+        font-weight: normal;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #8392a6;
+        border-bottom: none;
+      }
+
+      #table thead .top-row th {
+        text-align: left;
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      #table .top-row th,
+      #table td {
+        padding: 12px 15px;
+        max-width: 160px;
+      }
+
+      #table tbody tr {
+        width: 100%;
+        height: 50px;
+        border: 1px solid #8392a6;
+        border-radius: 3px;
+      }
+
+      #table tbody tr:hover {
+        background-color: #f3f9fe;
+      }
+      .top th {
+        width: 73px;
+        text-align: left;
+        color: #131516;
+        background: #ffffff;
+        font-weight: normal;
+        border: 0;
+        padding: 0 10px;
+        line-height: 30px;
+      }
+
+      table a {
+        color: #1e6fd2;
+      }
+
+      table a.issue-type span.issue-type {
+        text-decoration: none;
+        pointer-events: none;
+        color: #131516;
+      }
+
+      #tableBody td {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 14px;
+        line-height: 20px;
+        color: #131516;
+        border-bottom: 1px solid #8392a6;
+      }
+
+      #tableBody .numeric-cell {
+        text-align: right;
+      }
+
+      ul {
+        padding-inline-start: 0px;
+      }
+
+      ul > li > p {
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      ul > li::marker {
+        color: #8392a6;
+      }
+
+      #issueDetailsModal {
+        background-color: rgba(255, 255, 255, 50%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        z-index: 900;
+      }
+
+      #issueDetailsModal:not(.hidden) {
+        display: flex;
+      }
+
+      #issueDetailsModal .container {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        max-width: 900px;
+      }
+
+      #modalBody {
+        background: #ffffff;
+        border: 2px solid #f1f2f5;
+        box-shadow: 0 0 2px #8292a6;
+        display: inline-block;
+        color: black;
+        padding: 30px 50px;
+        font-size: 16px;
+        width: 100%;
+        position: relative;
+      }
+
+      #modalCloseButton {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        background-color: transparent;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KCTxkZWZzPgoJCTxzdHlsZT4KCQkJLmEtY2xvc2UtaWNvbiB7CgkJCQlmaWxsOiAjZmZmOwoJCQl9CgkJCS5hLWNsb3NlLWljb246aG92ZXIgewoJCQkJZmlsbDogI2YxZjJmNTsKCQkJfQoJCQkuYi1jbG9zZS1pY29uIHsKCQkJCWZpbGw6IG5vbmU7CgkJCQlzdHJva2U6ICM4MzkyYTY7CgkJCQlzdHJva2UtbGluZWNhcDogcm91bmQ7CgkJCQlzdHJva2UtbWl0ZXJsaW1pdDogMTA7CgkJCQlzdHJva2Utd2lkdGg6IDJweDsKCQkJfQoKCQkJLmNsb3NlLWljb24tY29udGFpbmVyOmhvdmVyIC5iLWNsb3NlLWljb24sCgkJCS5jbG9zZS1pY29uLWNvbnRhaW5lcjpob3ZlciAuYi1jbG9zZS1pY29uOmhvdmVyIHsKCQkJCXN0cm9rZTogIzBjNzJiYjsKCQkJfQoJCQkuY2xvc2UtaWNvbi1jb250YWluZXI6aG92ZXIgLmEtY2xvc2UtaWNvbiwKCQkJLmNsb3NlLWljb24tY29udGFpbmVyOmhvdmVyIC5hLWNsb3NlLWljb246aG92ZXIgewoJCQkJZmlsbDogI2YxZjJmNTsKCQkJfQoJCTwvc3R5bGU+Cgk8L2RlZnM+Cgk8ZyBjbGFzcz0iY2xvc2UtaWNvbi1jb250YWluZXIiPgoJCTxjaXJjbGUgY2xhc3M9ImEtY2xvc2UtaWNvbiIgY3g9IjIwIiBjeT0iMjAiIHI9IjIwIiAvPgoJCTxsaW5lIGNsYXNzPSJiLWNsb3NlLWljb24iIHkxPSIxMCIgeDI9IjEwLjAwMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUgMTUuMDA1KSIgLz4KCQk8bGluZSBjbGFzcz0iYi1jbG9zZS1pY29uIiB4MT0iMTAiIHkxPSIxMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUgMTUpIiAvPgoJPC9nPgo8L3N2Zz4K');
+      }
+
+      #modalCloseButton:hover {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KCTxkZWZzPgoJCTxzdHlsZT4KCQkJLmEtY2xvc2UtaWNvbiB7CgkJCQlmaWxsOiAjZjFmMmY1OwoJCQl9CgkJCS5iLWNsb3NlLWljb24gewoJCQkJZmlsbDogbm9uZTsKCQkJCXN0cm9rZTogIzgzOTJhNjsKCQkJCXN0cm9rZS1saW5lY2FwOiByb3VuZDsKCQkJCXN0cm9rZS1taXRlcmxpbWl0OiAxMDsKCQkJCXN0cm9rZS13aWR0aDogMnB4OwoJCQl9CgoJCQkuY2xvc2UtaWNvbi1jb250YWluZXIgLmItY2xvc2UtaWNvbiB7CgkJCQlzdHJva2U6ICMwYzcyYmI7CgkJCX0KCQkJLmNsb3NlLWljb24tY29udGFpbmVyIC5hLWNsb3NlLWljb24gewoJCQkJZmlsbDogI2YxZjJmNTsKCQkJfQoJCTwvc3R5bGU+Cgk8L2RlZnM+Cgk8ZyBjbGFzcz0iY2xvc2UtaWNvbi1jb250YWluZXIiPgoJCTxjaXJjbGUgY2xhc3M9ImEtY2xvc2UtaWNvbiIgY3g9IjIwIiBjeT0iMjAiIHI9IjIwIiAvPgoJCTxsaW5lIGNsYXNzPSJiLWNsb3NlLWljb24iIHkxPSIxMCIgeDI9IjEwLjAwMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUgMTUuMDA1KSIgLz4KCQk8bGluZSBjbGFzcz0iYi1jbG9zZS1pY29uIiB4MT0iMTAiIHkxPSIxMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUgMTUpIiAvPgoJPC9nPgo8L3N2Zz4K');
+      }
+
+      #modalCloseButton img {
+        width: 20px;
+        height: 20px;
+      }
+
+      #issueDetailsModal h1 {
+        font-weight: 600;
+        font-size: 18px;
+        color: #ce2c85;
+      }
+
+      #issueDetailsModal img {
+        margin-top: 10px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .modalComponentContainer {
+        margin-top: 20px;
+      }
+
+      .modalComponentItem {
+        display: flex;
+        color: #607085;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      .text-overflow {
+        max-width: 880px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+      }
+
+      .boldAttribute {
+        font-weight: 600;
+        color: #1b3050;
+      }
+
+      .modalComponentItem span {
+        color: initial;
+        margin-left: 5px;
+      }
+
+      .detailsBlock.dual {
+        margin: 20px 0;
+        display: flex;
+      }
+
+      .halfBlock {
+        flex: 1;
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .modalComponentItem a {
+        color: #0c72bb;
+        margin-left: 5px;
+      }
+
+      .modalComponentContainer .code {
+        font-size: 16px;
+        color: #131516;
+      }
+
+      .codeSnippetText {
+        font-size: 14px;
+        font-family: 'DM Mono', monospace;
+        border: 1px solid #8392a6;
+        background-color: #f8f9fa;
+        width: 100%;
+        padding: 20px;
+        margin-top: 10px;
+        word-break: break-all;
+        box-sizing: border-box;
+      }
+
+      td > button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: inherit;
+        background-repeat: no-repeat;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvX0luZm8iIGRhdGEtbmFtZT0iaWNvIEluZm8iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMzIgMzIiPgogIDxjaXJjbGUgaWQ9IkVsbGlwc2VfMzYiIGRhdGEtbmFtZT0iRWxsaXBzZSAzNiIgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSIjZmZmIi8+CiAgPGNpcmNsZSBpZD0iRWxsaXBzZV8yOSIgZGF0YS1uYW1lPSJFbGxpcHNlIDI5IiBjeD0iOC41IiBjeT0iOC41IiByPSI4LjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcuNSA3LjUpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MzkyYTYiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxjaXJjbGUgaWQ9IkVsbGlwc2VfMzAiIGRhdGEtbmFtZT0iRWxsaXBzZSAzMCIgY3g9IjEiIGN5PSIxIiByPSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNSAxMikiIGZpbGw9IiM4MzkyYTYiLz4KICA8bGluZSBpZD0iTGluZV82NSIgZGF0YS1uYW1lPSJMaW5lIDY1IiB5Mj0iNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYgMTUuNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgzOTJhNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K');
+        border: none;
+        background-position: center;
+      }
+
+      td > button:hover {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvX0luZm8iIGRhdGEtbmFtZT0iaWNvIEluZm8iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMzIgMzIiPgogIDxjaXJjbGUgaWQ9IkVsbGlwc2VfMzYiIGRhdGEtbmFtZT0iRWxsaXBzZSAzNiIgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSIjZjFmMmY1Ii8+CiAgPHBhdGggaWQ9IlBhdGhfNTEiIGRhdGEtbmFtZT0iUGF0aCA1MSIgZD0iTTguNSwwQTguNSw4LjUsMCwxLDEsMCw4LjUsOC41LDguNSwwLDAsMSw4LjUsMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcuNSA3LjUpIiBmaWxsPSJub25lIiBzdHJva2U9IiMwYzcyYmIiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxjaXJjbGUgaWQ9IkVsbGlwc2VfMzAiIGRhdGEtbmFtZT0iRWxsaXBzZSAzMCIgY3g9IjEiIGN5PSIxIiByPSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNSAxMikiIGZpbGw9IiMwYzcyYmIiLz4KICA8bGluZSBpZD0iTGluZV82NSIgZGF0YS1uYW1lPSJMaW5lIDY1IiB5Mj0iNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYgMTUuNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBjNzJiYiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K');
+      }
+
+      *:focus {
+        outline: 2px #ce2c85 dashed;
+        outline-offset: 1px;
+      }
+
+      .howToFixList > ul {
+        margin-top: 10px;
+      }
+
+      .howToFixList > ul > li::marker {
+        color: #1e6fd2;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header">
+      <a id="logo" href="https://www.evinced.com" target="_blank" rel="noopener noreferrer">
+        <img
+          alt="Powered by Evinced"
+          src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyNi4zLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcNCgl2ZXJzaW9uPSIxLjEiDQoJeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIg0KCXhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIg0KCXg9IjBweCINCgl5PSIwcHgiDQoJd2lkdGg9IjEyMi43cHgiDQoJaGVpZ2h0PSIzOC4zcHgiDQoJdmlld0JveD0iMCAwIDEyMi43IDM4LjMiDQoJZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTIyLjcgMzguMyINCgl4bWw6c3BhY2U9InByZXNlcnZlIg0KPg0KCTxnIGlkPSJiZyI+PC9nPg0KCTxnIGlkPSJsb2dvIj4NCgkJPGcNCgkJCWlkPSJHcm91cF82NjlfMDAwMDAxNTAwOTI4NzY5NTc5MDgxMDM3MTAwMDAwMDg2NjMzMjc3MTA5NDcxMDEzMjJfIg0KCQkJdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjYyLjcwOSAyNjAuODc2KSINCgkJPg0KCQkJPHBhdGgNCgkJCQlpZD0iUGF0aF8xMTRfMDAwMDAwOTE3MTk3MTQxNzA3NzM1MjE2OTAwMDAwMDg0NzgxMzMzNjU1OTMxNjg1NDdfIg0KCQkJCWZpbGw9IiM5NjZEQzAiDQoJCQkJZD0iTS01NTUuOS0yNDcuNGMwLDEuMywxLjEsMi40LDIuNCwyLjQNCgkJCWMxLjMsMCwyLjQtMS4xLDIuNC0yLjRzLTEuMS0yLjQtMi40LTIuNGwwLDBDLTU1NC44LTI0OS44LTU1NS45LTI0OC43LTU1NS45LTI0Ny40Ig0KCQkJLz4NCgkJCTxwYXRoDQoJCQkJaWQ9IlBhdGhfMTE1XzAwMDAwMDc1ODUxNjQyMTg2NDMyNDI1NzYwMDAwMDE4Mzk4NjQyMTg5MDE3MDY1NjQ1XyINCgkJCQlmaWxsPSIjRjIwNTg3Ig0KCQkJCWQ9Ik0tNTU1LjktMjUyLjljMCwxLjMsMS4xLDIuNCwyLjQsMi40DQoJCQljMS4zLDAsMi40LTEuMSwyLjQtMi40YzAtMS4zLTEuMS0yLjQtMi40LTIuNGwwLDBDLTU1NC44LTI1NS4zLTU1NS45LTI1NC4yLTU1NS45LTI1Mi45Ig0KCQkJLz4NCgkJCTxwYXRoDQoJCQkJaWQ9IlBhdGhfMTE2XzAwMDAwMDQ4NDY0NDI4OTQwMDQ1MTgzNzIwMDAwMDAxMjQ2MzUwODM4ODc0OTc0NjE0XyINCgkJCQlmaWxsPSIjRjIwNTg3Ig0KCQkJCWQ9Ik0tNTU1LjktMjU4LjRjMCwxLjMsMS4xLDIuNCwyLjQsMi40DQoJCQljMS4zLDAsMi40LTEuMSwyLjQtMi40YzAtMS4zLTEuMS0yLjQtMi40LTIuNGwwLDBDLTU1NC44LTI2MC44LTU1NS45LTI1OS44LTU1NS45LTI1OC40Ig0KCQkJLz4NCgkJCTxwYXRoDQoJCQkJaWQ9IlBhdGhfMTE3XzAwMDAwMTc4MTY0NTY3MTQyMTU3NDczNDIwMDAwMDA5NzcyNjcyNzY2NTgyNzUxMTUyXyINCgkJCQlmaWxsPSIjOTY2REMwIg0KCQkJCWQ9Ik0tNTUwLjMtMjUyLjljMCwxLjMsMS4xLDIuNCwyLjQsMi40DQoJCQljMS4zLDAsMi40LTEuMSwyLjQtMi40YzAtMS4zLTEuMS0yLjQtMi40LTIuNGwwLDBDLTU0OS4zLTI1NS4zLTU1MC4zLTI1NC4yLTU1MC4zLTI1Mi45Ig0KCQkJLz4NCgkJCTxwYXRoDQoJCQkJaWQ9IlBhdGhfMTE4XzAwMDAwMDA0NTIyNTkwNjY4MzgyMTc2NzkwMDAwMDEyOTM3ODQzMDY3ODUxNTEwOTY3XyINCgkJCQlmaWxsPSIjRjIwNTg3Ig0KCQkJCWQ9Ik0tNTUwLjMtMjU4LjRjMCwxLjMsMS4xLDIuNCwyLjQsMi40DQoJCQljMS4zLDAsMi40LTEuMSwyLjQtMi40YzAtMS4zLTEuMS0yLjQtMi40LTIuNGwwLDBDLTU0OS4zLTI2MC44LTU1MC4zLTI1OS44LTU1MC4zLTI1OC40Ig0KCQkJLz4NCgkJCTxwYXRoDQoJCQkJaWQ9IlBhdGhfMTE5XzAwMDAwMDk0NTk5MjAwNDY3NDQwMzYwMDAwMDAwMDE2MzAyMjcyNDMyMjU2MTUzMDAxXyINCgkJCQlmaWxsPSIjMjU3OEUwIg0KCQkJCWQ9Ik0tNTQ0LjgtMjQ3LjRjMCwxLjMsMS4xLDIuNCwyLjQsMi40DQoJCQljMS4zLDAsMi40LTEuMSwyLjQtMi40cy0xLjEtMi40LTIuNC0yLjRsMCwwQy01NDMuOC0yNDkuOC01NDQuOC0yNDguNy01NDQuOC0yNDcuNCINCgkJCS8+DQoJCQk8cGF0aA0KCQkJCWlkPSJQYXRoXzEyMF8wMDAwMDAyNjEyODkxMDYxMDI4NDA0MzE0MDAwMDAwNDk3NjYzNTMwOTYzODMzNzY2NF8iDQoJCQkJZmlsbD0iIzk2NkRDMCINCgkJCQlkPSJNLTU0NC44LTI1OC40YzAsMS4zLDEuMSwyLjQsMi40LDIuNA0KCQkJYzEuMywwLDIuNC0xLjEsMi40LTIuNGMwLTEuMy0xLjEtMi40LTIuNC0yLjRsMCwwQy01NDMuOC0yNjAuOC01NDQuOC0yNTkuOC01NDQuOC0yNTguNCINCgkJCS8+DQoJCTwvZz4NCgkJPGc+DQoJCQk8cmVjdCB4PSIzMi4zIiB5PSI3LjMiIGZpbGw9IiMxQjMwNTAiIHdpZHRoPSIyLjciIGhlaWdodD0iMTQuNCIgLz4NCgkJCTxwYXRoDQoJCQkJZmlsbD0iIzFCMzA1MCINCgkJCQlkPSJNNDkuMyw3LjhjLTAuOS0wLjYtMS45LTAuOC0yLjktMC44Yy0xLDAtMiwwLjItMi45LDAuN2MtMC42LDAuNC0xLjIsMC44LTEuNiwxLjRWNy4zaC0yLjd2MTQuNGgyLjd2LTguNA0KCQkJYzAtMC43LDAuMi0xLjMsMC41LTEuOWMwLjMtMC42LDAuOC0xLDEuMy0xLjNjMC42LTAuMywxLjMtMC41LDEuOS0wLjVjMSwwLDIsMC4zLDIuNywxLjFjMC43LDAuNywxLjEsMS43LDEsMi43djguNGwyLjcsMHYtOQ0KCQkJYzAtMS0wLjItMi0wLjctMi44QzUwLjgsOSw1MC4xLDguMyw0OS4zLDcuOHoiDQoJCQkvPg0KCQkJPHBvbHlnb24NCgkJCQlmaWxsPSIjMUIzMDUwIg0KCQkJCXBvaW50cz0iMjIuNSwxNy40IDE4LjEsNy4zIDE1LjEsNy4zIDIxLjcsMjEuNyAyMy4zLDIxLjcgMjkuOSw3LjMgMjcsNy4zIAkJIg0KCQkJLz4NCgkJCTxwYXRoDQoJCQkJZmlsbD0iIzFCMzA1MCINCgkJCQlkPSJNMTEsNy45QzkuOSw3LjIsOC43LDYuOSw3LjQsN2MtMS4zLDAtMi42LDAuMy0zLjgsMWMtMS4xLDAuNi0yLDEuNi0yLjcsMi43Yy0wLjcsMS4yLTEsMi41LTEsMy44DQoJCQljMCwxLjQsMC4zLDIuNywxLDMuOWMwLjcsMS4xLDEuNiwyLjEsMi43LDIuN2MxLjIsMC43LDIuNSwxLDMuOSwxYzEuMSwwLDIuMi0wLjIsMy4yLTAuNmMxLTAuNCwxLjgtMSwyLjUtMS45bC0xLjgtMS44DQoJCQljLTAuNSwwLjYtMS4xLDEtMS43LDEuM2MtMC43LDAuMy0xLjUsMC40LTIuMiwwLjRjLTAuOSwwLTEuOC0wLjItMi42LTAuNmMtMC43LTAuNC0xLjMtMS0xLjctMS44Yy0wLjItMC41LTAuNC0xLTAuNS0xLjVoMTEuMw0KCQkJYzAuMS0wLjMsMC4xLTAuNSwwLjEtMC44YzAtMC4yLDAtMC41LDAtMC43YzAtMS4zLTAuMy0yLjUtMC45LTMuNkMxMi44LDkuMywxMiw4LjUsMTEsNy45eiBNNC45LDEwLjFjMC44LTAuNCwxLjYtMC42LDIuNS0wLjYNCgkJCUM4LjIsOS41LDksOS43LDkuNywxMGMwLjYsMC40LDEuMSwwLjksMS41LDEuNmMwLjIsMC41LDAuNCwxLDAuNSwxLjZIMi44YzAuMS0wLjUsMC4yLTEsMC41LTEuNEMzLjcsMTEuMSw0LjIsMTAuNSw0LjksMTAuMXoiDQoJCQkvPg0KCQkJPHBhdGgNCgkJCQlmaWxsPSIjMUIzMDUwIg0KCQkJCWQ9Ik05Ny4zLDB2OS4zYy0wLjUtMC43LTEuMi0xLjItMS45LTEuNmMtMC45LTAuNS0xLjktMC43LTIuOS0wLjdjLTEuMywwLTIuNSwwLjMtMy42LDENCgkJCWMtMS4xLDAuNy0xLjksMS42LTIuNSwyLjdjLTAuNiwxLjItMC45LDIuNS0wLjksMy44YzAsMS4zLDAuMywyLjcsMC45LDMuOGMwLjYsMS4xLDEuNSwyLDIuNSwyLjdjMS4xLDAuNywyLjMsMSwzLjYsMQ0KCQkJYzEsMCwyLTAuMiwyLjktMC43YzAuNy0wLjQsMS40LTAuOSwxLjktMS42djJoMi44VjBIOTcuM3ogTTk1LjMsMTguOGMtMC43LDAuNC0xLjUsMC43LTIuNCwwLjZoMGMtMC44LDAtMS43LTAuMi0yLjQtMC42DQoJCQljLTAuNy0wLjQtMS4zLTEtMS42LTEuN2MtMC40LTAuOC0wLjYtMS43LTAuNi0yLjZjMC0wLjksMC4yLTEuOCwwLjYtMi41YzAuNC0wLjcsMC45LTEuMywxLjYtMS43YzAuNy0wLjQsMS42LTAuNywyLjQtMC42DQoJCQljMC44LDAsMS43LDAuMiwyLjQsMC42YzAuNywwLjQsMS4yLDEsMS42LDEuN2MwLjQsMC44LDAuNiwxLjcsMC42LDIuNmMwLDAuOS0wLjIsMS44LTAuNiwyLjVDOTYuNSwxNy43LDk2LDE4LjQsOTUuMywxOC44eiINCgkJCS8+DQoJCQk8cGF0aA0KCQkJCWZpbGw9IiMxQjMwNTAiDQoJCQkJZD0iTTgwLjEsNy45Qzc5LDcuMyw3Ny44LDYuOSw3Ni42LDdjLTEuMywwLTIuNiwwLjMtMy44LDFjLTEuMSwwLjYtMiwxLjYtMi43LDIuN2MtMC43LDEuMi0xLDIuNS0xLDMuOA0KCQkJYzAsMS40LDAuMywyLjcsMSwzLjljMC43LDEuMSwxLjYsMi4xLDIuNywyLjdjMS4yLDAuNywyLjUsMSwzLjksMWMxLjEsMCwyLjItMC4yLDMuMi0wLjZjMS0wLjQsMS44LTEsMi41LTEuOWwtMS44LTEuOA0KCQkJYy0wLjUsMC42LTEuMSwxLTEuNywxLjNjLTAuNywwLjMtMS41LDAuNC0yLjIsMC40Yy0wLjksMC0xLjgtMC4yLTIuNi0wLjZjLTAuNy0wLjQtMS4zLTEtMS43LTEuOGMtMC4yLTAuNS0wLjQtMS0wLjUtMS41aDExLjMNCgkJCWMwLjEtMC4zLDAuMS0wLjUsMC4xLTAuOGMwLTAuMiwwLTAuNSwwLTAuN2MwLTEuMy0wLjMtMi41LTAuOS0zLjZDODIsOS4zLDgxLjEsOC41LDgwLjEsNy45eiBNNzQuMSwxMC4xYzAuOC0wLjQsMS42LTAuNiwyLjUtMC42DQoJCQljMC44LDAsMS42LDAuMiwyLjMsMC42YzAuNiwwLjQsMS4xLDAuOSwxLjUsMS42YzAuMiwwLjUsMC40LDEsMC41LDEuNmgtOC44YzAuMS0wLjUsMC4yLTEsMC41LTEuNEM3Mi44LDExLjEsNzMuNCwxMC41LDc0LjEsMTAuMQ0KCQkJeiINCgkJCS8+DQoJCQk8cGF0aA0KCQkJCWZpbGw9IiMxQjMwNTAiDQoJCQkJZD0iTTY0LjQsMTljLTAuNywwLjMtMS40LDAuNC0yLjEsMC40Yy0wLjksMC0xLjctMC4yLTIuNC0wLjZjLTAuNy0wLjQtMS4zLTEtMS43LTEuNw0KCQkJYy0wLjQtMC44LTAuNi0xLjYtMC42LTIuNWMwLTAuOSwwLjItMS43LDAuNi0yLjVjMC40LTAuNywxLTEuMywxLjctMS43YzAuNy0wLjQsMS42LTAuNiwyLjQtMC42YzAuNywwLDEuNCwwLjEsMi4xLDAuNA0KCQkJYzAuNiwwLjMsMS4yLDAuNywxLjYsMS4ybDEuOC0xLjhjLTAuNy0wLjgtMS41LTEuNC0yLjUtMS44Yy0xLTAuNC0yLTAuNi0zLjEtMC42Yy0xLjMsMC0yLjcsMC4zLTMuOCwxYy0xLjEsMC42LTIuMSwxLjYtMi43LDIuNw0KCQkJYy0wLjcsMS4yLTEsMi41LTEsMy44YzAsMS4zLDAuMywyLjcsMSwzLjhjMC42LDEuMSwxLjYsMi4xLDIuNywyLjdjMS4yLDAuNywyLjUsMSwzLjgsMWMxLjEsMCwyLjEtMC4yLDMuMS0wLjYNCgkJCWMwLjktMC40LDEuOC0xLDIuNC0xLjhsLTEuOC0xLjhDNjUuNiwxOC4zLDY1LjEsMTguNyw2NC40LDE5eiINCgkJCS8+DQoJCTwvZz4NCgk8L2c+DQo8L3N2Zz4NCg=="
+        />
+      </a>
+      <div id="reportTitle"></div>
+      <div class="flexGrow"></div>
+      <div id="sdkVersion"></div>
+    </div>
+
+    <div id="issueDetailsModal" role="dialog" aria-dialog="true" class="hidden" tabindex="0">
+      <div class="container">
+        <div id="modalBody">
+          <button
+            id="modalCloseButton"
+            class="clickable"
+            aria-label="hide details"
+            aria-controls="modalBody"
+            tabindex="0"
+            onclick="closeIssueDetailsModal()"
+          ></button>
+          <p id="selector"></p>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <noscript
+      ><center>
+        <p>
+          This report requires Javascript enabled.<br />
+          Please enable Javascript in your browser.
+        </p>
+      </center></noscript
+    >
+
+    <div id="content">
+      <table id="table">
+        <caption id="issuesCount" scope="col" colspan="8"></caption>
+        <thead>
+          <tr class="top-row">
+            <th scope="col">
+              <span aria-hidden="true">No.</span>
+              <span class="sr-only">Number</span>
+            </th>
+            <th scope="col">Issue Type</th>
+            <th scope="col">Severity</th>
+            <th scope="col">Component</th>
+            <th scope="col">Selector</th>
+            <th scope="col">URL</th>
+            <th scope="col">Page Title</th>
+            <th scope="col">WCAG</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <script>
+      // returns Promise<HTMLImageElement>
+      const createImageFromUrl = async url => {
+        return new Promise(resolve => {
+          const origImage = new Image()
+          origImage.crossOrigin = 'anonymous'
+          origImage.src = url
+          origImage.onload = () => resolve(origImage)
+        })
+      }
+
+      // returns void
+      const drawAllRects = (canvas, bboxList) => {
+        const ctx = canvas.getContext('2d')
+
+        for (const bbox of bboxList) {
+          const { x, y, height, width } = bbox
+          ctx.beginPath()
+          ctx.strokeStyle = 'red'
+
+          // the factor here is because the screenshot taken can be of different ratio than the actual page
+          // so we need to scale the bounding box to fit the screenshot
+          const factor = jsonData.scale
+          ctx.rect(
+            x && x * factor,
+            y && y * factor,
+            width && width * factor,
+            height && height * factor
+          )
+          ctx.lineWidth = 5
+          ctx.stroke()
+        }
+      }
+
+      // returns string
+      const getEscapedUrl = url => {
+        const splitUrl = url.split('?')
+        let newUrl = splitUrl[0]
+        if (splitUrl.length >= 2) {
+          const params = `?${splitUrl[1]}`
+          newUrl = `${newUrl}${encodeURIComponent(params)}`
+        }
+        return newUrl
+      }
+
+      /**
+			 * params:
+			 * origScreenshotPath: string,
+				bboxList: number[][]
+
+				returns Promise<string>
+			 */
+      const getScreenshotAndMarkIssues = async (origScreenshotPath, bboxList) => {
+        const screenshotImage = await createImageFromUrl(origScreenshotPath)
+        const canvas = document.createElement('canvas')
+        canvas.width = screenshotImage.width
+        canvas.height = screenshotImage.height
+
+        const ctx = canvas.getContext('2d')
+        ctx.drawImage(screenshotImage, 0, 0)
+        drawAllRects(canvas, bboxList)
+
+        const screenshotWithIssues = canvas.toDataURL()
+        return screenshotWithIssues
+      }
+
+      // returns Promise<string>
+      const cropImage = async (imageUrl, bbox, elementWidth) => {
+        const ELEMENT_HEIGHT = 200
+
+        const imageObject = await createImageFromUrl(imageUrl)
+        const { x: bboxX, y: bboxY, height: bboxHeight, width: bboxWidth } = bbox
+
+        const bboxXMax = bboxX + bboxWidth
+        const bboxYMax = bboxY + bboxHeight
+
+        if (
+          bboxX < 0 ||
+          bboxY < 0 ||
+          bboxX + bboxWidth > imageObject.width ||
+          bboxY + bboxHeight > imageObject.height ||
+          bboxWidth <= 0 ||
+          bboxHeight <= 0
+        ) {
+          throw new Error('Got incorrect bbox dimensions')
+        }
+
+        const resMaxHeight = Math.max(bboxHeight, ELEMENT_HEIGHT)
+        const resMaxWidth = Math.max(bboxWidth, elementWidth)
+
+        const remainingPaddingHeight = resMaxHeight - bboxHeight
+        const remainingPaddingWidth = resMaxWidth - bboxWidth
+
+        const resX = Math.max(0, bboxX - remainingPaddingWidth / 2)
+        const resY = Math.max(0, bboxY - remainingPaddingHeight / 2)
+        const resXMax = Math.min(imageObject.width, bboxXMax + remainingPaddingWidth / 2)
+        const resYMax = Math.min(imageObject.height, bboxYMax + remainingPaddingHeight / 2)
+        const resWidth = resXMax - resX
+        const resHeight = resYMax - resY
+
+        const canvas = document.createElement('canvas')
+        canvas.width = resWidth
+        canvas.height = resHeight
+
+        const ctx = canvas.getContext('2d')
+
+        ctx.drawImage(imageObject, resX, resY, resWidth, resHeight, 0, 0, resWidth, resHeight)
+
+        const croppedImage = canvas.toDataURL()
+        return croppedImage
+      }
+
+      /*
+			params:
+			pageScreenshotUrl: string,
+				renderedWidth: number,
+				boundingBoxes: number[][]
+
+			returns string
+			*/
+      const calculateKey = (pageScreenshotUrl, renderedWidth, boundingBoxes) => {
+        return `url=${pageScreenshotUrl}+width=${renderedWidth}+boundingBoxes=${JSON.stringify(
+          boundingBoxes
+        )}`
+      }
+
+      const screenshotCache = new Map()
+
+      // returns string
+      const getFullPageScreenshot = pageScreenshotUrl => {
+        // In some cases (bug with scan or other scan issues) we may miss the page picture
+        // Don't fail in this case, this is valid (we will show "no screenshot")
+        if (!pageScreenshotUrl) {
+          return null
+        }
+        return getEscapedUrl(pageScreenshotUrl)
+      }
+
+      // returns Promise<string>
+      const getFullPageScreenshotWithIssues = async ({ pageScreenshotUrl, boundingBoxes }) => {
+        if (!pageScreenshotUrl) {
+          return null
+        }
+        const origScreenshotPath = getFullPageScreenshot(pageScreenshotUrl)
+        const boundingBoxesWithValues = boundingBoxes.filter(bbox => !!bbox)
+
+        const screenshotWithIssuesBase64Image = await getScreenshotAndMarkIssues(
+          origScreenshotPath,
+          boundingBoxesWithValues
+        )
+        return screenshotWithIssuesBase64Image
+      }
+
+      // returns Promise<string>
+      const getIssueOnlyScreenshot = async (
+        { pageScreenshotUrl, boundingBoxes },
+        renderedWidth
+      ) => {
+        if (!pageScreenshotUrl) {
+          return null
+        }
+        const boundingBoxesWithValues = boundingBoxes.filter(bbox => !!bbox)
+        const cacheKey = calculateKey(pageScreenshotUrl, renderedWidth, boundingBoxesWithValues)
+        const cachedImage = screenshotCache.get(cacheKey)
+        if (cachedImage) {
+          return cachedImage
+        }
+        const screenshotWithIssues = await getFullPageScreenshotWithIssues({
+          pageScreenshotUrl,
+          boundingBoxesWithValues
+        })
+
+        const croppedBase64Image = await cropImage(
+          screenshotWithIssues,
+          boundingBoxesWithValues[0],
+          renderedWidth
+        )
+        screenshotCache.set(cacheKey, croppedBase64Image)
+        return croppedBase64Image
+      }
+
+      const resolveScreenshotWithMarkersImage = async (elements = [], screenshotUrl) => {
+        const boundingBoxes = elements.map(element => element.boundingBox)
+        try {
+          const screenshotImageData = await getFullPageScreenshotWithIssues({
+            pageScreenshotUrl: screenshotUrl,
+            boundingBoxes
+          })
+          return screenshotImageData
+        } catch (e) {
+          console.warn(e)
+        }
+      }
+    </script>
+    <script>
+      /*
+				jsonData structure:
+				type HtmlReportIssue = {
+					pageUrl: string;
+					typeName: string;
+					summary: string;
+					elements: { componentId: string; selector: string; domSnippet: string }[];
+					knowledgeBaseLink: string;
+					severityName: string;
+					tags: {
+						id: string;
+						description?: string;
+						link?: string;
+					}[];
+					screenshotId: string;
+					cause: string;
+					effect: string;
+					howToFix: string;
+					note: string;
+				};
+						*/
+
+      function isOtherIssueType(issue) {
+        return issue.typeName === 'Other - manual'
+      }
+
+      function generateWCAGLinks(issue) {
+        if (issue.tags?.length) {
+          return `
+						<ul style="margin: 0; list-style: none">
+							${issue.tags
+                .filter(tag => tag.description && tag.link)
+                .map(tag => {
+                  return `<li
+											key=${tag.id}>
+											<a
+												href="${tag.link}"
+												target="_blank"
+												rel="noopener noreferrer">
+												${tag.description}
+											</a>
+										</li>`
+                })
+                .join('')}
+						</ul>
+					`
+        }
+        return ''
+      }
+
+      const jsonData = {"issues":[{"issueIndex":"1","pageUrl":"https://demo.evinced.com/","pageTitle":"Home | Evinced, Demo site","typeName":"Interactable Role","summary":"Screen readers do not interpret the element as interactable.","elements":[{"componentId":"ce13d0bb","selector":".block-dropdown:nth-child(1) > .dropholder > .dropdown.line","domSnippet":"&#60;div class&#61;&#34;dropdown line&#34;&#62;&#60;p&#62;Select&#60;&#47;p&#62;&#60;&#47;div&#62;","boundingBox":{"x":208.984375,"y":576.1875,"height":23.9375,"width":250,"top":576.1875,"left":208.984375,"right":458.984375,"bottom":600.125}}],"knowledgeBaseLink":"https://knowledge.evinced.com/system-validations/interactable-role","severityName":"Critical","tags":[{"id":"WCAG-1.3.1","description":"1.3.1 Info and Relationships  (Level A)","link":"https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html"},{"id":"WCAG-4.1.2","description":"4.1.2 Name, Role, Value  (Level A)","link":"https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html"},{"id":"WCAG-A"},{"id":"WCAG2.0"}],"cause":"Missing or incorrect semantics prevent screen readers from interpreting an element as interactable.","effect":"Screen reader either does not navigate to the element or navigates to it but does not correctly convey its function to the user.","howToFix":"* Change the element&#039;s tag to correctly reflect its type, ie: &lt;*button*&gt;, &lt;*a*&gt; or &lt;*input /*&gt;\n* Add attributes (ARIA) to indicate the element&#039;s type and/or potential functionalities."},{"issueIndex":"2","pageUrl":"https://demo.evinced.com/","pageTitle":"Home | Evinced, Demo site","typeName":"Keyboard Accessible","summary":"Keyboard-only users do not interpret the element as interactable.","elements":[{"componentId":"ce13d0bb","selector":".block-dropdown:nth-child(1) > .dropholder > .dropdown.line","domSnippet":"&#60;div class&#61;&#34;dropdown line&#34;&#62;&#60;p&#62;Select&#60;&#47;p&#62;&#60;&#47;div&#62;","boundingBox":{"x":208.984375,"y":576.1875,"height":23.9375,"width":250,"top":576.1875,"left":208.984375,"right":458.984375,"bottom":600.125}}],"knowledgeBaseLink":"https://knowledge.evinced.com/system-validations/keyboard-accessible","severityName":"Critical","tags":[{"id":"WCAG-2.1.1","description":"2.1.1 Keyboard  (Level A)","link":"https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html"},{"id":"WCAG-A"},{"id":"WCAG2.0"}],"cause":"Missing or incorrect semantics prevent the keyboard User-Agent from interpreting an element as interactable.","effect":"Interface interaction is limited for keyboard-only users.","howToFix":"* (Recommended) Add an element that better reflects the element&#039;s purpose. Interactive elements do not need any additions because they are focusable by nature.\n* Add a *tabindex* attribute with the value of “0” to the element."},{"issueIndex":"3","pageUrl":"https://demo.evinced.com/","pageTitle":"Home | Evinced, Demo site","typeName":"Interactable Role","summary":"Screen readers do not interpret the element as interactable.","elements":[{"componentId":"ce13d0bb","selector":".block-dropdown:nth-child(2) > .dropholder > .dropdown.line","domSnippet":"&#60;div class&#61;&#34;dropdown line&#34;&#62;&#60;p&#62;Select&#60;&#47;p&#62;&#60;&#47;div&#62;","boundingBox":{"x":480.984375,"y":576.1875,"height":23.9375,"width":250,"top":576.1875,"left":480.984375,"right":730.984375,"bottom":600.125}}],"knowledgeBaseLink":"https://knowledge.evinced.com/system-validations/interactable-role","severityName":"Critical","tags":[{"id":"WCAG-1.3.1","description":"1.3.1 Info and Relationships  (Level A)","link":"https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html"},{"id":"WCAG-4.1.2","description":"4.1.2 Name, Role, Value  (Level A)","link":"https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html"},{"id":"WCAG-A"},{"id":"WCAG2.0"}],"cause":"Missing or incorrect semantics prevent screen readers from interpreting an element as interactable.","effect":"Screen reader either does not navigate to the element or navigates to it but does not correctly convey its function to the user.","howToFix":"* Change the element&#039;s tag to correctly reflect its type, ie: &lt;*button*&gt;, &lt;*a*&gt; or &lt;*input /*&gt;\n* Add attributes (ARIA) to indicate the element&#039;s type and/or potential functionalities."},{"issueIndex":"4","pageUrl":"https://demo.evinced.com/","pageTitle":"Home | Evinced, Demo site","typeName":"Keyboard Accessible","summary":"Keyboard-only users do not interpret the element as interactable.","elements":[{"componentId":"ce13d0bb","selector":".block-dropdown:nth-child(2) > .dropholder > .dropdown.line","domSnippet":"&#60;div class&#61;&#34;dropdown line&#34;&#62;&#60;p&#62;Select&#60;&#47;p&#62;&#60;&#47;div&#62;","boundingBox":{"x":480.984375,"y":576.1875,"height":23.9375,"width":250,"top":576.1875,"left":480.984375,"right":730.984375,"bottom":600.125}}],"knowledgeBaseLink":"https://knowledge.evinced.com/system-validations/keyboard-accessible","severityName":"Critical","tags":[{"id":"WCAG-2.1.1","description":"2.1.1 Keyboard  (Level A)","link":"https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html"},{"id":"WCAG-A"},{"id":"WCAG2.0"}],"cause":"Missing or incorrect semantics prevent the keyboard User-Agent from interpreting an element as interactable.","effect":"Interface interaction is limited for keyboard-only users.","howToFix":"* (Recommended) Add an element that better reflects the element&#039;s purpose. Interactive elements do not need any additions because they are focusable by nature.\n* Add a *tabindex* attribute with the value of “0” to the element."},{"issueIndex":"5","pageUrl":"https://demo.evinced.com/","pageTitle":"Home | Evinced, Demo site","typeName":"Anchor without href attribute","summary":"Anchor elements (&lt;a&gt;) must have an &quot;href&quot; attribute to be registered to the accessibility tree as links.","elements":[{"componentId":"a2d2a84e","selector":".search-btn","domSnippet":"&#60;a class&#61;&#34;search&#45;btn&#34;&#62;Search&#60;&#47;a&#62;","boundingBox":{"x":901.015625,"y":540.25,"height":85,"width":181,"top":540.25,"left":901.015625,"right":1082.015625,"bottom":625.25}}],"knowledgeBaseLink":"https://knowledge.evinced.com/system-validations/anchor-without-href","severityName":"Critical","tags":[{"id":"WCAG-1.3.1","description":"1.3.1 Info and Relationships  (Level A)","link":"https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html"},{"id":"WCAG-4.1.2","description":"4.1.2 Name, Role, Value  (Level A)","link":"https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html"},{"id":"WCAG-A"},{"id":"WCAG2.0"}],"cause":"The &lt;a&gt; element lacks an href attribute, and that nullifies its semantic meaning.","effect":"Some screen readers (mainly on Windows) will read the element as plain text without indicating it is a link, so screen reader users won’t perceive its actual function.","howToFix":"* If the element is actually a link, you can add an href attribute that points to itself (e.g. &lt;a href=&quot;#&quot;&gt;).\n* If the element is not a link, consider replacing the element with an element with a more accurate semantics (e.g. &lt;button&gt;)\n* Change the element’s semantics to be more accurate by using the role attribute (e.g. &lt;a role=&quot;button&quot;&gt;). Note that in this case certain roles will still require additional specific attributes."},{"issueIndex":"6","pageUrl":"https://demo.evinced.com/","pageTitle":"Home | Evinced, Demo site","typeName":"Keyboard Accessible","summary":"Keyboard-only users do not interpret the element as interactable.","elements":[{"componentId":"a2d2a84e","selector":".search-btn","domSnippet":"&#60;a class&#61;&#34;search&#45;btn&#34;&#62;Search&#60;&#47;a&#62;","boundingBox":{"x":901.015625,"y":540.25,"height":85,"width":181,"top":540.25,"left":901.015625,"right":1082.015625,"bottom":625.25}}],"knowledgeBaseLink":"https://knowledge.evinced.com/system-validations/keyboard-accessible","severityName":"Critical","tags":[{"id":"WCAG-2.1.1","description":"2.1.1 Keyboard  (Level A)","link":"https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html"},{"id":"WCAG-A"},{"id":"WCAG2.0"}],"cause":"Missing or incorrect semantics prevent the keyboard User-Agent from interpreting an element as interactable.","effect":"Interface interaction is limited for keyboard-only users.","howToFix":"* (Recommended) Add an element that better reflects the element&#039;s purpose. Interactive elements do not need any additions because they are focusable by nature.\n* Add a *tabindex* attribute with the value of “0” to the element."}],"reportTimestampInMs":1735296298410,"sdkVersion":"JS Playwright Web SDK 2.24.1","screenshotsMap":{},"scale":1}
+
+      let focusAfterClosed
+      /**
+			 *	issue - Issue;
+				screenshotsMap? - Map<string,string>,
+				restoreFocusTo - DomElement
+			 **/
+      async function openIssueDetailsModal(issue, screenshotsMap, restoreFocusTo) {
+        focusAfterClosed = restoreFocusTo
+        const modalBody = document.querySelector('#modalBody div')
+        const newModalBody = document.createElement('div')
+        const url = issue.pageUrl
+        const issueTypeTitle = isOtherIssueType(issue) ? 'Other - manual issue' : issue.typeName
+
+        document.getElementById('table').setAttribute('aria-hidden', true)
+
+        newModalBody.innerHTML = `
+			         <h1>${issueTypeTitle}</h1>
+			         <p>${issue.summary}</p>
+			         <div class="modalComponentItem text-overflow">
+			             URL: <a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>
+			         </div>
+			         <div class="modalComponentItem">
+			             Page Title: <span>${issue.pageTitle}</span>
+			         </div>
+			     `
+
+        const componentsContainer = document.createElement('div')
+        issue.elements.forEach(el => {
+          componentsContainer.innerHTML += `
+			         <div class="modalComponentContainer">
+			             <div class="modalComponentItem">
+			                 Component: <span class="code">${getComponentName(el.componentId)}</span>
+			             </div>
+			             <div class="modalComponentItem text-overflow">
+			                 Selector: <span class="code">${el.selector}</span>
+			             </div>
+			             <div class="codeSnippetText" aria-label="code snippet">${el.domSnippet}</div>
+			         </div>
+			       `
+        })
+
+        let converter = null
+
+        try {
+          converter = new showdown.Converter()
+        } catch (e) {
+          console.error('Failed to initialize Showdown converter:', e)
+        }
+
+        const convertMarkDown = str => {
+          if (!converter) return str
+          return converter.makeHtml(str)
+        }
+
+        const dualContainer = document.createElement('div')
+        dualContainer.innerHTML += `
+					<div class="detailsBlock dual">
+						<div class="halfBlock">
+							<div class="modalComponentItem">
+								<div>Severity:</div>
+								<span>${issue.severityName}</span>
+							</div>
+							${
+                issue.cause
+                  ? `<div class="modalComponentItem">
+									<div>Cause:</div>
+									<span>${issue.cause}</span>
+								  </div>`
+                  : ''
+              }
+							${
+                issue.effect
+                  ? `<div class="modalComponentItem">
+									<div>Effect:</div>
+								  	<span>${issue.effect}</span>
+								  </div>`
+                  : ''
+              }
+							${
+                isOtherIssueType(issue)
+                  ? ''
+                  : `<div class="modalComponentItem">
+									<a href="${issue.knowledgeBaseLink}" target="_blank" rel="noopener noreferrer">Read more in Evinced Knowledge Base</a>
+									</div>`
+              }
+						</div>
+						<div class="halfBlock">
+							<div>
+								<div class="boldAttribute">How To Fix:</div>
+								<span class="howToFixList">${convertMarkDown(issue.howToFix)}</span>
+							</div>
+							<div>
+								<div class="boldAttribute">WCAG Violations:</div>
+								<span>${generateWCAGLinks(issue)}</span>
+							</div>
+						</div>
+					</div>
+				`
+        const notesContainer = document.createElement('div')
+        notesContainer.innerHTML = `
+					<label id="issue-notes" class="boldAttribute">Notes:</label>
+					<textarea rows=5 title="Notes" aria-labelledby="issue-notes" readonly>${issue.note || ''}</textarea>
+				`
+        notesContainer.style = 'display: flex; flex-direction: column; margin-bottom: 20px;'
+        newModalBody.appendChild(componentsContainer)
+        newModalBody.appendChild(dualContainer)
+        newModalBody.appendChild(notesContainer)
+
+        // append screenshots with markers if available
+        if (screenshotsMap && screenshotsMap[issue?.screenshotId]) {
+          const screenshot = await resolveScreenshotWithMarkersImage(
+            issue.elements,
+            screenshotsMap[issue?.screenshotId]
+          )
+          const screenshotContainer = document.createElement('div')
+          const imgContainer = document.createElement('img')
+          imgContainer.setAttribute('alt', 'Issue screenshot')
+          imgContainer.setAttribute('src', screenshot)
+          screenshotContainer.innerHTML = '<div class="boldAttribute">Screenshot</div>'
+          screenshotContainer.appendChild(imgContainer)
+          newModalBody.appendChild(screenshotContainer)
+        }
+
+        modalBody.replaceWith(newModalBody)
+        modalEl.classList.remove('hidden')
+        document.getElementById('issueDetailsModal').focus()
+      }
+
+      function closeIssueDetailsModal() {
+        modalEl.classList.add('hidden')
+        if (focusAfterClosed) {
+          focusAfterClosed.focus()
+        }
+        document.getElementById('table').removeAttribute('aria-hidden', true)
+        focusAfterClosed = null
+      }
+
+      function handleEscape(event) {
+        const key = event.which || event.keyCode
+        if (key === 27 && !modalEl.classList.contains('hidden')) {
+          closeIssueDetailsModal()
+          event.stopPropagation()
+        }
+      }
+
+      function unique(arr) {
+        return [...new Set(arr)]
+      }
+
+      function getComponentName(componentId) {
+        if (componentId === '00000000') {
+          return 'Not Grouped'
+        }
+        return componentId
+      }
+
+      function createUnorderedList(items, addCodeStyle) {
+        const uniqueItems = unique(items)
+        const isMoreThatOneLi = uniqueItems.length > 1
+        const ulElement = document.createElement('ul')
+        uniqueItems.forEach(item => {
+          const liElem = document.createElement('li')
+          const pElem = document.createElement('p')
+          if (addCodeStyle) {
+            pElem.classList.add('code')
+          }
+          pElem.innerHTML = item
+          pElem.setAttribute('title', item)
+          if (!isMoreThatOneLi) {
+            liElem.style.listStyle = 'none'
+          }
+          liElem.appendChild(pElem)
+          ulElement.appendChild(liElem)
+        })
+        return ulElement
+      }
+
+      function formatDate(reportTimestampInMs) {
+        const date = new Date(reportTimestampInMs)
+        return new Intl.DateTimeFormat('en-US', {
+          dateStyle: 'medium',
+          timeStyle: 'medium'
+        }).format(date)
+      }
+
+      /**
+			 json: {
+			 	issues: Issue[],
+				reportTimestampInMs: number,
+				sdkVersion: string,
+				screenshotsMap?: Map<string, string>
+			  }
+			 */
+      function loadTableData(json) {
+        const { issues, reportTimestampInMs, sdkVersion, screenshotsMap } = json
+        const table = document.getElementById('tableBody')
+        const issuesCount = document.getElementById('issuesCount')
+        const reportTitle = document.getElementById('reportTitle')
+        const pageTitle = document.querySelector('html head title')
+        const sdkVersionElem = document.getElementById('sdkVersion')
+        const URL_CELL_WIDTH = '240px'
+        issuesCount.innerHTML = `${issues.length} ${issues.length === 1 ? 'Issue' : 'Issues'}`
+
+        const reportTimestamp = formatDate(reportTimestampInMs)
+        reportTitle.innerHTML = `Accessibility Test Report [${reportTimestamp}]`
+        pageTitle.innerHTML = `Evinced Accessibility Test Report [${reportTimestamp}]`
+        sdkVersionElem.innerHTML = sdkVersion || 'Unknown SDK version'
+        issues.forEach((issue, issueIdx) => {
+          const showDetails = e => openIssueDetailsModal(issue, screenshotsMap, e.target)
+          const row = table.insertRow()
+
+          // Issue number
+          const numberCell = row.insertCell(0)
+          numberCell.setAttribute('class', 'numeric-cell')
+          numberCell.innerHTML = issue.issueIndex
+
+          // Issue type
+          const issueTypeCell = row.insertCell(1)
+          const isOtherType = isOtherIssueType(issue)
+          const issueType = isOtherType ? 'Other - manual issue' : issue.typeName
+
+          if (isOtherType) {
+            issueTypeLink = document.createElement('span')
+            issueTypeLink.setAttribute('class', 'issue-type')
+          } else {
+            issueTypeLink = document.createElement('a')
+            issueTypeLink.href = issue.knowledgeBaseLink
+            issueTypeLink.target = '_blank'
+            issueTypeLink.rel = 'noopener noreferrer'
+          }
+
+          issueTypeLink.innerText = issueType
+          issueTypeCell.appendChild(issueTypeLink)
+
+          // Severity
+          const severityCell = row.insertCell(2)
+          severityCell.innerHTML = issue.severityName
+
+          // Components
+          const componentIds = issue.elements.map(e => getComponentName(e.componentId))
+          const component = row.insertCell(3)
+          const componentUl = createUnorderedList(componentIds)
+
+          // Selectors
+          const selectors = issue.elements.map(e => e.selector)
+          const selector = row.insertCell(4)
+          const selectorUl = createUnorderedList(selectors, true)
+
+          // URL
+          const urlCell = row.insertCell(5)
+          urlCell.style.minWidth = URL_CELL_WIDTH
+          urlCell.style.maxWidth = URL_CELL_WIDTH
+          const pageUrl = issue.pageUrl
+          const linkEl = document.createElement('a')
+          linkEl.innerHTML = pageUrl
+          linkEl.setAttribute('href', pageUrl)
+          linkEl.setAttribute('title', pageUrl)
+          linkEl.setAttribute('target', '_blank')
+          linkEl.setAttribute('rel', 'noopener noreferrer')
+          urlCell.appendChild(linkEl)
+
+          // Page Title
+          const pageTitleCell = row.insertCell(6)
+          pageTitleCell.innerHTML = issue.pageTitle
+
+          component.appendChild(componentUl)
+          selector.appendChild(selectorUl)
+
+          // WCAG tags
+          const wcagCell = row.insertCell(7)
+          wcagCell.setAttribute('class', 'numeric-cell')
+          const wcagUl = document.createElement('ul')
+          const wcagObject = {}
+          issue.tags.forEach(tag => {
+            if (tag.description) {
+              wcagObject[tag.id.replace('WCAG-', '')] = tag.link
+            }
+          })
+          for (const [key, value] of Object.entries(wcagObject)) {
+            const li = document.createElement('li')
+            const a = document.createElement('a')
+            a.href = value
+            a.innerText = key
+            a.target = '_blank'
+            a.rel = 'noopener noreferrer'
+            li.style.listStyle = 'none'
+            li.appendChild(a)
+            wcagUl.appendChild(li)
+          }
+          wcagCell.appendChild(wcagUl)
+
+          // Details button
+          const detailsCell = row.insertCell(8)
+          detailsCell.classList.add('detailsCell')
+          const button = document.createElement('button')
+          button.classList.add('clickable')
+          button.setAttribute('aria-label', `open details for issue ${issueIdx + 1}`)
+          button.onclick = showDetails
+          detailsCell.appendChild(button)
+        })
+      }
+
+      const modalEl = document.getElementById('issueDetailsModal')
+      const container = modalEl.querySelector('.container')
+
+      modalEl.addEventListener('click', function (e) {
+        if (e.target !== modalEl && e.target !== container) return
+        closeIssueDetailsModal()
+      })
+      document.addEventListener('keyup', handleEscape)
+
+      loadTableData(jsonData)
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"
+      integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

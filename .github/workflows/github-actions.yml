@@ -83,8 +83,28 @@ jobs:
             npm run test
           fi
 
+      - name: Upload HTML reports
+        uses: actions/upload-artifact@v3
+        with:
+            name: ${{ matrix.language-folder.folder }}-report
+            path: |
+              ${{ matrix.language-folder.folder }}/**/*.html
+
       - uses: act10ns/slack@v2
         with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
         if: always()
+
+  download-reports:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download all reports
+        uses: actions/download-artifact@v3
+        with:
+          path: reports
+
+      - name: List downloaded reports
+        run: ls -R reports
