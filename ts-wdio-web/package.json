@@ -10,7 +10,7 @@
     "wdio": "wdio run ./wdio.conf.ts"
   },
   "dependencies": {
-    "@evinced/webdriverio-sdk": "^2.17.0",
+    "@evinced/webdriverio-sdk": "^2.22.1",
     "chromedriver": "^131.0.1"
   }
 }
