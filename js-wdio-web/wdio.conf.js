@@ -12,10 +12,15 @@ export const config = {
     await Evinced.setCredentials({
       serviceId: process.env.EVINCED_SERVICE_ID,
       secret: process.env.EVINCED_API_KEY,
+    });
+
       // If provided a JSON Web Token by Evinced use 
       // the `token` keyword for Offline Authentication
       // token: process.env.EVINCED_JWT
-    });
+      // await Evinced.setOfflineCredentials({
+      //   serviceId: process.env.EVINCED_SERVICE_ID,
+      //   token: process.env.EVINCED_AUTH_TOKEN,
+      // })
   },
   runner: "local",
   specs: ["./test/specs/**/*.js"],
