@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import Combobox from './components/Combobox';
 
 function App() {
   return (
