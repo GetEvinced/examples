@@ -3,12 +3,24 @@ const Evinced = EvincedService.default;
 
 export const config = {
   before: async function (capabilities, specs) {
+    if (process.env.EVINCED_SERVICE_ID !== String || process.env.EVINCED_API_KEY !== String) {
+      console.error("no EVINCED_SERVICE_ID or  EVINCED_API_KEY")
+      exit(1)
+    }
     // Using a before hook, you can authenticate your SDK with your credentials by storing them in your environment variables
     // If you are testing in CI/CD then use setCredentials, if you are testing locally, you can use setOfflineCredentials
     await Evinced.setCredentials({
       serviceId: process.env.EVINCED_SERVICE_ID,
       secret: process.env.EVINCED_API_KEY,
     });
+
+      // If provided a JSON Web Token by Evinced use 
+      // the `token` keyword for Offline Authentication
+      // token: process.env.EVINCED_JWT
+      // await Evinced.setOfflineCredentials({
+      //   serviceId: process.env.EVINCED_SERVICE_ID,
+      //   token: process.env.EVINCED_AUTH_TOKEN,
+      // })
   },
   runner: "local",
   specs: ["./test/specs/**/*.js"],
