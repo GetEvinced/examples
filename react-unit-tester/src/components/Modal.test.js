@@ -31,7 +31,7 @@ describe("Modal Component", () => {
       { element: buttonElement },
       { modalLocator: { id: "modal" } }
     );
-    expect(results).not.toHaveNoFailures();
+    expect(results).toHaveNoFailures();
   });
 
   it("closes the modal when the close button is clicked", () => {
