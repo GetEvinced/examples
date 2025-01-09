@@ -6,15 +6,14 @@ export const Modal = () => {
   const launcherRef = useRef(null);
 
   const openModal = () => {
-    // Store the currently focused element (launcher button)
+    // store the currently focused element (launcher button)
     launcherRef.current = document.activeElement;
     setIsOpen(true);
   };
 
   const closeModal = () => {
     setIsOpen(false);
-
-    // Restore focus to the launcher button when needed
+    // restore focus to the launcher button when needed
     if (launcherRef.current) {
       launcherRef.current.focus();
     }
