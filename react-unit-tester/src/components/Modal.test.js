@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 import { Modal } from "./Modal";
 import EvincedUT from "@evinced/unit-tester";
 
-jest.setTimeout(10000)
+// jest.setTimeout(10000);
 
 describe("Modal Component", () => {
   it("renders the open button", async () => {
