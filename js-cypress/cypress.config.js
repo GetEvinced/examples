@@ -1,5 +1,4 @@
 const { defineConfig } = require("cypress");
-const Evinced = require("@evinced/cypress-sdk");
 
 module.exports = defineConfig({
   e2e: {
