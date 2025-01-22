@@ -13,6 +13,11 @@ configure({
   serviceAccountSecret: process.env.EVINCED_API_KEY,
 });
 
+// configure({
+//   serviceAccountId: "",
+//   offlineToken: ""
+// });
+
 /* eslint-disable no-undef */
 globalThis.act = React.act || act;
 /* eslint-enable no-undef */
