@@ -1,20 +1,29 @@
-import { page } from '@vitest/browser/context'
-import { beforeEach, describe, expect, it } from 'vitest'
+import { screen } from 'shadow-dom-testing-library'
+import { userEvent } from '@testing-library/user-event'
+import '@testing-library/jest-dom'
+import EvincedUT from '@evinced/unit-tester'
 
 import '../src/my-button.js'
 
 describe('Button with increment', async () => {
+  const user = userEvent.setup()
+
   beforeEach(() => {
     document.body.innerHTML = '<my-button name="World"></my-button>'
   })
 
   it('should increment the count on each click', async () => {
-    await page.getByRole('button').click()
+    await user.click(screen.getByShadowRole('button'))
 
-    await expect.element(page.getByRole('button')).toHaveTextContent('2')
+    expect(screen.getByShadowRole('button')).toHaveTextContent('2')
   })
 
   it('should show name props', async () => {
-    await expect.element(page.getByRole('heading')).toHaveTextContent('World')
+    expect(screen.getByShadowRole('heading')).toHaveTextContent('World')
+  })
+
+  it('should pass evinced unit test', async () => {
+    const results = await EvincedUT.analyzeButton({ role: 'button' })
+    expect(results).toHaveNoFailures()
   })
 })

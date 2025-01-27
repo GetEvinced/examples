@@ -14,12 +14,15 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "lit": "^3.0.1"
+    "@evinced/unit-tester": "^2.12.0",
+    "lit": "^3.2.1"
   },
   "devDependencies": {
-    "@vitest/browser": "latest",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/user-event": "^14.6.1",
     "jsdom": "latest",
-    "playwright": "^1.49.0",
+    "shadow-dom-testing-library": "^1.11.3",
     "vite": "latest",
     "vitest": "latest"
   },
