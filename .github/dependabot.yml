@@ -59,6 +59,6 @@ updates:
 registries:
   evinced-artifactory:
     type: "npm-registry"
-    url: https://evinced.jfrog.io/artifactory/restricted-npm-local/%40evinced/
+    url: https://evinced.jfrog.io/artifactory/restricted-npm-local/.npm/
     token: "${{secrets.EVINCED_NPM_TOKEN}}"
     replaces-base: false
