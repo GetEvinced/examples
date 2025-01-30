@@ -5,39 +5,60 @@ updates:
     directory: "/js-wdio-web"
     schedule:
       interval: "weekly"
+    registries:
+      - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/ts-wdio-web"
     schedule:
       interval: "weekly"
+    registries:
+      - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/js-playwright"
     schedule:
       interval: "weekly"
+    registries:
+      - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/ts-playwright"
     schedule:
       interval: "weekly"
+    registries:
+      - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/js-cypress"
     schedule:
       interval: "daily"
+    registries:
+      - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/ts-cypress"
     schedule:
       interval: "weekly"
+    registries:
+      - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/react-unit-tester"
     schedule:
       interval: "weekly"
+    registries:
+      - evinced-artifactory
 
   # Enable updates for GitHub Actions workflows
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+
+registries:
+  evinced-artifactory:
+    type: "npm-registry"
+    url: "https://evinced.jfrog.io/artifactory/api/npm/restricted-npm-local/"
+    token: "${{secrets.EVINCED_NPM_TOKEN}}"
+    replaces-base: false
