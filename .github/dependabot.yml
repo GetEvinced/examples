@@ -1,6 +1,13 @@
 version: 2
+registries:
+  evinced-artifactory:
+    type: "npm-registry"
+    url: https://evinced.jfrog.io/artifactory/api/npm/restricted-npm
+    username: shane
+    password: ${{ secrets.SHANE_JFROG_PASSWORD }}
+    replaces-base: false  # Set to true if evinced jfrog should be the default registry
+
 updates:
-  # Enable version updates for npm in each subproject
   - package-ecosystem: "npm"
     directory: "/js-wdio-web"
     schedule:
@@ -50,16 +57,7 @@ updates:
     registries:
       - evinced-artifactory
 
-  # Enable updates for GitHub Actions workflows
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "monthly"
-
-registries:
-  evinced-artifactory:
-    type: "npm-registry"
-    url: https://evinced.jfrog.io/artifactory/api/npm/restricted-npm
-    username: shane
-    password: ${{ secrets.SHANE_JFROG_PASSWORD }}
-    replaces-base: false
