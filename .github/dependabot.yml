@@ -14,6 +14,8 @@ updates:
       interval: "monthly"
     registries:
       - evinced-artifactory
+    allow:
+      - dependency-name: "@evinced/webdriverio-sdk"
 
   - package-ecosystem: "npm"
     directory: "/ts-wdio-web"
@@ -21,6 +23,8 @@ updates:
       interval: "monthly"
     registries:
       - evinced-artifactory
+    allow:
+      - dependency-name: "@evinced/webdriverio-sdk"
 
   - package-ecosystem: "npm"
     directory: "/js-playwright"
@@ -28,6 +32,8 @@ updates:
       interval: "monthly"
     registries:
       - evinced-artifactory
+    allow:
+      - dependency-name: "@evinced/js-playwright-sdk"
 
   - package-ecosystem: "npm"
     directory: "/ts-playwright"
@@ -35,6 +41,8 @@ updates:
       interval: "monthly"
     registries:
       - evinced-artifactory
+    allow:
+      - dependency-name: "@evinced/js-playwright-sdk"
 
   - package-ecosystem: "npm"
     directory: "/js-cypress"
@@ -42,6 +50,8 @@ updates:
       interval: "monthly"
     registries:
       - evinced-artifactory
+    allow:
+      - dependency-name: "@evinced/cypress-sdk"
 
   - package-ecosystem: "npm"
     directory: "/ts-cypress"
@@ -49,6 +59,8 @@ updates:
       interval: "monthly"
     registries:
       - evinced-artifactory
+    allow:
+      - dependency-name: "@evinced/cypress-sdk"
 
   - package-ecosystem: "npm"
     directory: "/react-unit-tester"
@@ -56,6 +68,8 @@ updates:
       interval: "monthly"
     registries:
       - evinced-artifactory
+    allow:
+      - dependency-name: "@evinced/unit-tester"
 
   - package-ecosystem: "github-actions"
     directory: "/"
