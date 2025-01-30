@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "@evinced/webdriverio-sdk": "^2.22.2",
-    "chromedriver": "^131.0.1"
+    "chromedriver": "^132.0.2"
   }
 }
