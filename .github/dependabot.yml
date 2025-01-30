@@ -5,7 +5,7 @@ registries:
     url: https://evinced.jfrog.io/artifactory/api/npm/restricted-npm
     username: shane
     password: ${{ secrets.SHANE_JFROG_PASSWORD }}
-    replaces-base: false  # Set to true if evinced jfrog should be the default registry
+    replaces-base: true  # Set to true if evinced jfrog should be the default registry
 
 updates:
   - package-ecosystem: "npm"
