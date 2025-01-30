@@ -4,49 +4,49 @@ updates:
   - package-ecosystem: "npm"
     directory: "/js-wdio-web"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     registries:
       - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/ts-wdio-web"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     registries:
       - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/js-playwright"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     registries:
       - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/ts-playwright"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     registries:
       - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/js-cypress"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     registries:
       - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/ts-cypress"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     registries:
       - evinced-artifactory
 
   - package-ecosystem: "npm"
     directory: "/react-unit-tester"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     registries:
       - evinced-artifactory
 
@@ -54,12 +54,12 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
 
 registries:
   evinced-artifactory:
     type: "npm-registry"
-    url: https://evinced.jfrog.io/artifactory/restricted-npm-local/.npm/
+    url: https://evinced.jfrog.io/artifactory/api/npm/restricted-npm
     username: shane
     password: ${{ secrets.SHANE_JFROG_PASSWORD }}
     replaces-base: false
