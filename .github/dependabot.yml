@@ -16,6 +16,7 @@ updates:
       - evinced-artifactory
     allow:
       - dependency-name: "@evinced/webdriverio-sdk"
+    versioning-strategy: increase
 
   - package-ecosystem: "npm"
     directory: "/ts-wdio-web"
@@ -25,6 +26,7 @@ updates:
       - evinced-artifactory
     allow:
       - dependency-name: "@evinced/webdriverio-sdk"
+    versioning-strategy: increase
 
   - package-ecosystem: "npm"
     directory: "/js-playwright"
@@ -34,6 +36,7 @@ updates:
       - evinced-artifactory
     allow:
       - dependency-name: "@evinced/js-playwright-sdk"
+    versioning-strategy: increase
 
   - package-ecosystem: "npm"
     directory: "/ts-playwright"
@@ -43,6 +46,7 @@ updates:
       - evinced-artifactory
     allow:
       - dependency-name: "@evinced/js-playwright-sdk"
+    versioning-strategy: increase
 
   - package-ecosystem: "npm"
     directory: "/js-cypress"
@@ -52,6 +56,7 @@ updates:
       - evinced-artifactory
     allow:
       - dependency-name: "@evinced/cypress-sdk"
+    versioning-strategy: increase
 
   - package-ecosystem: "npm"
     directory: "/ts-cypress"
@@ -61,6 +66,7 @@ updates:
       - evinced-artifactory
     allow:
       - dependency-name: "@evinced/cypress-sdk"
+    versioning-strategy: increase
 
   - package-ecosystem: "npm"
     directory: "/react-unit-tester"
@@ -70,6 +76,7 @@ updates:
       - evinced-artifactory
     allow:
       - dependency-name: "@evinced/unit-tester"
+    versioning-strategy: increase
 
   - package-ecosystem: "github-actions"
     directory: "/"
