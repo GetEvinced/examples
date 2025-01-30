@@ -84,7 +84,7 @@ jobs:
           fi
 
       - name: Upload HTML reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
             name: ${{ matrix.language-folder.folder }}-report
             path: |
