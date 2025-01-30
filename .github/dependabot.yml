@@ -60,5 +60,6 @@ registries:
   evinced-artifactory:
     type: "npm-registry"
     url: https://evinced.jfrog.io/artifactory/restricted-npm-local/.npm/
-    token: "${{secrets.EVINCED_NPM_TOKEN}}"
+    username: shane
+    password: ${{ secrets.SHANE_JFROG_PASSWORD }}
     replaces-base: false
