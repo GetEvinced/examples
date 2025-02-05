@@ -1,4 +1,4 @@
-const { setCredentials } = require("@evinced/js-playwright-sdk");
+import { setCredentials } from "@evinced/js-playwright-sdk";
 
 // If using this approach, make sure you import the file into playwright.config.js/ts
 
