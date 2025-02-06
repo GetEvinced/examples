@@ -11,7 +11,7 @@ import EvincedUT from '@evinced/unit-tester';
 class TestSwitchComponent {
 }
 
-describe('AppComponent', () => {
+describe('SwitchComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TestSwitchComponent],
