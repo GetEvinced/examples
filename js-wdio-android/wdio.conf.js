@@ -54,9 +54,8 @@ export const config = {
         // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android',        
         'appium:automationName': 'UiAutomator2',
-        'appium:appWaitActivity' : 'com.evinced.demoapp'
-    }],
-
+        'appium:appPackage' : 'com.evinced.demoapp'        
+    }],    
     //
     // ===================
     // Test Configurations
