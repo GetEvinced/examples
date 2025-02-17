@@ -71,12 +71,21 @@ jobs:
           arch: x86_64
           profile: pixel_3
           disable-animations: true
+          emulator-options: "-no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim"
           script: echo "Emulator is ready"
+
+      - name: Restart ADB Server
+        if: contains(matrix.language-folder.folder, 'js-wdio-mobile')
+        run: |
+          adb kill-server
+          adb start-server
+          adb devices
 
       - name: Wait for Emulator to Boot
         if: contains(matrix.language-folder.folder, 'js-wdio-mobile')
         run: |
           adb wait-for-device
+          sleep 30  # Wait for the system to be ready
           adb shell input keyevent 82
           echo "Emulator is fully booted"
 
