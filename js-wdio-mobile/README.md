@@ -1,0 +1,1 @@
+To run these tests, please use npm run wdio
