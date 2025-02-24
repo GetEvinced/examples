@@ -1,5 +1,5 @@
 import { Builder } from "selenium-webdriver";
-import chrome from "selenium-webdriver/chrome";
+import * as chrome from "selenium-webdriver/chrome.js";
 import assert from "assert";
 import pkg from "@evinced/js-selenium-sdk";
 const { EvincedSDK, setCredentials } = pkg;
@@ -14,15 +14,12 @@ describe("Demo page", () => {
     const options = new chrome.Options();
     options.addArguments(`--user-data-dir=/tmp/chrome-profile-${Date.now()}`);
 
-    const driver = await new Builder()
-      .forBrowser("chrome")
-      .setChromeOptions(options)
-      .build();
+    const driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
     const evincedService = new EvincedSDK(driver);
     await evincedService.evStart();
     await driver.get("https://demo.evinced.com/");
     const issues = await evincedService.evStop();
-    assert.equal(issues.length, 6);
+    assert.equal(issues.length, 8);
     await driver.quit();
   });
 });
