@@ -84,6 +84,9 @@ jobs:
           elif [ -f "cypress.config.js" ] || [ -f "cypress.config.ts" ]; then
             echo "Running Cypress tests"
             npx cypress run
+          elif [ "${{ matrix.language-folder.folder }}" == "js-selenium-web" ]; then
+            echo "Running Selenium tests"
+            npm test
           else
             echo "Running standard tests"
             npm run test
