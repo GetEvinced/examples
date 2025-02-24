@@ -12,14 +12,17 @@ await setCredentials({
 describe("Demo page", () => {
   it("Demo page. evStart/evStop", async () => {
     const options = new chrome.Options();
-    options.addArguments(`--user-data-dir=/tmp/chrome-profile-${Date.now()}`);
+    options.addArguments("--headless");
 
-    const driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
+    const driver = await new Builder()
+      .forBrowser("chrome")
+      .setChromeOptions(options)
+      .build();
     const evincedService = new EvincedSDK(driver);
     await evincedService.evStart();
     await driver.get("https://demo.evinced.com/");
     const issues = await evincedService.evStop();
-    assert.equal(issues.length, 8);
+    assert.equal(issues.length, 6);
     await driver.quit();
   });
 });

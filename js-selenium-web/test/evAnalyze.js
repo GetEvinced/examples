@@ -12,8 +12,11 @@ await setCredentials({
 describe("Demo page", () => {
   it("Demo page. evAnalyze", async () => {
     const options = new chrome.Options();
-    options.addArguments(`--user-data-dir=/tmp/chrome-profile-${Date.now()}`);
-    const driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
+    options.addArguments("--headless");
+    const driver = await new Builder()
+      .forBrowser("chrome")
+      .setChromeOptions(options)
+      .build();
     const evincedService = new EvincedSDK(driver);
     await driver.get("https://demo.evinced.com/");
     const issues = await evincedService.evAnalyze();
