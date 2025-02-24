@@ -68,6 +68,8 @@ jobs:
         env:
           EVINCED_SERVICE_ID: ${{ secrets.EVINCED_SERVICE_ID }}
           EVINCED_API_KEY: ${{ secrets.EVINCED_API_KEY }}
+          SAUCE_USER: ${{ secrets.SAUCE_USER }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
         run: |
           cd ${{ matrix.language-folder.folder }}
           if [ "${{ matrix.language-folder.folder }}" == "js-wdio-mobile" ]; then
