@@ -31,29 +31,29 @@ export const config = {
   //
   capabilities: [
     {
-      port: 4723,
+      port: 443,
       // capabilities for local Appium web tests on an Android Emulator
-      platformName: "Android",
-      // browserName: "Chrome",
-      "appium:app":
-        "/Users/shane/Documents/Code/wdio-mobile/com.evinced.demoapp-MK.apk",
-      "appium:deviceName": "Android Emulator",
-      "appium:platformVersion": "15.0",
-      "appium:automationName": "UiAutomator2",
-      "appium:chromedriverAutodownload": true,
-
-      // For Sauce Labs
       // platformName: "Android",
-      // "appium:app": "storage:filename=com.evinced.demoapp-MK.apk",
-      // "appium:deviceName": "Android GoogleAPI Emulator",
+      // // browserName: "Chrome",
+      // "appium:app":
+      //   "/Users/shane/Documents/Code/wdio-mobile/com.evinced.demoapp-MK.apk",
+      // "appium:deviceName": "Android Emulator",
       // "appium:platformVersion": "15.0",
       // "appium:automationName": "UiAutomator2",
-      // "sauce:options": {
-      //   appiumVersion: '2.11.0',
-      //   build: "Examples",
-      //   name: "JS WDIO Evinced Tests",
-      //   // deviceOrientation: "PORTRAIT",
-      // },
+      // "appium:chromedriverAutodownload": true,
+
+      // For Sauce Labs
+      platformName: "Android",
+      "appium:app": "storage:filename=com.evinced.demoapp-MK.apk",
+      "appium:deviceName": "Android GoogleAPI Emulator",
+      "appium:platformVersion": "15.0",
+      "appium:automationName": "UiAutomator2",
+      "sauce:options": {
+        appiumVersion: '2.11.0',
+        build: "Examples Repository",
+        name: "JS WDIO Evinced Tests",
+        // deviceOrientation: "PORTRAIT",
+      },
     },
   ],
 

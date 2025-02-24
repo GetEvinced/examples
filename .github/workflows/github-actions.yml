@@ -63,47 +63,6 @@ jobs:
           cd ${{ matrix.language-folder.folder }}
           npx playwright install
 
-      - name: Set up Android environment (for mobile tests)
-        if: contains(matrix.language-folder.folder, 'js-wdio-mobile')
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 30
-          arch: x86_64
-          profile: pixel_3
-          disable-animations: true
-          emulator-options: "-no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim"
-          script: echo "Emulator is ready"
-
-      - name: Restart ADB Server
-        if: contains(matrix.language-folder.folder, 'js-wdio-mobile')
-        run: |
-          adb kill-server
-          adb start-server
-          adb devices
-
-      - name: Wait for Emulator to Boot
-        if: contains(matrix.language-folder.folder, 'js-wdio-mobile')
-        run: |
-          adb wait-for-device
-          sleep 30  # Wait for the system to be ready
-          adb shell input keyevent 82
-          echo "Emulator is fully booted"
-
-      - name: Start Appium Server (for mobile tests)
-        if: contains(matrix.language-folder.folder, 'js-wdio-mobile')
-        run: |
-          npm install -g appium
-          appium --log-level info &
-          npx wait-on tcp:4723
-          echo "Appium Server is ready"
-
-      - name: Set environment variables for WebDriverIO Mobile Tests
-        if: contains(matrix.language-folder.folder, 'js-wdio-mobile')
-        run: |
-          echo "APPIUM_DEVICE_NAME=Android Emulator" >> $GITHUB_ENV
-          echo "APPIUM_PLATFORM_VERSION=15.0" >> $GITHUB_ENV
-          echo "ANDROID_APP_PATH=${{ github.workspace }}/js-wdio-mobile/com.evinced.demoapp-MK.apk" >> $GITHUB_ENV
-
       - name: Run Evinced Smoke tests
         id: run-tests
         env:

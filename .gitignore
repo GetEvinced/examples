@@ -6,3 +6,4 @@ package-lock.json
 .npmrc
 .DS_Store
 react-unit-tester/.cache
+js-wdio-mobile/evinced-reports
