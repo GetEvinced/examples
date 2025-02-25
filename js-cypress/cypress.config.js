@@ -6,7 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
       on("task", {
         uploadToPlatform() {
-          console.log("Uplading...");
+          console.log("Uploading...");
           return null;
         },
       });
