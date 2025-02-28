@@ -27,6 +27,7 @@ jobs:
           - { language: "javascript", folder: "js-cypress" }
           - { language: "typescript", folder: "ts-cypress" }
           - { language: "javascript", folder: "react-unit-tester" }
+          - { language: "javascript", folder: "nextjs-react-unit-tester" }
           - { language: "javascript", folder: "js-wdio-mobile" }
           - { language: "javascript", folder: "js-selenium-web" }
 
@@ -87,6 +88,9 @@ jobs:
             npx cypress run
           elif [ "${{ matrix.language-folder.folder }}" == "js-selenium-web" ]; then
             echo "Running Selenium tests"
+            npm test
+          elif [ "${{ matrix.language-folder.folder }}" == "nextjs-react-unit-tester" ]; then
+            echo "Running Nextjs Jest Unit Tester tests"
             npm test
           else
             echo "Running standard tests"
