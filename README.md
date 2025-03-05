@@ -27,3 +27,7 @@ This repository is designed to:
 
 ---
 
+## To note:
+- In each folder, the commands to use the repository are present in the `README.md` file and they vary slightly project by project, please take a moment to review
+- In order for this to work properly, you must add a `.npmrc` file or provide the necessary authentication credentials related to your SDK. The keys can be obtained by logging into your Evinced account
+- Please ensure you run `npm install` to set the project up

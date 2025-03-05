@@ -1,25 +1,23 @@
-# Evinced Support Example
+# Evinced WDIO SDK
 
-This repository contains examples demonstrating how to integrate and use the Evinced SDK with JavaScript. The examples showcase both basic and advanced usage patterns to help you get started with accessibility analysis in your projects.
+## 100% Test Coverage Using All Methods
 
-## How to Use
+This repository ensures 100% test coverage using all available testing methods.
 
-### Running the Examples
-```bash
-npm i
-npm run wdio
-```
+## Usage
 
-### Prerequisites
-- Install the Evinced SDK. Refer to the official [Evinced WDIO Documentation](https://developer.evinced.com/sdks-for-web-apps/webdriverio-sdk) for installation instructions.
-- Please note, this project is using a local .npmrc file to install this project from the remote repository
+To run the tests, ensure you are in the "js-wdio-web" directory and use the following command:
 
-## Examples Overview
+## Getting started
 
-### 1. **Basic Example: `evAnalyze`**
-   - A straightforward implementation of the `evAnalyze` function.
-   - Demonstrates how to use the SDK for accessibility analysis in a simple test case.
+1. Clone the repository
+2. Install dependencies 
+    ```bash
+    npm install
+    ```
+3. Ensure you add your `.npmrc` file and credentials
+4. If everything installed, you are ready to run `npm test`
 
-### 2. **Advanced Example: Hooks and `evStart`/`evStop`**
-   - Showcases a more comprehensive approach, utilizing hooks for dynamic SDK integration.
-   - Demonstrates how to use `evStart` and `evStop` for managing the lifecycle of accessibility analysis.
+## Testing Framework
+
+This repository utilizes [WebdriverIO](https://webdriver.io/) to test React-based components that follow best practices with Evinced. 
