@@ -34,7 +34,7 @@ This repository is designed to:
 - You will see that in the tests we do use environment variables which are stored on our machines, you will need to either set the named variables on your machine or change accordingly to ensure you get up and running!
 
 An example set of environment variables might look like this:
-```sh
+```javascript
 configure({
   serviceAccountId: process.env.EVINCED_SERVICE_ID,
   serviceAccountSecret: process.env.EVINCED_API_KEY,
