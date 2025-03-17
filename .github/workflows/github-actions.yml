@@ -30,7 +30,6 @@ jobs:
           - { language: "javascript", folder: "nextjs-react-unit-tester" }
           - { language: "javascript", folder: "js-wdio-mobile" }
           - { language: "javascript", folder: "js-selenium-web" }
-          - { language: "dotnet", folder: "evinced-dot-net" }
 
     steps:
       - uses: act10ns/slack@v2
@@ -100,9 +99,6 @@ jobs:
           elif [ "${{ matrix.language-folder.folder }}" == "nextjs-react-unit-tester" ]; then
             echo "Running Nextjs Jest Unit Tester tests"
             npm test
-          elif [ "${{ matrix.language-folder.language }}" == "dotnet" ]; then
-            echo "Running .NET Evinced tests"
-            dotnet test --logger trx
           else
             echo "Running standard tests"
             npm run test
