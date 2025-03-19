@@ -1,68 +1,68 @@
-[2025-02-25T17:32:07.831] [INFO] default - Setting online credentials...
-[2025-02-25T17:32:07.832] [INFO] default - Getting authentication token online
-[2025-02-25T17:32:08.022] [DEBUG] default - Response status: 200
-[2025-02-25T17:32:08.022] [INFO] default - Credentials have been set
-[2025-02-25T17:32:08.026] [INFO] default - Setting online credentials...
-[2025-02-25T17:32:08.026] [INFO] default - Getting authentication token online
-[2025-02-25T17:32:08.213] [DEBUG] default - Response status: 200
-[2025-02-25T17:32:08.213] [INFO] default - Credentials have been set
-[2025-02-25T17:32:09.366] [INFO] default - Evinced SDK: initializing...
-[2025-02-25T17:32:09.367] [DEBUG] default - AuthData initialized. Checking license
-[2025-02-25T17:32:09.367] [DEBUG] default - Token decoded
-[2025-02-25T17:32:09.369] [DEBUG] default - Token signed
-[2025-02-25T17:32:09.369] [DEBUG] default - Product type approved
-[2025-02-25T17:32:09.369] [DEBUG] default - Service account approved
-[2025-02-25T17:32:09.369] [INFO] default - License approved
-[2025-02-25T17:32:09.901] [INFO] default - evAnalyze called
-[2025-02-25T17:32:09.901] [INFO] default - Injecting Evinced SDK
-[2025-02-25T17:32:09.904] [INFO] default - Evinced is injected: false
-[2025-02-25T17:32:10.108] [INFO] default - Evinced SDK has been injected
-[2025-02-25T17:32:10.126] [DEBUG] default - Calling "Run analysis once" command
-[2025-02-25T17:32:10.996] [INFO] default - Analysis report received. Analysis finished. Got issues: 6
-[2025-02-25T17:32:11.598] [INFO] default - Evinced SDK: initializing...
-[2025-02-25T17:32:11.599] [DEBUG] default - AuthData initialized. Checking license
-[2025-02-25T17:32:11.599] [DEBUG] default - Token decoded
-[2025-02-25T17:32:11.599] [DEBUG] default - Token signed
-[2025-02-25T17:32:11.599] [DEBUG] default - Product type approved
-[2025-02-25T17:32:11.599] [DEBUG] default - Service account approved
-[2025-02-25T17:32:11.599] [INFO] default - License approved
-[2025-02-25T17:32:11.599] [INFO] default - evStart called
-[2025-02-25T17:32:11.600] [DEBUG] default - Extending Selenium actions with Evinced logic...
-[2025-02-25T17:32:11.600] [DEBUG] default - Extending action: click
-[2025-02-25T17:32:11.600] [DEBUG] default - Extending action: get
-[2025-02-25T17:32:11.600] [DEBUG] default - `click` and `get` Selenium actions have been extended.
-[2025-02-25T17:32:11.600] [DEBUG] default - Extending navigation methods: navigate, back, forward, refresh
-[2025-02-25T17:32:11.600] [DEBUG] default - Extending executeScript method
-[2025-02-25T17:32:11.600] [DEBUG] default - Selenium actions have been extended.
-[2025-02-25T17:32:11.600] [INFO] default - Injecting Evinced SDK
-[2025-02-25T17:32:11.604] [INFO] default - Evinced is injected: false
-[2025-02-25T17:32:11.815] [INFO] default - Evinced SDK has been injected
-[2025-02-25T17:32:11.830] [INFO] default - Continuous mode is starting...
-[2025-02-25T17:32:11.830] [DEBUG] default - Calling "Start analysis" command
-[2025-02-25T17:32:11.849] [DEBUG] default - ----ACTION CALLED----: "get" was called.
-[2025-02-25T17:32:11.849] [DEBUG] default - Processing the action (before): "get".
-[2025-02-25T17:32:11.850] [DEBUG] default - Current URL: data:,
-[2025-02-25T17:32:11.850] [DEBUG] default - Calling the original method get.
-[2025-02-25T17:32:12.231] [DEBUG] default - Processing the action (after): "get".
-[2025-02-25T17:32:12.233] [DEBUG] default - Checking if initialization is needed for URL https://demo.evinced.com/
-[2025-02-25T17:32:12.233] [DEBUG] default - URL change detected. Previous URL: data:,, new URL: https://demo.evinced.com/
-[2025-02-25T17:32:12.236] [DEBUG] default - Injection and initialization are needed
-[2025-02-25T17:32:12.236] [DEBUG] default - Performing full inject
-[2025-02-25T17:32:12.236] [INFO] default - Injecting Evinced SDK
-[2025-02-25T17:32:12.239] [INFO] default - Evinced is injected: false
-[2025-02-25T17:32:12.456] [INFO] default - Evinced SDK has been injected
-[2025-02-25T17:32:12.471] [DEBUG] default - Calling "Start analysis" command
-[2025-02-25T17:32:12.559] [DEBUG] default - After action get. Analysis started
-[2025-02-25T17:32:12.560] [INFO] default - evStop called
-[2025-02-25T17:32:12.560] [DEBUG] default - Calling "Stop analysis" command
-[2025-02-25T17:32:13.237] [INFO] default - Continuous mode is stopped
-[2025-02-25T17:32:13.237] [DEBUG] default - Got new issues: 6
-[2025-02-25T17:32:13.237] [DEBUG] default - Collected issues updated. New length: 6
-[2025-02-25T17:32:13.237] [DEBUG] default - Getting unique issues from array, length: 6
-[2025-02-25T17:32:13.238] [DEBUG] default - The message is too long (12630), only the first 1000 characters will be logged. 
+[2025-03-19T22:07:27.002] [INFO] default - Setting online credentials...
+[2025-03-19T22:07:27.002] [INFO] default - Getting authentication token online
+[2025-03-19T22:07:27.276] [DEBUG] default - Response status: 200
+[2025-03-19T22:07:27.277] [INFO] default - Credentials have been set
+[2025-03-19T22:07:27.282] [INFO] default - Setting online credentials...
+[2025-03-19T22:07:27.282] [INFO] default - Getting authentication token online
+[2025-03-19T22:07:27.479] [DEBUG] default - Response status: 200
+[2025-03-19T22:07:27.480] [INFO] default - Credentials have been set
+[2025-03-19T22:07:29.889] [INFO] default - Evinced SDK: initializing...
+[2025-03-19T22:07:29.889] [DEBUG] default - AuthData initialized. Checking license
+[2025-03-19T22:07:29.889] [DEBUG] default - Token decoded
+[2025-03-19T22:07:29.890] [DEBUG] default - Token signed
+[2025-03-19T22:07:29.890] [DEBUG] default - Product type approved
+[2025-03-19T22:07:29.890] [DEBUG] default - Service account approved
+[2025-03-19T22:07:29.890] [INFO] default - License approved
+[2025-03-19T22:07:30.770] [INFO] default - evAnalyze called
+[2025-03-19T22:07:30.770] [INFO] default - Injecting Evinced SDK
+[2025-03-19T22:07:30.775] [INFO] default - Evinced is injected: false
+[2025-03-19T22:07:30.975] [INFO] default - Evinced SDK has been injected
+[2025-03-19T22:07:30.992] [DEBUG] default - Calling "Run analysis once" command
+[2025-03-19T22:07:31.132] [INFO] default - Analysis report received. Analysis finished. Got issues: 6
+[2025-03-19T22:07:31.668] [INFO] default - Evinced SDK: initializing...
+[2025-03-19T22:07:31.668] [DEBUG] default - AuthData initialized. Checking license
+[2025-03-19T22:07:31.668] [DEBUG] default - Token decoded
+[2025-03-19T22:07:31.668] [DEBUG] default - Token signed
+[2025-03-19T22:07:31.668] [DEBUG] default - Product type approved
+[2025-03-19T22:07:31.668] [DEBUG] default - Service account approved
+[2025-03-19T22:07:31.668] [INFO] default - License approved
+[2025-03-19T22:07:31.668] [INFO] default - evStart called
+[2025-03-19T22:07:31.668] [DEBUG] default - Extending Selenium actions with Evinced logic...
+[2025-03-19T22:07:31.668] [DEBUG] default - Extending action: click
+[2025-03-19T22:07:31.669] [DEBUG] default - Extending action: get
+[2025-03-19T22:07:31.669] [DEBUG] default - `click` and `get` Selenium actions have been extended.
+[2025-03-19T22:07:31.669] [DEBUG] default - Extending navigation methods: navigate, back, forward, refresh
+[2025-03-19T22:07:31.669] [DEBUG] default - Extending executeScript method
+[2025-03-19T22:07:31.669] [DEBUG] default - Selenium actions have been extended.
+[2025-03-19T22:07:31.669] [INFO] default - Injecting Evinced SDK
+[2025-03-19T22:07:31.674] [INFO] default - Evinced is injected: false
+[2025-03-19T22:07:31.875] [INFO] default - Evinced SDK has been injected
+[2025-03-19T22:07:31.890] [INFO] default - Continuous mode is starting...
+[2025-03-19T22:07:31.890] [DEBUG] default - Calling "Start analysis" command
+[2025-03-19T22:07:31.910] [DEBUG] default - ----ACTION CALLED----: "get" was called.
+[2025-03-19T22:07:31.910] [DEBUG] default - Processing the action (before): "get".
+[2025-03-19T22:07:31.911] [DEBUG] default - Current URL: data:,
+[2025-03-19T22:07:31.911] [DEBUG] default - Calling the original method get.
+[2025-03-19T22:07:32.322] [DEBUG] default - Processing the action (after): "get".
+[2025-03-19T22:07:32.324] [DEBUG] default - Checking if initialization is needed for URL https://demo.evinced.com/
+[2025-03-19T22:07:32.324] [DEBUG] default - URL change detected. Previous URL: data:,, new URL: https://demo.evinced.com/
+[2025-03-19T22:07:32.326] [DEBUG] default - Injection and initialization are needed
+[2025-03-19T22:07:32.326] [DEBUG] default - Performing full inject
+[2025-03-19T22:07:32.326] [INFO] default - Injecting Evinced SDK
+[2025-03-19T22:07:32.328] [INFO] default - Evinced is injected: false
+[2025-03-19T22:07:32.538] [INFO] default - Evinced SDK has been injected
+[2025-03-19T22:07:32.553] [DEBUG] default - Calling "Start analysis" command
+[2025-03-19T22:07:32.639] [DEBUG] default - After action get. Analysis started
+[2025-03-19T22:07:32.639] [INFO] default - evStop called
+[2025-03-19T22:07:32.639] [DEBUG] default - Calling "Stop analysis" command
+[2025-03-19T22:07:33.424] [INFO] default - Continuous mode is stopped
+[2025-03-19T22:07:33.424] [DEBUG] default - Got new issues: 6
+[2025-03-19T22:07:33.424] [DEBUG] default - Collected issues updated. New length: 6
+[2025-03-19T22:07:33.424] [DEBUG] default - Getting unique issues from array, length: 6
+[2025-03-19T22:07:33.425] [DEBUG] default - The message is too long (12630), only the first 1000 characters will be logged. 
       In order to log such long messages -> update logging configuration.
-[2025-02-25T17:32:13.238] [DEBUG] default - Issues content: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","description":"**Cause:** Missing or incorrect semantics prevent screen readers from interpreting an element as interactable.\n**Effect:** Screen reader either does not navigate to the element or navigates to it but does not correctly convey its function to the user.\n**Suggested Solutions:**\n* Change the element's tag to correctly reflect its type, ie: <*button*>, <*a*>, <*select*> or <*input*>\n* Add attributes (ARIA) to indicate the element's type and/or potential functionalities.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"5c0944f8-2799-4ac9-a7b5-353944525ac1","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-dropdown:nt
-[2025-02-25T17:32:13.238] [DEBUG] default - Unique issues length: 6
-[2025-02-25T17:32:13.238] [DEBUG] default - The message is too long (12637), only the first 1000 characters will be logged. 
+[2025-03-19T22:07:33.425] [DEBUG] default - Issues content: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","description":"**Cause:** Missing or incorrect semantics prevent screen readers from interpreting an element as interactable.\n**Effect:** Screen reader either does not navigate to the element or navigates to it but does not correctly convey its function to the user.\n**Suggested Solutions:**\n* Change the element's tag to correctly reflect its type, ie: <*button*>, <*a*>, <*select*> or <*input*>\n* Add attributes (ARIA) to indicate the element's type and/or potential functionalities.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"608ecfff-2611-4083-8806-ca006c9418ee","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-dropdown:nt
+[2025-03-19T22:07:33.425] [DEBUG] default - Unique issues length: 6
+[2025-03-19T22:07:33.425] [DEBUG] default - The message is too long (12637), only the first 1000 characters will be logged. 
       In order to log such long messages -> update logging configuration.
-[2025-02-25T17:32:13.238] [DEBUG] default - Unique issues content: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","description":"**Cause:** Missing or incorrect semantics prevent screen readers from interpreting an element as interactable.\n**Effect:** Screen reader either does not navigate to the element or navigates to it but does not correctly convey its function to the user.\n**Suggested Solutions:**\n* Change the element's tag to correctly reflect its type, ie: <*button*>, <*a*>, <*select*> or <*input*>\n* Add attributes (ARIA) to indicate the element's type and/or potential functionalities.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"5c0944f8-2799-4ac9-a7b5-353944525ac1","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-drop
+[2025-03-19T22:07:33.425] [DEBUG] default - Unique issues content: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","description":"**Cause:** Missing or incorrect semantics prevent screen readers from interpreting an element as interactable.\n**Effect:** Screen reader either does not navigate to the element or navigates to it but does not correctly convey its function to the user.\n**Suggested Solutions:**\n* Change the element's tag to correctly reflect its type, ie: <*button*>, <*a*>, <*select*> or <*input*>\n* Add attributes (ARIA) to indicate the element's type and/or potential functionalities.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"608ecfff-2611-4083-8806-ca006c9418ee","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-drop
