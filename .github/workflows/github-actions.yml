@@ -48,8 +48,11 @@ jobs:
             echo "Setting up Node.js environment"
             curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
             sudo apt-get install -y nodejs
+          elif [ "${{ matrix.language-folder.language }}" == "dotnet" ]; then
+            echo "Setting up .NET environment"
+            sudo apt-get update
+            sudo apt-get install -y dotnet-sdk-8.0
           fi
-
       - name: Configure .npmrc
         run: |
           echo "${{ secrets.EVINCED_NPM_TOKEN }}" > ~/.npmrc
@@ -57,7 +60,11 @@ jobs:
       - name: Install dependencies
         run: |
           cd ${{ matrix.language-folder.folder }}
-          npm install
+          if [ "${{ matrix.language-folder.language }}" == "dotnet" ]; then
+            dotnet restore
+          else
+            npm install
+          fi
 
       - name: Install Playwright browsers
         if: contains(matrix.language-folder.folder, 'playwright')
