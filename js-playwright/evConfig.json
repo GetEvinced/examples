@@ -10,6 +10,13 @@
     "LOGGING_LEVEL": "debug",
     "ADD_LOGGING_CONTEXT": true
   },
+  "sdkLogging": {
+    "enable": false,
+    "level": "debug",
+    "browserLoggingEnabled": true,
+    "systemInformationLoggingEnabled": true,
+    "maxLogLength": 10000
+  },
   "toggles": {
     "USE_AXE_NEEDS_REVIEW": false,
     "USE_AXE_BEST_PRACTICES": false,
