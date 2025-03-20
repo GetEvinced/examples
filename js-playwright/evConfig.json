@@ -13,9 +13,10 @@
   "sdkLogging": {
     "enable": false,
     "level": "debug",
+    "directory": "./logs",
     "browserLoggingEnabled": true,
     "systemInformationLoggingEnabled": true,
-    "maxLogLength": 10000
+    "maxLogLength": 1000
   },
   "toggles": {
     "USE_AXE_NEEDS_REVIEW": false,
