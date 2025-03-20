@@ -16,7 +16,7 @@
     "directory": "./logs",
     "browserLoggingEnabled": true,
     "systemInformationLoggingEnabled": true,
-    "maxLogLength": 1000
+    "maxLogLength": 10000
   },
   "toggles": {
     "USE_AXE_NEEDS_REVIEW": false,
