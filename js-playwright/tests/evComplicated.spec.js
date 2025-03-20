@@ -15,7 +15,7 @@ test.describe("Tests the Evinced demo page", () => {
     evincedService.testRunInfo.addLabel({
       testName: testInfo.title,
       testFile: testInfo.file,
-      environment: "CI/CD Pipeline"
+      environment: "CI/CD Pipeline",
     });
     // Use continuous mode for each test
     await evincedService.evStart();
@@ -23,10 +23,12 @@ test.describe("Tests the Evinced demo page", () => {
     await page.goto("https://demo.evinced.com/");
   });
 
-  test.afterEach(async ({}) => {
-    const evReport = "./test-results/evStartStop.html";
+  test.afterEach(async ({}, testInfo) => {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-"); // Get time if you want to use it
+    const testName = testInfo.title.replace(/\s+/g, "_"); // Replace spaces with underscores
+    const evReport = `./test-results/${testName}_${timestamp}.html`; // Generate dynamic test naming
+
     // If using upload to platform
-    // await evincedService.evStop({ uploadToPlatform: true });
     const issues = await evincedService.evStop({ uploadToPlatform: true });
     await evincedService.evSaveFile(issues, "html", evReport);
     expect(existsSync(evReport)).toBeTruthy();

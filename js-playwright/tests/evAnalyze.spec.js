@@ -8,6 +8,7 @@ test.describe("Evinced evAnalyze", () => {
     const evincedService = new EvincedSDK(page);
     await page.goto("https://demo.evinced.com/");
     const issues = await evincedService.evAnalyze();
+    console.log("Issues =", issues);
     await evincedService.evSaveFile(issues, "html", evReport);
     expect(existsSync(evReport)).toBeTruthy();
   });
