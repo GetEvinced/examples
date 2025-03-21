@@ -1,0 +1,14 @@
+{
+    "sdkLogging": {
+        "enable": true,
+        "level": "debug",
+        "directory": "./logs",
+        "browserLoggingEnabled": true,
+        "systemInformationLoggingEnabled": true,
+        "maxLogLength": 100000
+    },
+    "logging": {
+        "LOGGING_LEVEL": "debug",
+        "ADD_LOGGING_CONTEXT": true
+    }
+}
