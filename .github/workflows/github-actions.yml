@@ -30,6 +30,7 @@ jobs:
           - { language: "javascript", folder: "nextjs-react-unit-tester" }
           - { language: "javascript", folder: "js-wdio-mobile" }
           - { language: "javascript", folder: "js-selenium-web" }
+          - { language: "javascript", folder: "vitest-react-unit-tester" }
 
     steps:
       - uses: act10ns/slack@v2
