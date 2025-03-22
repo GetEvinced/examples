@@ -41,14 +41,6 @@ module.exports = {
   // Global test hooks run before/after each of the tests in your entire test suite.
   // Hooks that run before and after tests can access the browser.
   test: {
-    // before: async t => {
-    //   console.log('Global Test before hook');
-    //   t.ctx.evinced = new EvincedSDK(t);
-    //   await t.ctx.evinced.evStart();
-    // },
-    // after: async t => {
-    //   console.log('Global Test after hook');
-    //   await t.ctx.evinced.evStop();
-    // },
+
   },
 };

@@ -1,4 +1,4 @@
-# Evinced JS TestCafe SDK
+# Evinced JS TestCafe SDK 
 This repository demonstrates the use of the Evinced SDK with examples in JavaScript. These examples showcase best practices for integrating the SDK and running accessibility tests efficiently.
 
 ## Getting started

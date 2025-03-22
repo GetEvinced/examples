@@ -1,27 +1,11 @@
 {
     "uploadToPlatformOptions": {
         "enableUploadToPlatform": true,
-        "setUploadToPlatformDefault": false
+        "setUploadToPlatformDefault": true
     },
     "enableScreenshots": true,
-    "skipValidations": [
-        {
-            "selector": "",
-            "urlRegex": "",
-            "validationTypes": []
-            
-        }
-    ],
     "logging": {
         "LOGGING_LEVEL": "debug",
         "ADD_LOGGING_CONTEXT": true
-    },
-    "sdkLogging": {
-        "enable": true, 
-        "level": "debug", 
-        "directory": "./logs", 
-        "browserLoggingEnabled": true, 
-        "systemInformationLoggingEnabled": true, 
-        "maxLogLength": 1000 
     }
 }

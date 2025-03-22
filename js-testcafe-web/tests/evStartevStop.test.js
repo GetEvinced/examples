@@ -29,7 +29,7 @@ test('Testing evStart and evStop', async t => {
 
     // Conclude the scan and store the issues found
     const issues = await evinced.evStop();
-    // using evSaveFile to store file locally
+    // Using evSaveFile to store file locally
     await evinced.evSaveFile(issues, "html", evReport);
 
 });

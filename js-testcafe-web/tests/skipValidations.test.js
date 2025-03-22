@@ -32,16 +32,16 @@ test("Testing skipValidations", async (t) => {
         .expect(ClientFunction(() => document.title)())
         .eql("Home | Evinced, Demo site");
       
-    // const BASE_FORM_SELECTOR =
-    //   "#gatsby-focus-wrapper > main > div.wrapper-banner > div.filter-container";
-    // const SELECT_HOME_DROPDOWN = Selector(`${BASE_FORM_SELECTOR} > div:nth-child(1) > div > div.dropdown.line`);
-    // const SELECT_WHERE_DROPDOWN = Selector(`${BASE_FORM_SELECTOR} > div:nth-child(2) > div > div.dropdown.line`);
-    // const TINY_HOME_OPTION = Selector(`${BASE_FORM_SELECTOR} > div:nth-child(1) > div > ul > li:nth-child(2)`);
-    // const EAST_COST_OPTION = Selector(`${BASE_FORM_SELECTOR} > div:nth-child(2) > div > ul > li:nth-child(3)`);
+    const BASE_FORM_SELECTOR =
+      "#gatsby-focus-wrapper > main > div.wrapper-banner > div.filter-container";
+    const SELECT_HOME_DROPDOWN = Selector(`${BASE_FORM_SELECTOR} > div:nth-child(1) > div > div.dropdown.line`);
+    const SELECT_WHERE_DROPDOWN = Selector(`${BASE_FORM_SELECTOR} > div:nth-child(2) > div > div.dropdown.line`);
+    const TINY_HOME_OPTION = Selector(`${BASE_FORM_SELECTOR} > div:nth-child(1) > div > ul > li:nth-child(2)`);
+    const EAST_COST_OPTION = Selector(`${BASE_FORM_SELECTOR} > div:nth-child(2) > div > ul > li:nth-child(3)`);
 
-    // await t.click(SELECT_HOME_DROPDOWN);
-    // await t.click(TINY_HOME_OPTION);
-    // await t.click(SELECT_WHERE_DROPDOWN);
-    // await t.click(EAST_COST_OPTION);
+    await t.click(SELECT_HOME_DROPDOWN);
+    await t.click(TINY_HOME_OPTION);
+    await t.click(SELECT_WHERE_DROPDOWN);
+    await t.click(EAST_COST_OPTION);
 
 });

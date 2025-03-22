@@ -1,5 +1,5 @@
 
-## exclude these things
+## exclude these things 
 .DS_Store
 logs
 /tests/results/*

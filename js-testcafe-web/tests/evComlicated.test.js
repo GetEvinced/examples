@@ -23,7 +23,7 @@ fixture`Upload to platfrom`
     });
 
 test("Complicated Example", async (t) => {
-    //to utilize skip validations in a test, pass in skipSelector variable to skipValidations to exclude selectors you don't want crowding your report
+    // To utilize skip validations in a test, pass in skipSelector variable to skipValidations to exclude selectors you don't want crowding your report
     // example: const issues = await evinced.evAnalyze({ skipValidations: [skipSelector] });    
     const skipSelector = {
         selector: '*',

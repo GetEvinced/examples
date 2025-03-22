@@ -20,6 +20,6 @@ test("Testing evAnalyze", async (t) => {
     const issues = await evinced.evAnalyze();
 
     // Store results in the a directory with the test name/date to maintain unique reports 
-    await evinced.evSaveFile(issues, 'html', `tests/results/evinced/${t.test.name}/${Date()}.html`); 
+    await evinced.evSaveFile(issues, 'html', `tests/results/evinced/${t.test.name}/${Date()}.html`);
 });
 
