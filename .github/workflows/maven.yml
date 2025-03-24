@@ -6,17 +6,21 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Java Selenium Examples CI/CD tests
 
 on:
   push:
     branches: [ "javaWorkflow" ]
   pull_request:
     branches: [ "javaWorkflow" ]
+  schedule:
+    - cron: "0 0 * * 1"
 
 jobs:
-  build:
-
+  test:
+    strategy:
+      matrix: { folder: ["java-selenium-web"] }
+      
     runs-on: ubuntu-latest
 
     steps:
