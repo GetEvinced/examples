@@ -47,5 +47,5 @@ jobs:
         EVINCED_SERVICE_ID: ${{ secrets.EVINCED_SERVICE_ID }}
         EVINCED_API_KEY: ${{ secrets.EVINCED_API_KEY }}
         EVINCED_AUTH_TOKEN: ${{ secrets.EVINCED_AUTH_TOKEN }}
-        run: | 
+      run: | 
           mvn clean test
