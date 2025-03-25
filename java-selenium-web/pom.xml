@@ -19,21 +19,21 @@
   </properties>
 
   <!-- EXAMPLE ONLY This should be in your ~/.m2/settings.xml file https://maven.apache.org/settings.html -->
-  <!-- <servers>
+  <servers>
     <server>
       <id>evinced-repository</id>
         <username>${env.JFROG_USER}</username>
         <password>${env.JFROG_PW}</password>
     </server>
-  </servers> -->
+  </servers>
 
   <repositories>
   <!-- EXAMPLE ONLY This should probably be in your ~/.m2/settings.xml file https://maven.apache.org/settings.html -->
-<!--    <repository>-->
-<!--      <id>evinced-repository</id>-->
-<!--      <name>Evinced Jfrog Repo</name>-->
-<!--      <url>https://evinced.jfrog.io/artifactory/restricted-maven-local/</url>-->
-<!--    </repository>-->
+   <repository>
+      <id>evinced-repository</id>
+     <name>Evinced Jfrog Repo</name>
+     <url>https://evinced.jfrog.io/artifactory/restricted-maven-local/</url>
+   </repository> 
 
     <repository>
         <id>jitpack.io</id>
