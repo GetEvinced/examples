@@ -41,6 +41,5 @@ module.exports = {
   // Global test hooks run before/after each of the tests in your entire test suite.
   // Hooks that run before and after tests can access the browser.
   test: {
-
   },
 };

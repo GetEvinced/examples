@@ -1,7 +1,5 @@
-import { Selector, test } from 'testcafe';
-const { EvincedSDK} = require("@evinced/js-testcafe-sdk");
-const { fixture } = require("testcafe");
-const { ClientFunction } = require("testcafe");
+import { EvincedSDK } from "@evinced/js-testcafe-sdk";
+import { Selector, test, fixture, ClientFunction } from 'testcafe';
 
 
 let evinced;
