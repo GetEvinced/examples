@@ -18,6 +18,11 @@
     "systemInformationLoggingEnabled": true,
     "maxLogLength": 10000
   },
+   "recordingService": {
+    "ENABLE_DEBOUNCE_NEW_SELECTORS": false,
+    "DEBOUNCE_NEW_SELECTORS_MS": 500,
+    "DELAY_MODE": "throttle"
+  },
   "toggles": {
     "USE_AXE_NEEDS_REVIEW": false,
     "USE_AXE_BEST_PRACTICES": false,
