@@ -23,7 +23,7 @@
     "test menu": "jest nextjs-react-unit-tester/components/Menu.test.js",
     "test menubutton": "jest nextjs-react-unit-tester/components/MenuButton.test.js",
     "test meter": "jest nextjs-react-unit-tester/components/Meter.test.js",
-    "test modal": "jest nextjs-react-unit-tester/components/Modal.test.js", 
+    "test modal": "jest nextjs-react-unit-tester/components/Modal.test.js",
     "test multithumbslider": "jest nextjs-react-unit-tester/components/MultiThumbSlider.test.js",
     "test popup": "jest nextjs-react-unit-tester/components/Popup.test.js",
     "test radiogroup": "jest nextjs-react-unit-tester/components/RadioGroup.test.js",
@@ -38,7 +38,7 @@
     "test toggleswitch": "jest nextjs-react-unit-tester/components/ToggleSwitch.test.js"
   },
   "dependencies": {
-    "@evinced/unit-tester": "^2.15.0",
+    "@evinced/unit-tester": "^2.21.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/user-event": "14.5.2",
     "next": "15.2.0",
