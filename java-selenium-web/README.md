@@ -7,7 +7,7 @@ Developer Docs: https://developer.evinced.com/sdks-for-web-apps/selenium-java-sd
 ```
 EvincedConfiguration evincedConfiguration = new EvincedConfiguration();
 EvincedWebDriver evincedDriver = new EvincedWebDriver(driver, evincedConfiguration);
-configuration.setLoggingConfiguration(LoggingConfiguration.builder()
+evincedConfiguration.setLoggingConfiguration(LoggingConfiguration.builder()
         .loggingEnabled(false) // enables/disables logging. Overrides the environment variable, if set.
         .loggingLevel("error") // sets the general logging level.
         .logsFolder("target/logs/evinced/debug_logs_") // updates the logging folder
