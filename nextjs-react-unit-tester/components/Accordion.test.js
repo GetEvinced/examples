@@ -22,8 +22,6 @@ describe("Accordion Evinced Test", () => {
       }
     );
 
-    EvincedUT.analyzeCom
-
     expect(results).toHaveNoFailures();
   });
 });
