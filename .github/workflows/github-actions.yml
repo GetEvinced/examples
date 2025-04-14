@@ -73,6 +73,13 @@ jobs:
           cd ${{ matrix.language-folder.folder }}
           npx playwright install
 
+      - name: Install matching Chromedriver
+        if: matrix.language-folder.folder == 'js-selenium-web'
+        run: |
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1)
+          echo "Detected Chrome version: $CHROME_VERSION"
+          npm install chromedriver@$CHROME_VERSION
+
       - name: Run Evinced Smoke tests
         id: run-tests
         env:
