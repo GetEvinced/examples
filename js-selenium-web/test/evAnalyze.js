@@ -1,5 +1,6 @@
 import { Builder } from "selenium-webdriver";
 import * as chrome from "selenium-webdriver/chrome.js";
+import chromedriver from "chromedriver"; // new
 import assert from "assert";
 import pkg from "@evinced/js-selenium-sdk";
 const { EvincedSDK, setCredentials } = pkg;
@@ -13,10 +14,15 @@ describe("Demo page", () => {
   it("Demo page. evAnalyze", async () => {
     const options = new chrome.Options();
     options.addArguments("--headless");
+
+    const service = new chrome.ServiceBuilder(chromedriver.path); 
+
     const driver = await new Builder()
       .forBrowser("chrome")
       .setChromeOptions(options)
+      .setChromeService(service)
       .build();
+
     const evincedService = new EvincedSDK(driver);
     await driver.get("https://demo.evinced.com/");
     const issues = await evincedService.evAnalyze();
