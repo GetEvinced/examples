@@ -7,12 +7,12 @@
     "rules": {}
   },
   "logging": {
-    "LOGGING_LEVEL": "debug",
+    "LOGGING_LEVEL": "trace",
     "ADD_LOGGING_CONTEXT": true
   },
   "sdkLogging": {
     "enable": false,
-    "level": "debug",
+    "level": "trace",
     "directory": "./logs",
     "browserLoggingEnabled": true,
     "systemInformationLoggingEnabled": true,
