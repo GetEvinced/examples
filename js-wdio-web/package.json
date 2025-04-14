@@ -10,6 +10,6 @@
     "wdio": "wdio run ./wdio.conf.js"
   },
   "dependencies": {
-    "@evinced/webdriverio-sdk": "^2.24.0"
+    "@evinced/webdriverio-sdk": "^2.26.0"
   }
 }
