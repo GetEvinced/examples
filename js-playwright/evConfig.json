@@ -12,6 +12,7 @@
   },
   "sdkLogging": {
     "enable": false,
+    "performance": true,
     "level": "trace",
     "directory": "./logs",
     "browserLoggingEnabled": true,
