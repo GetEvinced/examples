@@ -7,16 +7,21 @@
     "rules": {}
   },
   "logging": {
-    "LOGGING_LEVEL": "debug",
+    "LOGGING_LEVEL": "trace",
     "ADD_LOGGING_CONTEXT": true
   },
   "sdkLogging": {
     "enable": false,
-    "level": "debug",
+    "level": "trace",
     "directory": "./logs",
     "browserLoggingEnabled": true,
     "systemInformationLoggingEnabled": true,
     "maxLogLength": 10000
+  },
+   "recordingService": {
+    "ENABLE_DEBOUNCE_NEW_SELECTORS": false,
+    "DEBOUNCE_NEW_SELECTORS_MS": 500,
+    "DELAY_MODE": "throttle"
   },
   "toggles": {
     "USE_AXE_NEEDS_REVIEW": false,
