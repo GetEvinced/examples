@@ -15,7 +15,7 @@ describe("Datagrid Accessibility", () => {
     // I filter on the results to find the errors
     const errors = results.filter((error) => error.pass === false);
     // console.log(errors);
-    // My example has 3 errors, so to make the test pass, we pass the length of 3 here
+    // My example has 4 errors, so to make the test pass, we pass the length of 3 here
     expect(errors).toHaveLength(4);
     // console.log(results);
   });
