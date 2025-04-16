@@ -5,5 +5,5 @@ configure({
   serviceAccountId: process.env.EVINCED_SERVICE_ID,
   serviceAccountSecret: process.env.EVINCED_API_KEY,
   // you can use an offline token here as well
-  // offlineToken: ""
+  // offlineToken: process.env.EVINCED_OFFLINE_UT_TOKEN
 });

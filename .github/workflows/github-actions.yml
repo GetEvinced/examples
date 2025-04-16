@@ -30,6 +30,7 @@ jobs:
           - { language: "javascript", folder: "nextjs-react-unit-tester" }
           - { language: "javascript", folder: "js-wdio-mobile" }
           - { language: "javascript", folder: "js-selenium-web" }
+          - { language: "javascript", folder: "vitest-react-unit-tester" }
 
     steps:
       - uses: act10ns/slack@v2
@@ -72,6 +73,13 @@ jobs:
           cd ${{ matrix.language-folder.folder }}
           npx playwright install
 
+      - name: Install matching Chromedriver
+        if: matrix.language-folder.folder == 'js-selenium-web'
+        run: |
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1)
+          echo "Detected Chrome version: $CHROME_VERSION"
+          npm install chromedriver@$CHROME_VERSION
+
       - name: Run Evinced Smoke tests
         id: run-tests
         env:
@@ -98,6 +106,9 @@ jobs:
             npm test
           elif [ "${{ matrix.language-folder.folder }}" == "nextjs-react-unit-tester" ]; then
             echo "Running Nextjs Jest Unit Tester tests"
+            npm test
+          elif [ "${{ matrix.language-folder.folder }}" == "vitest-react-unit-tester" ]; then
+            echo "Running Vitest Unit Tester tests"
             npm test
           else
             echo "Running standard tests"

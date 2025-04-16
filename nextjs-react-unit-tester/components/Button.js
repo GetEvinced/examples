@@ -5,6 +5,8 @@ const Button = ({ openModal }) => {
     <button
       id="openButton"
       className="openButton"
+      aria-label="button"
+      role="button"
       onClick={openModal}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
