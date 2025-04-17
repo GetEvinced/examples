@@ -1,7 +1,9 @@
 import "./commands";
 import Evinced from "@evinced/cypress-sdk";
 
-Evinced.init();
+Evinced.init({
+  enableScreenshots: true
+});
 
 Evinced.setCredentials({
   serviceId: Cypress.env("serviceId"),
