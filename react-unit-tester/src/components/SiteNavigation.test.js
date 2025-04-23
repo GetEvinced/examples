@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import SiteNavigation from "./SiteNavigation";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Site Navigation component accessibility test", () => {
   it("analyzes the site navigation using EvincedUT", async () => {

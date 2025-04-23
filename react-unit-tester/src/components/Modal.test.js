@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Modal } from "./Modal";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 // jest.setTimeout(10000);
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 import Disclosure from "./Disclosure";
 
 describe("Disclosure Accessibility", () => {

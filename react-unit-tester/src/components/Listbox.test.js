@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Listbox from "./Listbox";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 // Example taken from https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-rearrangeable/
 jest.setTimeout(15000)

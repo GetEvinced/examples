@@ -6,7 +6,7 @@ import "@testing-library/jest-dom";
 
 import * as React from "react";
 import { act } from "react-dom/test-utils";
-import { configure } from "@evinced/unit-tester";
+import { configure } from "@evinced/unit-tester-sdk";
 
 configure({
   serviceAccountId: process.env.EVINCED_SERVICE_ID,

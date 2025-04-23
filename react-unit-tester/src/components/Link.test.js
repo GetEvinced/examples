@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Link from "./Link";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Link component accessibility test", () => {
   it("renders the component correctly", () => {

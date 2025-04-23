@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Table from "./Table";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Table component accessibility test", () => {
   it("analyzes the table component using EvincedUT", async () => {

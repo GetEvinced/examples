@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { Breadcrumbs } from "./Breadcrumbs";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Breadcrumbs", () => {
   it("renders breadcrumbs with items", async () => {

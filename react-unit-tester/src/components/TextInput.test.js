@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import TextInput from "./TextInput";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Text Input component accessibility test", () => {
   it("analyzes the text input using EvincedUT", async () => {

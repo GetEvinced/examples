@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 import Checkbox from "./Checkbox";
 
 describe("Checkbox Accessibility Test", () => {

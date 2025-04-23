@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import TabList from "./TabList";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Tab List component accessibility test", () => {
   it("analyzes the tab list using EvincedUT", async () => {

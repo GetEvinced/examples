@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Slider from "./Slider";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Slider component accessibility test", () => {
   it("analyzes the slider component using EvincedUT", async () => {

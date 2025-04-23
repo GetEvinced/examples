@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import RadioGroup from "./RadioGroup";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Radio Group component accessibility test", () => {
   it("analyzes the radio group using EvincedUT", async () => {

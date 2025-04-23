@@ -1,11 +1,11 @@
 import React from "react";
 import { render, waitFor, screen } from "@testing-library/react";
 import Feed from "./Feed";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 // this example creates a dummy feed, more info on what actually is a feed: https://www.w3.org/html/wg/wiki/Feed.html
 
-jest.mock("@evinced/unit-tester", () => ({
+jest.mock("@evinced/unit-tester-sdk", () => ({
   analyzeFeed: jest.fn(),
 }));
 

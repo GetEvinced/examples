@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Meter from "./Meter";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Meter component accessibility test", () => {
   it("analyzes the meter component using EvincedUT", async () => {

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import ToggleButton from "./ToggleButton";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Toggle Button component accessibility test", () => {
   it("analyzes the toggle button using EvincedUT", async () => {

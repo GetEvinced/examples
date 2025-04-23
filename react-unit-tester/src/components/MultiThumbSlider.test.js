@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import MultiThumbSlider from "./MultiThumbSlider";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 describe("Multi Thumb Slider component accessibility test", () => {
   it("analyzes the multi-thumb slider using EvincedUT", async () => {

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Switch from "./Switch";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 
 jest.setTimeout(30000);
 

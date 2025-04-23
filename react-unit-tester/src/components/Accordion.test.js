@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import EvincedUT from "@evinced/unit-tester";
+import EvincedUT from "@evinced/unit-tester-sdk";
 import Accordion from "./Accordion";
 
 describe("Accordion Evinced Test", () => {
