@@ -1,10 +1,10 @@
 context("Evinced Demo Site tests", () => {
-  before(() => {
+  beforeEach(() => {
     // Start the Evinced engine
     cy.evStart();
   });
 
-  after(() => {
+  afterEach(() => {
     // Conclude the scan, print issues to cy.log with logIssues and print the report JSON object to browser's console
     cy.evStop({ logIssues: true }).should((report) => {
       console.log(JSON.stringify(report, null, 2));

@@ -63,9 +63,13 @@
               "target": "Package",
               "version": "[2.13.1, )"
             },
+            "Selenium.Support": {
+              "target": "Package",
+              "version": "[4.31.0, )"
+            },
             "Selenium.WebDriver": {
               "target": "Package",
-              "version": "[4.23.0, )"
+              "version": "[4.31.0, )"
             },
             "coverlet.collector": {
               "target": "Package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SitXBIRt/H/7nstKPMqFGXrdPygcgDf9TX5PTHgKXzObQWKCwBPbahP6/wq9d6BhKW0r2/1uv6kRdI6JXBBAEQ==",
+  "dgSpecHash": "+5LDSFQkRHx4ard4r2Nc0Ev4BvSeAZy3UhIgiRhIjKEM7jKbGklXARSEyP20fzirgc5vOKwdHUclXZYveYecIw==",
   "success": true,
   "projectFilePath": "/Users/shane/Documents/support-golden-examples/evinced-dot-net/evinced-dot-net.csproj",
   "expectedPackageFiles": [
@@ -28,10 +28,13 @@
     "/Users/shane/.nuget/packages/nunit/4.3.2/nunit.4.3.2.nupkg.sha512",
     "/Users/shane/.nuget/packages/nunit3testadapter/5.0.0/nunit3testadapter.5.0.0.nupkg.sha512",
     "/Users/shane/.nuget/packages/selenium.cs.sdk/2.13.1/selenium.cs.sdk.2.13.1.nupkg.sha512",
-    "/Users/shane/.nuget/packages/selenium.webdriver/4.23.0/selenium.webdriver.4.23.0.nupkg.sha512",
+    "/Users/shane/.nuget/packages/selenium.support/4.31.0/selenium.support.4.31.0.nupkg.sha512",
+    "/Users/shane/.nuget/packages/selenium.webdriver/4.31.0/selenium.webdriver.4.31.0.nupkg.sha512",
     "/Users/shane/.nuget/packages/system.diagnostics.diagnosticsource/5.0.0/system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
     "/Users/shane/.nuget/packages/system.identitymodel.tokens.jwt/8.3.0/system.identitymodel.tokens.jwt.8.3.0.nupkg.sha512",
-    "/Users/shane/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512"
+    "/Users/shane/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512",
+    "/Users/shane/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
+    "/Users/shane/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512"
   ],
   "logs": []
 }

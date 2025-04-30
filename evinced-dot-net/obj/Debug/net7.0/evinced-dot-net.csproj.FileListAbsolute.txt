@@ -45,8 +45,11 @@
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/nunit.framework.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/nunit.framework.legacy.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Selenium.CS.SDK.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/WebDriver.Support.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/WebDriver.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/System.Text.Encodings.Web.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/System.Text.Json.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/cs/Microsoft.Testing.Extensions.Telemetry.resources.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/de/Microsoft.Testing.Extensions.Telemetry.resources.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/es/Microsoft.Testing.Extensions.Telemetry.resources.dll
@@ -177,6 +180,7 @@
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/tr/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.csproj.CopyComplete
