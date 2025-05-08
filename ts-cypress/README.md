@@ -18,6 +18,8 @@ To run the tests, ensure you are in the "js-cypress" directory and use the follo
 3. Ensure you add your `.npmrc` file and credentials
 4. If everything installed, you are ready to run `npx cypress run`
 
+To run individual tests run `npx cypress run --spec "cypress/e2e/your-test-file.cy.js"`
+
 ## Testing Framework
 
 This repository utilizes [Cypress](https://docs.cypress.io/app/end-to-end-testing/writing-your-first-end-to-end-test) to test React-based components that follow best practices with Evinced.
