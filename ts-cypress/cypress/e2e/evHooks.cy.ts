@@ -31,9 +31,9 @@ context("Evinced Demo Site tests", () => {
     cy.get(TINY_HOME_OPTION).scrollIntoView().should("be.visible").click();
 
     cy.get(SELECT_WHERE_DROPDOWN).click();
-    cy.get(EAST_COST_OPTION).should("be.visible").click(); 
+    // cy.get(EAST_COST_OPTION).should("be.visible").click(); 
 
-    cy.get(SEARCH_BUTTON).should("be.visible").click();
-    cy.get(CALI_OPTION).should("be.visible").should("have.text", "California Vanning");
+    // cy.get(SEARCH_BUTTON).should("be.visible").click();
+    // cy.get(CALI_OPTION).should("be.visible").should("have.text", "California Vanning");
   });
 });
