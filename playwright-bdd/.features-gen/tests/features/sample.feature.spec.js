@@ -1,4 +1,4 @@
-// Generated from: sample.feature
+// Generated from: tests/features/sample.feature
 import { test } from "playwright-bdd";
 
 test.describe('Playwright site', () => {
@@ -18,7 +18,7 @@ test.afterEach('AfterEach Hooks', ({ $afterEach }) => {});
 
 test.use({
   $test: ({}, use) => use(test),
-  $uri: ({}, use) => use('sample.feature'),
+  $uri: ({}, use) => use('tests/features/sample.feature'),
   $bddFileData: ({}, use) => use(bddFileData),
   $beforeEachFixtures: ({ page }, use) => use({ page }),
 });
