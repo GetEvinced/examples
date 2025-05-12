@@ -24,9 +24,11 @@ context("Evinced Demo Site tests", () => {
     const SELECT_WHERE_DROPDOWN = `${BASE_FORM_SELECTOR} > div:nth-child(2) > div > div.dropdown.line`;
     const TINY_HOME_OPTION = `${BASE_FORM_SELECTOR} > div:nth-child(1) > div > ul > li:nth-child(2)`;
     const EAST_COST_OPTION = `${BASE_FORM_SELECTOR} > div:nth-child(2) > div > ul > li:nth-child(3)`;
+
     cy.get(SELECT_HOME_DROPDOWN).click();
-    cy.get(TINY_HOME_OPTION).click();
+    cy.get(TINY_HOME_OPTION).should("be.visible").click();
+
     cy.get(SELECT_WHERE_DROPDOWN).click();
-    cy.get(EAST_COST_OPTION).click();
+    cy.get(EAST_COST_OPTION).should("be.visible").click(); 
   });
 });
