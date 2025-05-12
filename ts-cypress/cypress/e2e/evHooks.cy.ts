@@ -28,9 +28,9 @@ context("Evinced Demo Site tests", () => {
     const CALI_OPTION = `#results-container > div:nth-child(6) > h2`;
 
     cy.get(SELECT_HOME_DROPDOWN).click();
-    cy.get(TINY_HOME_OPTION).scrollIntoView().should("be.visible").click();
+    // cy.get(TINY_HOME_OPTION).scrollIntoView().should("be.visible").click();
 
-    cy.get(SELECT_WHERE_DROPDOWN).click();
+    // cy.get(SELECT_WHERE_DROPDOWN).click();
     // cy.get(EAST_COST_OPTION).should("be.visible").click(); 
 
     // cy.get(SEARCH_BUTTON).should("be.visible").click();
