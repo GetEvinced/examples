@@ -9,3 +9,4 @@ react-unit-tester/.cache
 js-wdio-mobile/evinced-reports
 evinced-dot-net/sdk
 evinced-dot-net/bin
+playwright-bdd/evinced-reports
