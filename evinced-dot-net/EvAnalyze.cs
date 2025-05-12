@@ -7,10 +7,10 @@ using Evinced.SDK;
 namespace EvincedCSharpTests
 {
     [TestFixture]
-    public class AccessibilityTests
+    public class EvAnalyzeTest
     {
         [Test]
-        public void EvAnalyzeTest()
+        public void EvAnalyzeEx()
         {
             EvincedConfig.Initialize();
 
