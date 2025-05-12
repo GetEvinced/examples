@@ -1,8 +1,3 @@
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.csproj.AssemblyReference.cache
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.GeneratedMSBuildEditorConfig.editorconfig
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.AssemblyInfoInputs.cache
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.AssemblyInfo.cs
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.csproj.CoreCompileInputs.cache
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/selenium-manager/linux/selenium-manager
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/selenium-manager/macos/selenium-manager
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/selenium-manager/windows/selenium-manager.exe
@@ -180,12 +175,17 @@
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/tr/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.csproj.AssemblyReference.cache
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.GeneratedMSBuildEditorConfig.editorconfig
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.AssemblyInfoInputs.cache
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.AssemblyInfo.cs
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.csproj.CoreCompileInputs.cache
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.csproj.CopyComplete
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/refint/evinced-dot-net.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.pdb
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.genruntimeconfig.cache
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/ref/evinced-dot-net.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/System.IO.Pipelines.dll

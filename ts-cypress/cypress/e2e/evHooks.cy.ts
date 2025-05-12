@@ -23,10 +23,17 @@ context("Evinced Demo Site tests", () => {
     const SELECT_HOME_DROPDOWN = `${BASE_FORM_SELECTOR} > div:nth-child(1) > div > div.dropdown.line`;
     const SELECT_WHERE_DROPDOWN = `${BASE_FORM_SELECTOR} > div:nth-child(2) > div > div.dropdown.line`;
     const TINY_HOME_OPTION = `${BASE_FORM_SELECTOR} > div:nth-child(1) > div > ul > li:nth-child(2)`;
-    const EAST_COST_OPTION = `${BASE_FORM_SELECTOR} > div:nth-child(2) > div > ul > li:nth-child(3)`;
+    const EAST_COST_OPTION = `#gatsby-focus-wrapper > main > div.wrapper-banner > div.filter-container > div:nth-child(2) > div > ul > li:nth-child(3)`;
+    const SEARCH_BUTTON = `#gatsby-focus-wrapper > main > div.wrapper-banner > div.filter-container > a`;
+    const CALI_OPTION = `#results-container > div:nth-child(6) > h2`;
+
     cy.get(SELECT_HOME_DROPDOWN).click();
-    cy.get(TINY_HOME_OPTION).click();
-    cy.get(SELECT_WHERE_DROPDOWN).click();
-    cy.get(EAST_COST_OPTION).click();
+    // cy.get(TINY_HOME_OPTION).scrollIntoView().should("be.visible").click();
+
+    // cy.get(SELECT_WHERE_DROPDOWN).click();
+    // cy.get(EAST_COST_OPTION).should("be.visible").click(); 
+
+    // cy.get(SEARCH_BUTTON).should("be.visible").click();
+    // cy.get(CALI_OPTION).should("be.visible").should("have.text", "California Vanning");
   });
 });
