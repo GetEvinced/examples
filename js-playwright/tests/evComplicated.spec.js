@@ -9,8 +9,10 @@ let evincedService;
 test.describe("Tests the Evinced demo page", () => {
   test.beforeEach(async ({ page }, testInfo) => {
     evincedService = new EvincedSDK(page);
-    // This is specifically for upload to platform, it will name the test using the name in the test string
-    // In this case, we are using evCongfig to use this functionality, can you also use it at the test level by passing a method to evStop
+    // This is specifically for upload to platform, 
+    // it will name the test using the name in the test string
+    // In this case, we are using evCongfig to use this functionality, 
+    // can you also use it at the test level by passing a method to evStop
     // await evincedService.evStop({ uploadToPlatform: true });
     evincedService.testRunInfo.addLabel({
       testName: testInfo.title,
