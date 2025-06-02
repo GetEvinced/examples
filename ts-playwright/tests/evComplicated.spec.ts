@@ -28,7 +28,9 @@ test.describe("Tests the Evinced demo page", () => {
     // If using upload to platform
     // await evincedService.evStop({ uploadToPlatform: true });
     const issues = await evincedService.evStop({ uploadToPlatform: true });
+    console.log("Evinced a11y issues:", issues)
     await evincedService.evSaveFile(issues, "html", evReport);
+    await evincedService.evSaveFile(issues, "json", "./test-results/evStartStop.json")
     expect(existsSync(evReport)).toBeTruthy();
   });
 
