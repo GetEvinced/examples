@@ -20,7 +20,7 @@ describe("Demo page", () => {
     const driver = await new Builder()
       .forBrowser("chrome")
       .setChromeOptions(options)
-      .setChromeService(service) 
+      .setChromeService(service)
       .build();
 
     const evincedService = new EvincedSDK(driver);
