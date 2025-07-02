@@ -3,3 +3,4 @@ authors = ["Max Dobeck"]
 language = "en"
 src = "src"
 title = "Evinced SDK Manual"
+description = "Manual for using and deploying Evinced SDKs. Mobile and Web."

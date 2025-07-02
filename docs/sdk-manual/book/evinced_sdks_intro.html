@@ -3,12 +3,12 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Reporting - Evinced SDK Manual</title>
+        <title>Evinced SDKs - Intro - Evinced SDK Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="">
+        <meta name="description" content="Manual for using and deploying Evinced SDKs. Mobile and Web.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -155,17 +155,49 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="reporting"><a class="header" href="#reporting">Reporting</a></h1>
-
+                        <h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
+<p>Official Development Docs: <a href="https://developer.evinced.com/">https://developer.evinced.com/</a></p>
+<p>All code examples: <a href="https://github.com/GetEvinced/examples/">https://github.com/GetEvinced/examples/</a></p>
+<p>Evinced Software Development Kits(SDKs) will attempt to scan the screen for accessibility issues. A screen is what is available during a test, including the full Document Object Model(DOM) or Accessibility Tree. This could be a mobile app or a browser. In laymans terms it will scan what is available either one time, or continusly when an event<sup class="footnote-reference" id="fr-event-1"><a href="#footnote-event">1</a></sup> fires.</p>
+<p>After the testing/scanning phase is completed a report is produced in a chosen format, typically HTML. This report AKA Artifact is self-contained and includes quick-fixes, in-depth details, and screenshots of the various accessibility issues found.</p>
+<p>Once a report is generated remediation is pursued either by logging the report as a development issue or by quickly performing the suggested changes. Manual confirmation and testing of any fixes is typcially pursued with the Mobile Flow Analyzer (Desktop App) or the Web Flow Analyzer (Chrome Extension).</p>
+<p>This guide will contain code an explanation and code examples for:</p>
+<ul>
+<li>authenticating against Evinced servers</li>
+<li>setting up Continuous mode</li>
+<li>calling a single scan of the current state: Analyze mode</li>
+<li>Miscellanous questions related to edge cases or larger scale usage</li>
+</ul>
+<pre><code class="language-javascript">test.describe("Tests the Evinced demo page", () =&gt; {
+  test.beforeEach(async ({ page }, testInfo) =&gt; {
+    evincedService = new EvincedSDK(page);
+    // This is specifically for upload to platform, 
+    // it will name the test using the name in the test string
+    // In this case, we are using evCongfig to use this functionality, 
+    // can you also use it at the test level by passing a method to evStop
+    // await evincedService.evStop({ uploadToPlatform: true });
+    evincedService.testRunInfo.addLabel({
+      testName: testInfo.title,
+      testFile: testInfo.file,
+      environment: "CI/CD Pipeline",
+    });
+    // Use continuous mode for each test
+    await evincedService.evStart();
+    // Go to the starting url before each test
+    await page.goto("https://demo.evinced.com/");
+  });
+</code></pre>
+<hr>
+<ol class="footnote-definition"><li id="footnote-event">
+<p>A click, tap, keypress, any sort of interaction with the web page or mobile app. <a href="#fr-event-1">↩</a></p>
+</li>
+</ol>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="analyze_mode.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
 
-                            <a rel="next prefetch" href="validations/validations_intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="auth.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -175,11 +207,8 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="analyze_mode.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
 
-                    <a rel="next prefetch" href="validations/validations_intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="auth.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

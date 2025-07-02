@@ -9,7 +9,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="">
+        <meta name="description" content="Manual for using and deploying Evinced SDKs. Mobile and Web.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -157,6 +157,18 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
+<p>Official Development Docs: <a href="https://developer.evinced.com/">https://developer.evinced.com/</a></p>
+<p>All code examples: <a href="https://github.com/GetEvinced/examples/">https://github.com/GetEvinced/examples/</a></p>
+<p>Evinced Software Development Kits(SDKs) will attempt to scan the screen for accessibility issues. A screen is what is available during a test, including the full Document Object Model(DOM) or Accessibility Tree. This could be a mobile app or a browser. In laymans terms it will scan what is available either one time, or continusly when an event<sup class="footnote-reference" id="fr-event-1"><a href="#footnote-event">1</a></sup> fires.</p>
+<p>After the testing/scanning phase is completed a report is produced in a chosen format, typically HTML. This report AKA Artifact is self-contained and includes quick-fixes, in-depth details, and screenshots of the various accessibility issues found.</p>
+<p>Once a report is generated remediation is pursued either by logging the report as a development issue or by quickly performing the suggested changes. Manual confirmation and testing of any fixes is typcially pursued with the Mobile Flow Analyzer (Desktop App) or the Web Flow Analyzer (Chrome Extension).</p>
+<p>This guide will contain code an explanation and code examples for:</p>
+<ul>
+<li>authenticating against Evinced servers</li>
+<li>setting up Continuous mode</li>
+<li>calling a single scan of the current state: Analyze mode</li>
+<li>Miscellanous questions related to edge cases or larger scale usage</li>
+</ul>
 <pre><code class="language-javascript">test.describe("Tests the Evinced demo page", () =&gt; {
   test.beforeEach(async ({ page }, testInfo) =&gt; {
     evincedService = new EvincedSDK(page);
@@ -176,16 +188,143 @@
     await page.goto("https://demo.evinced.com/");
   });
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="authentication"><a class="header" href="#authentication">Authentication</a></h1>
+<hr>
+<ol class="footnote-definition"><li id="footnote-event">
+<p>A click, tap, keypress, any sort of interaction with the web page or mobile app. <a href="#fr-event-1">↩</a></p>
+</li>
+</ol><div style="break-before: page; page-break-before: always;"></div><h1 id="authentication"><a class="header" href="#authentication">Authentication</a></h1>
+<p>Evinced SDKs will always require a <strong>USER ID</strong> and a <strong>SECRET</strong> of some kind. A <strong>SECRET</strong> could be an API key obtained from <a href="https://hub.evinced.com">https://hub.evinced.com</a> or a JSON Web Token(JWT) provided by an evinced employee.</p>
+<blockquote>
+<p>If you are using a API key typically this is referred to as a <code>secret</code> in the <code>setCredentials()</code> method.</p>
+<p>If you are using a JWT then this is referred to as a <code>token</code>.</p>
+</blockquote>
+<p>Use your local Environment variables or whatever current secret management system your team must conform to.</p>
+<h2 id="node-js-environment"><a class="header" href="#node-js-environment">Node JS Environment</a></h2>
+<h3 id="playwright-jsts"><a class="header" href="#playwright-jsts">Playwright JS/TS</a></h3>
+<pre><code class="language-javascript">// js-playwright/global.settings.js
+// If using this approach, make sure you import the file into playwright.config.js/ts
+
+async function globalSetup(config) {
+  try {
+    await setCredentials({
+      serviceId: process.env.EVINCED_SERVICE_ID,
+      secret: process.env.EVINCED_API_KEY,
+    });
+  } catch (error) {
+    throw new Error("Evinced SDK authorization failure.");
+  }
+}
+module.exports = globalSetup;
+
+</code></pre>
+<h3 id="cypress"><a class="header" href="#cypress">Cypress</a></h3>
+<pre><code class="language-javascript">// js-cypress/cypress/support/e2e.js
+Evinced.setCredentials({
+  serviceId: Cypress.env("serviceId"),
+  secret: Cypress.env("secret"),
+});
+</code></pre>
+<h3 id="testcafe"><a class="header" href="#testcafe">Testcafe</a></h3>
+<pre><code class="language-javascript">// js-testcafe-web/.testcaferc.js
+    fixture: {
+      before: async () =&gt; {
+        // Set credentials
+        try {
+          console.log("Accessing Global Credentials");
+
+          await setCredentials({
+            serviceId: process.env.EVINCED_SERVICE_ID,
+            secret: process.env.EVINCED_API_KEY,
+          });
+          // To configure Offline Credentials use below example
+          // await setOfflineCredentials({
+          //   serviceId: process.env.EVINCED_SERVICE_ID,
+          //   token: process.env.EVINCED_AUTH_TOKEN,
+          // });
+        } catch (error) {
+          console.log("Error Evinced SDK authorization failure ", error);
+        }
+      },
+</code></pre>
+<h3 id="wdio-web--mobile"><a class="header" href="#wdio-web--mobile">WDIO Web &amp; Mobile</a></h3>
+<pre><code class="language-javascript">// WEB js-wdio-web/wdio.conf.js
+  before: async function (capabilities, specs) {
+    if (!process.env.EVINCED_SERVICE_ID || !process.env.EVINCED_API_KEY) {
+      console.error("no EVINCED_SERVICE_ID or EVINCED_API_KEY")
+      return;
+    }
+    // Using a before hook, you can authenticate your SDK with your credentials by storing them in your environment variables
+    // If you are testing in CI/CD then use setCredentials, if you are testing locally, you can use setOfflineCredentials
+    await Evinced.setCredentials({
+      serviceId: process.env.EVINCED_SERVICE_ID,
+      secret: process.env.EVINCED_API_KEY,
+    });
+
+      // If provided a JSON Web Token by Evinced use 
+      // the `token` keyword for Offline Authentication
+      // token: process.env.EVINCED_JWT
+      // await Evinced.setOfflineCredentials({
+      //   serviceId: process.env.EVINCED_SERVICE_ID,
+      //   token: process.env.EVINCED_AUTH_TOKEN,
+      // })
+</code></pre>
+<pre><code class="language-javascript">// MOBILE js-wdio-mobile/test/specs/mobileTest.js
+    evincedWdioSDK = new EvincedWdioMobileSdk();
+
+    const isLicenseValid = evincedWdioSDK.setupCredentials(
+      process.env.EVINCED_SERVICE_ID,
+      process.env.EVINCED_API_KEY
+    );
+</code></pre>
+<h3 id="unit-tester"><a class="header" href="#unit-tester">Unit Tester</a></h3>
+<pre><code class="language-javascript">// nextjs-react-unit-tester/jest.setup.js
+import '@testing-library/jest-dom';
+import { configure } from "@evinced/unit-tester";
+
+configure({
+  serviceAccountId: process.env.EVINCED_SERVICE_ID,
+  serviceAccountSecret: process.env.EVINCED_API_KEY,
+  // you can use an offline token here as well
+  // offlineToken: process.env.EVINCED_OFFLINE_UT_TOKEN
+});
+</code></pre>
+<h2 id="java"><a class="header" href="#java">Java</a></h2>
+<h3 id="selenium"><a class="header" href="#selenium">Selenium</a></h3>
+<pre><code class="language-java">// java-selenium-web/src/test/java/com/krissutherland/EvincedSetupTest.java
+        EvincedSDK.setOfflineCredentials(System.getenv("EVINCED_SERVICE_ID"), System.getenv("EVINCED_AUTH_TOKEN"));
+</code></pre>
+<blockquote>
+<p>Defer to the official documentation for each framework for more in-depth coverage. Official Development Docs: <a href="https://developer.evinced.com/">https://developer.evinced.com/</a></p>
+<p>All code examples: <a href="https://github.com/GetEvinced/examples/">https://github.com/GetEvinced/examples/</a></p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="continuous-mode"><a class="header" href="#continuous-mode">Continuous Mode</a></h1>
+<p>Continuous Mode constantly scans at the start point when it is invoked. Then at the end point, when it is disabled it returns a Report. Typically this Report object is saved as an HTML, CSV, or JSON file.</p>
+<p><img src="cont_mode/../assets/evstart-evstop-lifecycle.png" alt="evstop evstart lifecycle drawing" /></p>
+<p>While the Scanning is enabled, events like clicks or keyboard input will be captured and automatically trigger a re-scan. Lets say for for example you have a date picker and when clicked the new date triggers several updates across the components on the page.</p>
+<p>Without continous mode you'd have to know in your tests where this UI change happens, add a method calling for an a11y scan. This is time intensive and error prone.</p>
+<p>With Evinced's Continuous Mode you do not have to manually invoke anything! Turn it on at the beginning of the test then turn it off at the end of the test and collect your report. In this scenario the clicking of the date picker triggeres a rescan and any highlighting, new content, changes of colors, etc is automatically captured.</p>
+<p><img src="cont_mode/../assets/cont-mode-example.png" alt="Continuous mode drawn example" /></p>
+<h2 id="enabling-the-scan"><a class="header" href="#enabling-the-scan">Enabling the Scan</a></h2>
+<h3 id="web"><a class="header" href="#web">Web</a></h3>
+<p>Typically the method name is <code>evStart()</code>. This is the point in time where the Evinced SDK will start "watching" the browser for changes.</p>
+<h3 id="mobile"><a class="header" href="#mobile">Mobile</a></h3>
+<h2 id="ending-the-continuous-scanning"><a class="header" href="#ending-the-continuous-scanning">Ending the Continuous Scanning</a></h2>
+<h3 id="web-1"><a class="header" href="#web-1">Web</a></h3>
+<p><code>evStop()</code> is the method that will halt the scanning and immediately attempt to return a Report. This report is typically best thought of as an array of Accessibility Issues found during the test. Each Issue consists of IDs, Criticality, and other useful pieces of information. Read more in the page about <a href="cont_mode/../the-report.html">Reporting</a>.</p>
+<h3 id="mobile-1"><a class="header" href="#mobile-1">Mobile</a></h3>
+<blockquote>
+<p>Defer to the official documentation for each framework for more in-depth coverage. Official Development Docs: <a href="https://developer.evinced.com/">https://developer.evinced.com/</a></p>
+<p>All code examples: <a href="https://github.com/GetEvinced/examples/">https://github.com/GetEvinced/examples/</a></p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="playwright-js"><a class="header" href="#playwright-js">Playwright JS</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="webdriverio-web"><a class="header" href="#webdriverio-web">WebdriverIO Web</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="webdriverio-mobile"><a class="header" href="#webdriverio-mobile">WebdriverIO Mobile</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="cypress"><a class="header" href="#cypress">Cypress</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cypress-1"><a class="header" href="#cypress-1">Cypress</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="java-selenium"><a class="header" href="#java-selenium">Java Selenium</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cucumber-bdd"><a class="header" href="#cucumber-bdd">Cucumber BDD</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="analyze"><a class="header" href="#analyze">Analyze</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="reporting"><a class="header" href="#reporting">Reporting</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-evinced-report"><a class="header" href="#the-evinced-report">The Evinced Report</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="aggregrated-reporting"><a class="header" href="#aggregrated-reporting">Aggregrated Reporting</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="validations"><a class="header" href="#validations">Validations</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="axe"><a class="header" href="#axe">Axe</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="skip-validations"><a class="header" href="#skip-validations">Skip Validations</a></h1>
@@ -196,6 +335,14 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="toggles"><a class="header" href="#toggles">Toggles</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="upload-to-platform"><a class="header" href="#upload-to-platform">Upload to Platform</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="troubleshooting"><a class="header" href="#troubleshooting">Troubleshooting</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contributing"><a class="header" href="#contributing">Contributing</a></h1>
+<p>Using MDBOOK https://rust-lang.github.io/mdBook/index.html.</p>
+<h3 id="to-build-and-open-the-book-in-a-browser"><a class="header" href="#to-build-and-open-the-book-in-a-browser">To build and open the book in a browser</a></h3>
+<p><code>mdbook build ./docs/sdk-manual --open</code></p>
+<h3 id="if-actively-developing-use-watch-or-serve"><a class="header" href="#if-actively-developing-use-watch-or-serve">If actively developing use watch or serve</a></h3>
+<p><code>mdbook serve ./docs/sdk-manual --open</code> and this will open it in browser.</p>
+<p><code>mdbook watch ./docs/sdk-manual --open</code></p>
+<p>Changes will be waited on but you may have to manually reload. You shouldn't but you may have to. If you want changes to happen quickly then use serve.</p>
 
                     </main>
 

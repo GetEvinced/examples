@@ -3,12 +3,12 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Evinced SDKs - Evinced SDK Manual</title>
+        <title>For Authors - Evinced SDK Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="">
+        <meta name="description" content="Manual for using and deploying Evinced SDKs. Mobile and Web.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -155,35 +155,23 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
-<pre><code class="language-javascript">test.describe("Tests the Evinced demo page", () =&gt; {
-  test.beforeEach(async ({ page }, testInfo) =&gt; {
-    evincedService = new EvincedSDK(page);
-    // This is specifically for upload to platform, 
-    // it will name the test using the name in the test string
-    // In this case, we are using evCongfig to use this functionality, 
-    // can you also use it at the test level by passing a method to evStop
-    // await evincedService.evStop({ uploadToPlatform: true });
-    evincedService.testRunInfo.addLabel({
-      testName: testInfo.title,
-      testFile: testInfo.file,
-      environment: "CI/CD Pipeline",
-    });
-    // Use continuous mode for each test
-    await evincedService.evStart();
-    // Go to the starting url before each test
-    await page.goto("https://demo.evinced.com/");
-  });
-</code></pre>
+                        <h1 id="contributing"><a class="header" href="#contributing">Contributing</a></h1>
+<p>Using MDBOOK https://rust-lang.github.io/mdBook/index.html.</p>
+<h3 id="to-build-and-open-the-book-in-a-browser"><a class="header" href="#to-build-and-open-the-book-in-a-browser">To build and open the book in a browser</a></h3>
+<p><code>mdbook build ./docs/sdk-manual --open</code></p>
+<h3 id="if-actively-developing-use-watch-or-serve"><a class="header" href="#if-actively-developing-use-watch-or-serve">If actively developing use watch or serve</a></h3>
+<p><code>mdbook serve ./docs/sdk-manual --open</code> and this will open it in browser.</p>
+<p><code>mdbook watch ./docs/sdk-manual --open</code></p>
+<p>Changes will be waited on but you may have to manually reload. You shouldn't but you may have to. If you want changes to happen quickly then use serve.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-
-                            <a rel="next prefetch" href="auth.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                            <a rel="prev" href="troubleshooting.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
+
 
                         <div style="clear: both"></div>
                     </nav>
@@ -191,10 +179,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-
-                    <a rel="next prefetch" href="auth.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                    <a rel="prev" href="troubleshooting.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
+
             </nav>
 
         </div>

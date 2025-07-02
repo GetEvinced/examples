@@ -1,5 +1,5 @@
 # Summary
-[Evinced SDKs](./evinced_sdks.md)
+[Evinced SDKs - Intro](./evinced_sdks_intro.md)
 - [Authentication](./auth.md)
 
 # Scanning
@@ -13,7 +13,8 @@
 - [Analyze](./analyze_mode.md)
 
 # Reporting
-- [Reporting](./reporting.md)
+- [The Evinced Report](./the-report.md)
+    - [Aggregrated Reporting](./aggr_reporting.md)
 
 # Validations
 - [Validations](./validations/validations_intro.md)
@@ -21,10 +22,13 @@
     - [Skip Validations](./validations/skip.md)
 
 # Reference
-- [CICD](./continuous_integration.md)
+- [Continuos Integration](./continuous_integration.md)
 - [Config](./config/additional_features.md)
     - [evConfig File](./config/evConfig.md)
     - [Skip Validations](./config/skip_validations.md)
     - [Toggles](./config/toggles.md)
     - [Upload to Platform](./config/upload_to_platform.md)
 - [Troubleshooting](./troubleshooting.md)
+
+# Contributing
+- [For Authors](./contributing.md)
