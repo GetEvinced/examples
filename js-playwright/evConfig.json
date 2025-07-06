@@ -33,5 +33,10 @@
     "ENABLE_SENDING_ENGINE_MATRICES": false
   },
   "skipValidations": [],
-  "enableScreenshots": true
+  "enableScreenshots": true,
+  "reporterOptions": {
+    "reportFormat": "html",
+    "fileName": "aggregatedReportForRun.html",
+    "outputDir": "./evincedAggReports"
+  }
 }
