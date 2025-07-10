@@ -20,7 +20,7 @@
     "maxLogLength": 10000
   },
   "sdk_options": {
-    "usePlaywrightScreenshotCapturing": true
+    "useDefaultScreenshotsCapturing": true
   },
   "recordingService": {
     "ENABLE_DEBOUNCE_NEW_SELECTORS": false,

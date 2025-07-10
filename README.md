@@ -40,3 +40,6 @@ configure({
   serviceAccountSecret: process.env.EVINCED_API_KEY,
 });
 ```
+---
+### Got Questions? 
+Do not hesitate to reach out to the Support team (support@evinced.com)
