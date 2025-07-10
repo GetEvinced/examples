@@ -29,6 +29,11 @@ Evinced.setCredentials({
   secret: Cypress.env("secret"),
 });
 
+Evinced.setUploadToPlatformConfig({
+  enableUploadToPlatform: true,
+  setUploadToPlatformDefault: false,
+});
+
 // ONLY USED OFFLINE CREDENTIALS IF YOU NEED TO ISOLATE AN ISSUE
 
 // Evinced.setOfflineCredentials({
