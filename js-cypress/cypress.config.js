@@ -1,14 +1,12 @@
 const { defineConfig } = require("cypress");
+const Evinced = require("@evinced/cypress-sdk").default;
 
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
       on("task", {
-        uploadToPlatform() {
-          console.log("Uploading...");
-          return null;
-        },
+        uploadToPlatform: Evinced.cyTaskUploadToPlatform,
       });
     },
   },
