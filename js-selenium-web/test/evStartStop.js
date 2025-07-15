@@ -27,6 +27,11 @@ describe("Demo page", () => {
     await evincedService.evStart();
     await driver.get("https://demo.evinced.com/");
     const issues = await evincedService.evStop();
+    evincedService.evSaveFile(
+      issues,
+      "html",
+      "test-results/evAnalyze-report.html"
+    );
     assert.equal(issues.length, 6);
     await driver.quit();
   });

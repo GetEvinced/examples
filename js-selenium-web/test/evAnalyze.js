@@ -15,7 +15,7 @@ describe("Demo page", () => {
     const options = new chrome.Options();
     options.addArguments("--headless");
 
-    const service = new chrome.ServiceBuilder(chromedriver.path); 
+    const service = new chrome.ServiceBuilder(chromedriver.path);
 
     const driver = await new Builder()
       .forBrowser("chrome")
@@ -25,7 +25,16 @@ describe("Demo page", () => {
 
     const evincedService = new EvincedSDK(driver);
     await driver.get("https://demo.evinced.com/");
-    const issues = await evincedService.evAnalyze();
+    const issues = await evincedService.evAnalyze({
+      initOptions: {
+        enableScreenshots: true,
+      },
+    });
+    evincedService.evSaveFile(
+      issues,
+      "html",
+      "test-results/evAnalyze-report.html"
+    );
     assert.equal(issues.length, 6);
     await driver.quit();
   });
