@@ -1,24 +1,295 @@
-[2025-06-24T09:19:28.774] [INFO] default - Setting online credentials...
-[2025-06-24T09:19:28.775] [INFO] default - Getting authentication token online
-[2025-06-24T09:19:29.074] [DEBUG] default - Response status: 200
-[2025-06-24T09:19:29.075] [INFO] default - Credentials have been set
-[2025-06-24T09:19:29.078] [INFO] default - Setting online credentials...
-[2025-06-24T09:19:29.079] [INFO] default - Getting authentication token online
-[2025-06-24T09:19:29.210] [DEBUG] default - Response status: 200
-[2025-06-24T09:19:29.210] [INFO] default - Credentials have been set
-[2025-06-24T09:21:06.840] [INFO] default - Setting online credentials...
-[2025-06-24T09:21:06.841] [INFO] default - Getting authentication token online
-[2025-06-24T09:21:07.106] [DEBUG] default - Response status: 200
-[2025-06-24T09:21:07.106] [INFO] default - Credentials have been set
-[2025-06-24T09:21:07.108] [INFO] default - Setting online credentials...
-[2025-06-24T09:21:07.108] [INFO] default - Getting authentication token online
-[2025-06-24T09:21:07.239] [DEBUG] default - Response status: 200
-[2025-06-24T09:21:07.240] [INFO] default - Credentials have been set
-[2025-06-24T09:21:28.839] [INFO] default - Setting online credentials...
-[2025-06-24T09:21:28.840] [INFO] default - Getting authentication token online
-[2025-06-24T09:21:29.097] [DEBUG] default - Response status: 200
-[2025-06-24T09:21:29.097] [INFO] default - Credentials have been set
-[2025-06-24T09:21:29.099] [INFO] default - Setting online credentials...
-[2025-06-24T09:21:29.099] [INFO] default - Getting authentication token online
-[2025-06-24T09:21:29.231] [DEBUG] default - Response status: 200
-[2025-06-24T09:21:29.231] [INFO] default - Credentials have been set
+[2025-07-15T09:37:41.097] [INFO] default - Setting online credentials...
+[2025-07-15T09:37:41.098] [INFO] default - Getting authentication token online
+[2025-07-15T09:37:41.337] [DEBUG] default - Response status: 200
+[2025-07-15T09:37:41.338] [INFO] default - Credentials have been set
+[2025-07-15T09:37:41.341] [INFO] default - Setting online credentials...
+[2025-07-15T09:37:41.341] [INFO] default - Getting authentication token online
+[2025-07-15T09:37:41.479] [DEBUG] default - Response status: 200
+[2025-07-15T09:37:41.479] [INFO] default - Credentials have been set
+[2025-07-15T09:37:41.998] [INFO] default - Evinced SDK: initializing...
+[2025-07-15T09:37:41.999] [DEBUG] default - AuthData initialized. Checking license
+[2025-07-15T09:37:41.999] [DEBUG] default - Token decoded
+[2025-07-15T09:37:41.999] [DEBUG] default - Token signed
+[2025-07-15T09:37:41.999] [DEBUG] default - Product type approved
+[2025-07-15T09:37:41.999] [DEBUG] default - Service account approved
+[2025-07-15T09:37:42.000] [INFO] default - License approved
+[2025-07-15T09:37:42.000] [DEBUG] default - EngineCommandsExecutor instance reset
+[2025-07-15T09:37:42.000] [DEBUG] default - EngineCommandsExecutor initialized
+[2025-07-15T09:37:42.000] [DEBUG] default - ListenerService initialized
+[2025-07-15T09:37:42.434] [INFO] default - evAnalyze called
+[2025-07-15T09:37:42.434] [INFO] default - Injecting Evinced SDK
+[2025-07-15T09:37:42.437] [INFO] default - Evinced is injected: false
+[2025-07-15T09:37:42.688] [INFO] default - Evinced SDK has been injected
+[2025-07-15T09:37:42.693] [INFO] default - Preparing configuration for engine initialisation
+[2025-07-15T09:37:42.693] [DEBUG] default - Local "evConfig.json" parsed: {"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:37:42.694] [DEBUG] default - Merged configuration: {"rootSelector":"","enableScreenshots":true,"toggles":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":false},"issuesContentPerType":null,"axeIssuesContentPerType":null,"recordingService":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"},"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:37:42.695] [DEBUG] default - Configuration. Session info: {"userId":"js-selenium-sdk-user","serverConfig":{"TOGGLES":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":true},"showDuplicateIssues":true,"RECORDING_SERVICE":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"}}}
+[2025-07-15T09:37:42.695] [DEBUG] default - Configuration. Analysis config: {"analysisId":"9b0b2eb0-cdfb-47b1-98c2-b52d6c82515b","rootSelector":"","licenseData":{"accessToken":"********","tenantId":"18accef9-6075-4ec0-bd6e-14ec182b7fcc"}}
+[2025-07-15T09:37:42.695] [DEBUG] default - Configuration. Analysis persisted data: undefined
+[2025-07-15T09:37:42.695] [DEBUG] default - Configuration. Updates callback: undefined
+[2025-07-15T09:37:42.695] [DEBUG] default - Configuration. Running context: {"hostingProduct":"SELENIUM-JS-SDK","productName":"WEB_SDK","sdkType":"SELENIUM_JS_SDK","hostingProductVersion":"2.3.0"}
+[2025-07-15T09:37:42.695] [DEBUG] default - Checking if Selenium BiDi API is enabled
+[2025-07-15T09:37:42.695] [DEBUG] default - Capabilities: {"map_":{}}
+[2025-07-15T09:37:42.695] [DEBUG] default - BiDi enabled: false
+[2025-07-15T09:37:42.695] [DEBUG] default - Calling "Init analysis client core" command
+[2025-07-15T09:37:42.720] [DEBUG] default - Calling "Run analysis once" command
+[2025-07-15T09:37:43.526] [DEBUG] default - Screenshots map updated
+[2025-07-15T09:37:43.526] [INFO] default - Analysis report received. Analysis finished. Got issues: 6
+[2025-07-15T09:37:43.526] [INFO] default - evSaveFile called with format: html
+[2025-07-15T09:37:43.527] [INFO] default - Saving report to test-results/evAnalyze-report.html in html format
+[2025-07-15T09:37:43.527] [DEBUG] default - The message is too long (13280), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:37:43.527] [DEBUG] default - Report content: Issues: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","customKnowledgeBaseLinks":null,"description":"**Cause:** \nScreen readers are unable to identify that the element is interactive due to missing or incorrect semantics.\n**Effect:** \nScreen reader users may not find the content or may not realize that the the content is interactive.\n**Suggested Solutions:**\nUse native HTML interactive elements such as `<*button*>`, `<*a*>`, `<*select*>`, `<*input*>`. Alternatively, add the appropriate ARIA role that corresponds to the content purpose.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"32c2875d-b5c8-4fc6-a149-6d4dff7b35c0","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-
+[2025-07-15T09:37:43.527] [DEBUG] default - The message is too long (201338), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:37:43.527] [DEBUG] default - Report content: ScreenshotsMap: {"1c3e787f-98af-42a3-ac0e-a19aca00a8f8":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAVFAlgDASIAAhEBAxEB/8QAHgAAAQQDAQEBAAAAAAAAAAAAAAMEBQYC
+[2025-07-15T09:37:43.528] [INFO] default - Saving report to test-results/evAnalyze-report.html with format html
+[2025-07-15T09:37:43.528] [DEBUG] default - The message is too long (13264), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:37:43.528] [DEBUG] default - Issues: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","customKnowledgeBaseLinks":null,"description":"**Cause:** \nScreen readers are unable to identify that the element is interactive due to missing or incorrect semantics.\n**Effect:** \nScreen reader users may not find the content or may not realize that the the content is interactive.\n**Suggested Solutions:**\nUse native HTML interactive elements such as `<*button*>`, `<*a*>`, `<*select*>`, `<*input*>`. Alternatively, add the appropriate ARIA role that corresponds to the content purpose.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"32c2875d-b5c8-4fc6-a149-6d4dff7b35c0","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-dropdown:nth-chi
+[2025-07-15T09:37:43.529] [DEBUG] default - The message is too long (201322), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:37:43.529] [DEBUG] default - Screenshot map: {"1c3e787f-98af-42a3-ac0e-a19aca00a8f8":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAVFAlgDASIAAhEBAxEB/8QAHgAAAQQDAQEBAAAAAAAAAAAAAAMEBQYCBwgBCQr/xABvEAAB
+[2025-07-15T09:37:43.532] [INFO] default - Report successfully saved to test-results/evAnalyze-report.html
+[2025-07-15T09:37:43.959] [INFO] default - Evinced SDK: initializing...
+[2025-07-15T09:37:43.959] [DEBUG] default - AuthData initialized. Checking license
+[2025-07-15T09:37:43.960] [DEBUG] default - Token decoded
+[2025-07-15T09:37:43.960] [DEBUG] default - Token signed
+[2025-07-15T09:37:43.960] [DEBUG] default - Product type approved
+[2025-07-15T09:37:43.960] [DEBUG] default - Service account approved
+[2025-07-15T09:37:43.960] [INFO] default - License approved
+[2025-07-15T09:37:43.960] [DEBUG] default - EngineCommandsExecutor instance reset
+[2025-07-15T09:37:43.960] [DEBUG] default - EngineCommandsExecutor initialized
+[2025-07-15T09:37:43.960] [DEBUG] default - ListenerService initialized
+[2025-07-15T09:37:43.961] [INFO] default - evStart called
+[2025-07-15T09:37:43.961] [INFO] default - Preparing state for continuous analysis
+[2025-07-15T09:37:43.961] [DEBUG] default - Checking if Selenium BiDi API is enabled
+[2025-07-15T09:37:43.961] [DEBUG] default - Capabilities: {"map_":{}}
+[2025-07-15T09:37:43.961] [DEBUG] default - BiDi enabled: false
+[2025-07-15T09:37:43.961] [DEBUG] default - Extending Selenium actions with Evinced logic...
+[2025-07-15T09:37:43.961] [DEBUG] default - Extending action: click
+[2025-07-15T09:37:43.961] [DEBUG] default - `click` Selenium action has been extended with start/stop.
+[2025-07-15T09:37:43.961] [DEBUG] default - Extending action: get
+[2025-07-15T09:37:43.961] [DEBUG] default - `get` Selenium action has been extended.
+[2025-07-15T09:37:43.961] [DEBUG] default - Extending navigation methods: navigate, back, forward, refresh
+[2025-07-15T09:37:43.961] [DEBUG] default - Extending executeScript method
+[2025-07-15T09:37:43.962] [DEBUG] default - Selenium actions have been extended.
+[2025-07-15T09:37:43.962] [INFO] default - Injecting Evinced SDK
+[2025-07-15T09:37:43.965] [INFO] default - Evinced is injected: false
+[2025-07-15T09:37:44.224] [INFO] default - Evinced SDK has been injected
+[2025-07-15T09:37:44.228] [INFO] default - Preparing configuration for engine initialisation
+[2025-07-15T09:37:44.228] [DEBUG] default - Local "evConfig.json" parsed: {"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:37:44.229] [DEBUG] default - Merged configuration: {"rootSelector":"","enableScreenshots":false,"toggles":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":false},"issuesContentPerType":null,"axeIssuesContentPerType":null,"recordingService":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"},"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:37:44.229] [DEBUG] default - Configuration. Session info: {"userId":"js-selenium-sdk-user","serverConfig":{"TOGGLES":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":false},"showDuplicateIssues":true,"RECORDING_SERVICE":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"}}}
+[2025-07-15T09:37:44.229] [DEBUG] default - Configuration. Analysis config: {"analysisId":"f13be033-6e0b-4bef-a4d0-4ab142ab06d0","rootSelector":"","licenseData":{"accessToken":"********","tenantId":"18accef9-6075-4ec0-bd6e-14ec182b7fcc"}}
+[2025-07-15T09:37:44.229] [DEBUG] default - Configuration. Analysis persisted data: undefined
+[2025-07-15T09:37:44.229] [DEBUG] default - Configuration. Updates callback: undefined
+[2025-07-15T09:37:44.229] [DEBUG] default - Configuration. Running context: {"hostingProduct":"SELENIUM-JS-SDK","productName":"WEB_SDK","sdkType":"SELENIUM_JS_SDK","hostingProductVersion":"2.3.0"}
+[2025-07-15T09:37:44.229] [DEBUG] default - Checking if Selenium BiDi API is enabled
+[2025-07-15T09:37:44.229] [DEBUG] default - Capabilities: {"map_":{}}
+[2025-07-15T09:37:44.229] [DEBUG] default - BiDi enabled: false
+[2025-07-15T09:37:44.229] [DEBUG] default - Calling "Init analysis client core" command
+[2025-07-15T09:37:44.240] [INFO] default - Continuous mode is starting...
+[2025-07-15T09:37:44.240] [DEBUG] default - Calling "Start analysis" command
+[2025-07-15T09:37:44.258] [DEBUG] default - ----ACTION CALLED----: "get" was called.
+[2025-07-15T09:37:44.258] [DEBUG] default - Processing the action (before): 'get'.
+[2025-07-15T09:37:44.260] [DEBUG] default - Current URL: data:,
+[2025-07-15T09:37:44.260] [DEBUG] default - Calling the original method get.
+[2025-07-15T09:37:44.686] [DEBUG] default - Processing the action (after): 'get'.
+[2025-07-15T09:37:44.689] [DEBUG] default - Checking if initialization is needed for URL https://demo.evinced.com/
+[2025-07-15T09:37:44.689] [DEBUG] default - URL change detected. Previous URL: data:,, new URL: https://demo.evinced.com/
+[2025-07-15T09:37:44.690] [DEBUG] default - Injection and initialization are needed
+[2025-07-15T09:37:44.691] [DEBUG] default - Performing full inject
+[2025-07-15T09:37:44.691] [INFO] default - Injecting Evinced SDK
+[2025-07-15T09:37:44.692] [INFO] default - Evinced is injected: false
+[2025-07-15T09:37:44.941] [INFO] default - Evinced SDK has been injected
+[2025-07-15T09:37:44.946] [INFO] default - Preparing configuration for engine initialisation
+[2025-07-15T09:37:44.946] [DEBUG] default - Local "evConfig.json" parsed: {"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:37:44.947] [DEBUG] default - Merged configuration: {"rootSelector":"","enableScreenshots":false,"toggles":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":false},"issuesContentPerType":null,"axeIssuesContentPerType":null,"recordingService":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"},"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:37:44.947] [DEBUG] default - Configuration. Session info: {"userId":"js-selenium-sdk-user","serverConfig":{"TOGGLES":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":false},"showDuplicateIssues":true,"RECORDING_SERVICE":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"}}}
+[2025-07-15T09:37:44.947] [DEBUG] default - Configuration. Analysis config: {"analysisId":"3b7d5a63-a7a2-4c15-812b-98410aa566ca","rootSelector":"","licenseData":{"accessToken":"********","tenantId":"18accef9-6075-4ec0-bd6e-14ec182b7fcc"}}
+[2025-07-15T09:37:44.947] [DEBUG] default - Configuration. Analysis persisted data: undefined
+[2025-07-15T09:37:44.947] [DEBUG] default - Configuration. Updates callback: undefined
+[2025-07-15T09:37:44.947] [DEBUG] default - Configuration. Running context: {"hostingProduct":"SELENIUM-JS-SDK","productName":"WEB_SDK","sdkType":"SELENIUM_JS_SDK","hostingProductVersion":"2.3.0"}
+[2025-07-15T09:37:44.947] [DEBUG] default - Checking if Selenium BiDi API is enabled
+[2025-07-15T09:37:44.947] [DEBUG] default - Capabilities: {"map_":{}}
+[2025-07-15T09:37:44.947] [DEBUG] default - BiDi enabled: false
+[2025-07-15T09:37:44.947] [DEBUG] default - Calling "Init analysis client core" command
+[2025-07-15T09:37:44.958] [DEBUG] default - Calling "Start analysis" command
+[2025-07-15T09:37:45.039] [DEBUG] default - Engine prepared. Analysis started
+[2025-07-15T09:37:45.039] [DEBUG] default - After action 'get: processing finished.
+[2025-07-15T09:37:45.039] [INFO] default - evAnalyze called
+[2025-07-15T09:37:45.039] [INFO] default - Injecting Evinced SDK
+[2025-07-15T09:37:45.041] [INFO] default - Evinced is injected: true
+[2025-07-15T09:37:45.041] [INFO] default - Preparing configuration for engine initialisation
+[2025-07-15T09:37:45.041] [DEBUG] default - Local "evConfig.json" parsed: {"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:37:45.041] [DEBUG] default - Merged configuration: {"rootSelector":"","enableScreenshots":true,"toggles":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":false},"issuesContentPerType":null,"axeIssuesContentPerType":null,"recordingService":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"},"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:37:45.041] [DEBUG] default - Configuration. Session info: {"userId":"js-selenium-sdk-user","serverConfig":{"TOGGLES":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":true},"showDuplicateIssues":true,"RECORDING_SERVICE":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"}}}
+[2025-07-15T09:37:45.041] [DEBUG] default - Configuration. Analysis config: {"analysisId":"8d3b8d90-a317-4fc2-b829-d8d11c1fec36","rootSelector":"","licenseData":{"accessToken":"********","tenantId":"18accef9-6075-4ec0-bd6e-14ec182b7fcc"}}
+[2025-07-15T09:37:45.041] [DEBUG] default - Configuration. Analysis persisted data: undefined
+[2025-07-15T09:37:45.041] [DEBUG] default - Configuration. Updates callback: undefined
+[2025-07-15T09:37:45.041] [DEBUG] default - Configuration. Running context: {"hostingProduct":"SELENIUM-JS-SDK","productName":"WEB_SDK","sdkType":"SELENIUM_JS_SDK","hostingProductVersion":"2.3.0"}
+[2025-07-15T09:37:45.041] [DEBUG] default - Checking if Selenium BiDi API is enabled
+[2025-07-15T09:37:45.041] [DEBUG] default - Capabilities: {"map_":{}}
+[2025-07-15T09:37:45.041] [DEBUG] default - BiDi enabled: false
+[2025-07-15T09:37:45.041] [DEBUG] default - Calling "Init analysis client core" command
+[2025-07-15T09:37:45.046] [DEBUG] default - Calling "Run analysis once" command
+[2025-07-15T09:37:45.786] [INFO] default - Analysis report received. Analysis finished. Got issues: 6
+[2025-07-15T09:37:45.786] [INFO] default - evSaveFile called with format: html
+[2025-07-15T09:37:45.786] [INFO] default - Saving report to test-results/evStartStop-report.html in html format
+[2025-07-15T09:37:45.786] [DEBUG] default - The message is too long (12956), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:37:45.786] [DEBUG] default - Report content: Issues: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","customKnowledgeBaseLinks":null,"description":"**Cause:** \nScreen readers are unable to identify that the element is interactive due to missing or incorrect semantics.\n**Effect:** \nScreen reader users may not find the content or may not realize that the the content is interactive.\n**Suggested Solutions:**\nUse native HTML interactive elements such as `<*button*>`, `<*a*>`, `<*select*>`, `<*input*>`. Alternatively, add the appropriate ARIA role that corresponds to the content purpose.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"fba7d76a-b57d-4882-aa99-0652129ca0ad","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-
+[2025-07-15T09:37:45.786] [DEBUG] default - Report content: ScreenshotsMap: {}
+[2025-07-15T09:37:45.786] [INFO] default - Saving report to test-results/evStartStop-report.html with format html
+[2025-07-15T09:37:45.786] [DEBUG] default - The message is too long (12940), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:37:45.786] [DEBUG] default - Issues: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","customKnowledgeBaseLinks":null,"description":"**Cause:** \nScreen readers are unable to identify that the element is interactive due to missing or incorrect semantics.\n**Effect:** \nScreen reader users may not find the content or may not realize that the the content is interactive.\n**Suggested Solutions:**\nUse native HTML interactive elements such as `<*button*>`, `<*a*>`, `<*select*>`, `<*input*>`. Alternatively, add the appropriate ARIA role that corresponds to the content purpose.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"fba7d76a-b57d-4882-aa99-0652129ca0ad","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-dropdown:nth-chi
+[2025-07-15T09:37:45.787] [DEBUG] default - Screenshot map: {}
+[2025-07-15T09:37:45.788] [INFO] default - Report successfully saved to test-results/evStartStop-report.html
+[2025-07-15T09:39:00.777] [INFO] default - Setting online credentials...
+[2025-07-15T09:39:00.777] [INFO] default - Getting authentication token online
+[2025-07-15T09:39:01.024] [DEBUG] default - Response status: 200
+[2025-07-15T09:39:01.024] [INFO] default - Credentials have been set
+[2025-07-15T09:39:01.027] [INFO] default - Setting online credentials...
+[2025-07-15T09:39:01.027] [INFO] default - Getting authentication token online
+[2025-07-15T09:39:01.161] [DEBUG] default - Response status: 200
+[2025-07-15T09:39:01.162] [INFO] default - Credentials have been set
+[2025-07-15T09:39:01.761] [INFO] default - Evinced SDK: initializing...
+[2025-07-15T09:39:01.762] [DEBUG] default - AuthData initialized. Checking license
+[2025-07-15T09:39:01.762] [DEBUG] default - Token decoded
+[2025-07-15T09:39:01.763] [DEBUG] default - Token signed
+[2025-07-15T09:39:01.763] [DEBUG] default - Product type approved
+[2025-07-15T09:39:01.763] [DEBUG] default - Service account approved
+[2025-07-15T09:39:01.763] [INFO] default - License approved
+[2025-07-15T09:39:01.763] [DEBUG] default - EngineCommandsExecutor instance reset
+[2025-07-15T09:39:01.763] [DEBUG] default - EngineCommandsExecutor initialized
+[2025-07-15T09:39:01.763] [DEBUG] default - ListenerService initialized
+[2025-07-15T09:39:02.200] [INFO] default - evAnalyze called
+[2025-07-15T09:39:02.200] [INFO] default - Injecting Evinced SDK
+[2025-07-15T09:39:02.204] [INFO] default - Evinced is injected: false
+[2025-07-15T09:39:02.485] [INFO] default - Evinced SDK has been injected
+[2025-07-15T09:39:02.490] [INFO] default - Preparing configuration for engine initialisation
+[2025-07-15T09:39:02.490] [DEBUG] default - Local "evConfig.json" parsed: {"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:39:02.491] [DEBUG] default - Merged configuration: {"rootSelector":"","enableScreenshots":true,"toggles":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":false},"issuesContentPerType":null,"axeIssuesContentPerType":null,"recordingService":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"},"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:39:02.491] [DEBUG] default - Configuration. Session info: {"userId":"js-selenium-sdk-user","serverConfig":{"TOGGLES":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":true},"showDuplicateIssues":true,"RECORDING_SERVICE":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"}}}
+[2025-07-15T09:39:02.491] [DEBUG] default - Configuration. Analysis config: {"analysisId":"06fc9afc-0b1c-4456-be8c-ffa0af931d4b","rootSelector":"","licenseData":{"accessToken":"********","tenantId":"18accef9-6075-4ec0-bd6e-14ec182b7fcc"}}
+[2025-07-15T09:39:02.491] [DEBUG] default - Configuration. Analysis persisted data: undefined
+[2025-07-15T09:39:02.491] [DEBUG] default - Configuration. Updates callback: undefined
+[2025-07-15T09:39:02.491] [DEBUG] default - Configuration. Running context: {"hostingProduct":"SELENIUM-JS-SDK","productName":"WEB_SDK","sdkType":"SELENIUM_JS_SDK","hostingProductVersion":"2.3.0"}
+[2025-07-15T09:39:02.491] [DEBUG] default - Checking if Selenium BiDi API is enabled
+[2025-07-15T09:39:02.491] [DEBUG] default - Capabilities: {"map_":{}}
+[2025-07-15T09:39:02.491] [DEBUG] default - BiDi enabled: false
+[2025-07-15T09:39:02.491] [DEBUG] default - Calling "Init analysis client core" command
+[2025-07-15T09:39:02.504] [DEBUG] default - Calling "Run analysis once" command
+[2025-07-15T09:39:03.258] [DEBUG] default - Screenshots map updated
+[2025-07-15T09:39:03.258] [INFO] default - Analysis report received. Analysis finished. Got issues: 6
+[2025-07-15T09:39:03.258] [INFO] default - evSaveFile called with format: html
+[2025-07-15T09:39:03.258] [INFO] default - Saving report to test-results/evAnalyze-report.html in html format
+[2025-07-15T09:39:03.258] [DEBUG] default - The message is too long (13280), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:39:03.258] [DEBUG] default - Report content: Issues: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","customKnowledgeBaseLinks":null,"description":"**Cause:** \nScreen readers are unable to identify that the element is interactive due to missing or incorrect semantics.\n**Effect:** \nScreen reader users may not find the content or may not realize that the the content is interactive.\n**Suggested Solutions:**\nUse native HTML interactive elements such as `<*button*>`, `<*a*>`, `<*select*>`, `<*input*>`. Alternatively, add the appropriate ARIA role that corresponds to the content purpose.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"65d91818-10ff-47a0-a4f5-6d4db56f4ae8","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-
+[2025-07-15T09:39:03.260] [DEBUG] default - The message is too long (201298), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:39:03.260] [DEBUG] default - Report content: ScreenshotsMap: {"11f99187-7261-45be-acbf-81f31d628c7d":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAVFAlgDASIAAhEBAxEB/8QAHgAAAQQDAQEBAAAAAAAAAAAAAAMEBQYC
+[2025-07-15T09:39:03.261] [INFO] default - Saving report to test-results/evAnalyze-report.html with format html
+[2025-07-15T09:39:03.261] [DEBUG] default - The message is too long (13264), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:39:03.261] [DEBUG] default - Issues: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","customKnowledgeBaseLinks":null,"description":"**Cause:** \nScreen readers are unable to identify that the element is interactive due to missing or incorrect semantics.\n**Effect:** \nScreen reader users may not find the content or may not realize that the the content is interactive.\n**Suggested Solutions:**\nUse native HTML interactive elements such as `<*button*>`, `<*a*>`, `<*select*>`, `<*input*>`. Alternatively, add the appropriate ARIA role that corresponds to the content purpose.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"65d91818-10ff-47a0-a4f5-6d4db56f4ae8","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-dropdown:nth-chi
+[2025-07-15T09:39:03.262] [DEBUG] default - The message is too long (201282), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:39:03.262] [DEBUG] default - Screenshot map: {"11f99187-7261-45be-acbf-81f31d628c7d":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAVFAlgDASIAAhEBAxEB/8QAHgAAAQQDAQEBAAAAAAAAAAAAAAMEBQYCBwgBCQr/xABvEAAB
+[2025-07-15T09:39:03.267] [INFO] default - Report successfully saved to test-results/evAnalyze-report.html
+[2025-07-15T09:39:03.700] [INFO] default - Evinced SDK: initializing...
+[2025-07-15T09:39:03.700] [DEBUG] default - AuthData initialized. Checking license
+[2025-07-15T09:39:03.701] [DEBUG] default - Token decoded
+[2025-07-15T09:39:03.701] [DEBUG] default - Token signed
+[2025-07-15T09:39:03.701] [DEBUG] default - Product type approved
+[2025-07-15T09:39:03.701] [DEBUG] default - Service account approved
+[2025-07-15T09:39:03.701] [INFO] default - License approved
+[2025-07-15T09:39:03.701] [DEBUG] default - EngineCommandsExecutor instance reset
+[2025-07-15T09:39:03.701] [DEBUG] default - EngineCommandsExecutor initialized
+[2025-07-15T09:39:03.701] [DEBUG] default - ListenerService initialized
+[2025-07-15T09:39:03.701] [INFO] default - evStart called
+[2025-07-15T09:39:03.702] [INFO] default - Preparing state for continuous analysis
+[2025-07-15T09:39:03.702] [DEBUG] default - Checking if Selenium BiDi API is enabled
+[2025-07-15T09:39:03.702] [DEBUG] default - Capabilities: {"map_":{}}
+[2025-07-15T09:39:03.702] [DEBUG] default - BiDi enabled: false
+[2025-07-15T09:39:03.702] [DEBUG] default - Extending Selenium actions with Evinced logic...
+[2025-07-15T09:39:03.702] [DEBUG] default - Extending action: click
+[2025-07-15T09:39:03.702] [DEBUG] default - `click` Selenium action has been extended with start/stop.
+[2025-07-15T09:39:03.702] [DEBUG] default - Extending action: get
+[2025-07-15T09:39:03.702] [DEBUG] default - `get` Selenium action has been extended.
+[2025-07-15T09:39:03.702] [DEBUG] default - Extending navigation methods: navigate, back, forward, refresh
+[2025-07-15T09:39:03.702] [DEBUG] default - Extending executeScript method
+[2025-07-15T09:39:03.702] [DEBUG] default - Selenium actions have been extended.
+[2025-07-15T09:39:03.702] [INFO] default - Injecting Evinced SDK
+[2025-07-15T09:39:03.707] [INFO] default - Evinced is injected: false
+[2025-07-15T09:39:03.969] [INFO] default - Evinced SDK has been injected
+[2025-07-15T09:39:03.974] [INFO] default - Preparing configuration for engine initialisation
+[2025-07-15T09:39:03.974] [DEBUG] default - Local "evConfig.json" parsed: {"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:39:03.974] [DEBUG] default - Merged configuration: {"rootSelector":"","enableScreenshots":true,"toggles":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":false},"issuesContentPerType":null,"axeIssuesContentPerType":null,"recordingService":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"},"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:39:03.974] [DEBUG] default - Configuration. Session info: {"userId":"js-selenium-sdk-user","serverConfig":{"TOGGLES":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":true},"showDuplicateIssues":true,"RECORDING_SERVICE":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"}}}
+[2025-07-15T09:39:03.975] [DEBUG] default - Configuration. Analysis config: {"analysisId":"0ebe51a8-4940-4a2c-a211-b35d06d03254","rootSelector":"","licenseData":{"accessToken":"********","tenantId":"18accef9-6075-4ec0-bd6e-14ec182b7fcc"}}
+[2025-07-15T09:39:03.975] [DEBUG] default - Configuration. Analysis persisted data: undefined
+[2025-07-15T09:39:03.975] [DEBUG] default - Configuration. Updates callback: undefined
+[2025-07-15T09:39:03.975] [DEBUG] default - Configuration. Running context: {"hostingProduct":"SELENIUM-JS-SDK","productName":"WEB_SDK","sdkType":"SELENIUM_JS_SDK","hostingProductVersion":"2.3.0"}
+[2025-07-15T09:39:03.975] [DEBUG] default - Checking if Selenium BiDi API is enabled
+[2025-07-15T09:39:03.975] [DEBUG] default - Capabilities: {"map_":{}}
+[2025-07-15T09:39:03.975] [DEBUG] default - BiDi enabled: false
+[2025-07-15T09:39:03.975] [DEBUG] default - Calling "Init analysis client core" command
+[2025-07-15T09:39:03.986] [INFO] default - Continuous mode is starting...
+[2025-07-15T09:39:03.986] [DEBUG] default - Calling "Start analysis" command
+[2025-07-15T09:39:04.006] [DEBUG] default - ----ACTION CALLED----: "get" was called.
+[2025-07-15T09:39:04.006] [DEBUG] default - Processing the action (before): 'get'.
+[2025-07-15T09:39:04.008] [DEBUG] default - Current URL: data:,
+[2025-07-15T09:39:04.008] [DEBUG] default - Calling the original method get.
+[2025-07-15T09:39:04.471] [DEBUG] default - Processing the action (after): 'get'.
+[2025-07-15T09:39:04.474] [DEBUG] default - Checking if initialization is needed for URL https://demo.evinced.com/
+[2025-07-15T09:39:04.474] [DEBUG] default - URL change detected. Previous URL: data:,, new URL: https://demo.evinced.com/
+[2025-07-15T09:39:04.475] [DEBUG] default - Injection and initialization are needed
+[2025-07-15T09:39:04.475] [DEBUG] default - Performing full inject
+[2025-07-15T09:39:04.475] [INFO] default - Injecting Evinced SDK
+[2025-07-15T09:39:04.477] [INFO] default - Evinced is injected: false
+[2025-07-15T09:39:04.743] [INFO] default - Evinced SDK has been injected
+[2025-07-15T09:39:04.748] [INFO] default - Preparing configuration for engine initialisation
+[2025-07-15T09:39:04.748] [DEBUG] default - Local "evConfig.json" parsed: {"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:39:04.748] [DEBUG] default - Merged configuration: {"rootSelector":"","enableScreenshots":true,"toggles":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":false},"issuesContentPerType":null,"axeIssuesContentPerType":null,"recordingService":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"},"sdkLogging":{"enable":"true","level":"debug"}}
+[2025-07-15T09:39:04.748] [DEBUG] default - Configuration. Session info: {"userId":"js-selenium-sdk-user","serverConfig":{"TOGGLES":{"ENABLE_PENDO_ANALYTICS":false,"ENABLE_SENDING_ENGINE_MATRICES":true,"SAVE_FULL_HTML":false,"USE_AXE_BEST_PRACTICES":false,"USE_AXE_NEEDS_REVIEW":false,"USE_BROKEN_SKIP_LINK_VALIDATOR":false,"USE_FOCUS_INDICATION":false,"USE_LANGUAGE_ATTRIBUTE_MISMATCH_VALIDATOR":false,"USE_SCREEN_READING_ORDER_VALIDATOR":false,"USE_TAB_ORDER_VALIDATOR":false,"USE_TEXT_ON_IMAGE":false,"ENABLE_SCREENSHOTS":true},"showDuplicateIssues":true,"RECORDING_SERVICE":{"ENABLE_DEBOUNCE_NEW_SELECTORS":false,"DEBOUNCE_NEW_SELECTORS_MS":200,"DELAY_MODE":"debounce"}}}
+[2025-07-15T09:39:04.748] [DEBUG] default - Configuration. Analysis config: {"analysisId":"0ab5c56e-1dbb-4b06-a9ce-01339591b63e","rootSelector":"","licenseData":{"accessToken":"********","tenantId":"18accef9-6075-4ec0-bd6e-14ec182b7fcc"}}
+[2025-07-15T09:39:04.748] [DEBUG] default - Configuration. Analysis persisted data: undefined
+[2025-07-15T09:39:04.748] [DEBUG] default - Configuration. Updates callback: undefined
+[2025-07-15T09:39:04.748] [DEBUG] default - Configuration. Running context: {"hostingProduct":"SELENIUM-JS-SDK","productName":"WEB_SDK","sdkType":"SELENIUM_JS_SDK","hostingProductVersion":"2.3.0"}
+[2025-07-15T09:39:04.748] [DEBUG] default - Checking if Selenium BiDi API is enabled
+[2025-07-15T09:39:04.748] [DEBUG] default - Capabilities: {"map_":{}}
+[2025-07-15T09:39:04.748] [DEBUG] default - BiDi enabled: false
+[2025-07-15T09:39:04.748] [DEBUG] default - Calling "Init analysis client core" command
+[2025-07-15T09:39:04.759] [DEBUG] default - Calling "Start analysis" command
+[2025-07-15T09:39:04.861] [DEBUG] default - Engine prepared. Analysis started
+[2025-07-15T09:39:04.861] [DEBUG] default - After action 'get: processing finished.
+[2025-07-15T09:39:04.861] [INFO] default - evStop called
+[2025-07-15T09:39:04.861] [DEBUG] default - Continuous mode is ON. Checking if engine is injected and analyzing the page
+[2025-07-15T09:39:04.862] [DEBUG] default - Checking if initialization is needed for URL https://demo.evinced.com/
+[2025-07-15T09:39:04.864] [DEBUG] default - Engine prepared. Analysis started
+[2025-07-15T09:39:04.864] [DEBUG] default - Calling "Stop analysis" command
+[2025-07-15T09:39:05.512] [INFO] default - Continuous mode is stopped
+[2025-07-15T09:39:05.512] [DEBUG] default - Screenshots map updated
+[2025-07-15T09:39:05.512] [DEBUG] default - Got new issues: 6
+[2025-07-15T09:39:05.512] [DEBUG] default - Collected issues updated. New length: 6
+[2025-07-15T09:39:05.512] [DEBUG] default - Removing duplicates from 6 issues
+[2025-07-15T09:39:05.512] [INFO] default - evSaveFile called with format: html
+[2025-07-15T09:39:05.512] [INFO] default - Saving report to test-results/evAnalyze-report.html in html format
+[2025-07-15T09:39:05.512] [DEBUG] default - The message is too long (13280), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:39:05.513] [DEBUG] default - Report content: Issues: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","customKnowledgeBaseLinks":null,"description":"**Cause:** \nScreen readers are unable to identify that the element is interactive due to missing or incorrect semantics.\n**Effect:** \nScreen reader users may not find the content or may not realize that the the content is interactive.\n**Suggested Solutions:**\nUse native HTML interactive elements such as `<*button*>`, `<*a*>`, `<*select*>`, `<*input*>`. Alternatively, add the appropriate ARIA role that corresponds to the content purpose.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"df7f084d-2d99-4e54-b095-0c480d7dfd1f","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-
+[2025-07-15T09:39:05.514] [DEBUG] default - The message is too long (201198), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:39:05.514] [DEBUG] default - Report content: ScreenshotsMap: {"b4a215a6-29d2-408b-8763-8139ef69a6a2":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAVFAlgDASIAAhEBAxEB/8QAHgAAAQQDAQEBAAAAAAAAAAAAAAMEBQYC
+[2025-07-15T09:39:05.514] [INFO] default - Saving report to test-results/evAnalyze-report.html with format html
+[2025-07-15T09:39:05.514] [DEBUG] default - The message is too long (13264), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:39:05.514] [DEBUG] default - Issues: [{"additionalInformation":{},"canonicalSignature":"2ffa5563","customKnowledgeBaseLinks":null,"description":"**Cause:** \nScreen readers are unable to identify that the element is interactive due to missing or incorrect semantics.\n**Effect:** \nScreen reader users may not find the content or may not realize that the the content is interactive.\n**Suggested Solutions:**\nUse native HTML interactive elements such as `<*button*>`, `<*a*>`, `<*select*>`, `<*input*>`. Alternatively, add the appropriate ARIA role that corresponds to the content purpose.","elements":[{"boundingBox":{"bottom":600.125,"height":23.9375,"left":168.9921875,"right":418.9921875,"top":576.1875,"width":250,"x":168.9921875,"y":576.1875},"canonicalUrl":null,"componentId":"ce13d0bb","domSnippet":"<div class=\"dropdown line\"><p>Select</p></div>","id":"df7f084d-2d99-4e54-b095-0c480d7dfd1f","index":"S1","pageTitle":"Home | Evinced, Demo site","pageUrl":"https://demo.evinced.com/","selector":".block-dropdown:nth-chi
+[2025-07-15T09:39:05.515] [DEBUG] default - The message is too long (201182), only the first 1000 characters will be logged. 
+      In order to log such long messages -> update logging configuration.
+[2025-07-15T09:39:05.515] [DEBUG] default - Screenshot map: {"b4a215a6-29d2-408b-8763-8139ef69a6a2":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAVFAlgDASIAAhEBAxEB/8QAHgAAAQQDAQEBAAAAAAAAAAAAAAMEBQYCBwgBCQr/xABvEAAB
+[2025-07-15T09:39:05.517] [INFO] default - Report successfully saved to test-results/evAnalyze-report.html
