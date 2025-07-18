@@ -10,6 +10,7 @@
     "wdio": "wdio run ./wdio.conf.js"
   },
   "dependencies": {
-    "@evinced/webdriverio-sdk": "^2.32.0"
+    "@evinced/webdriverio-sdk": "^2.34.0",
+    "puppeteer-core": "^22.15.0"
   }
 }
