@@ -10,3 +10,12 @@ js-wdio-mobile/evinced-reports
 evinced-dot-net/sdk
 evinced-dot-net/bin
 playwright-bdd/evinced-reports
+
+# For Java projects
+target/
+build/
+*.class
+*.jar
+*.war
+*.ear
+tmp
