@@ -61,7 +61,7 @@
             },
             "Selenium.CS.SDK": {
               "target": "Package",
-              "version": "[2.16.1, )"
+              "version": "[2.19.1, )"
             },
             "Selenium.Support": {
               "target": "Package",

@@ -9,5 +9,7 @@ public static class EvincedConfig
         string authToken = Environment.GetEnvironmentVariable("EVINCED_WEB_OFFLINE_TOKEN");
 
         EvincedSDK.SetOfflineCredentials(serviceId, authToken);
+
+        EvincedSDK.UploadToPlatform = true;
     }
 }

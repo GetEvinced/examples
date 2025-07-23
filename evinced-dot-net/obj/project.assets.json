@@ -793,7 +793,7 @@
           "build/netcoreapp3.1/NUnit3TestAdapter.targets": {}
         }
       },
-      "Selenium.CS.SDK/2.16.1": {
+      "Selenium.CS.SDK/2.19.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "8.3.0",
@@ -2307,15 +2307,15 @@
         "nunit_256.png"
       ]
     },
-    "Selenium.CS.SDK/2.16.1": {
-      "sha512": "LaF6GjGvZy5B4gZ2cfGWqyK4VzWP0Bd11LHa19QOCxJeTqzS1jkKgBKSPDqmkStp+/DopH10LoZdGXOd4s2ewA==",
+    "Selenium.CS.SDK/2.19.1": {
+      "sha512": "uJdTW+r/MVfyljJYevqGEbkfyzAF4har67CnMxIX6XdqSESrwDAejdAqbKQ2ZTm2Xlo2iP1cbJnChl3cdJaFYQ==",
       "type": "package",
-      "path": "selenium.cs.sdk/2.16.1",
+      "path": "selenium.cs.sdk/2.19.1",
       "files": [
         ".nupkg.metadata",
         "LICENSE.md",
         "lib/net6.0/Selenium.CS.SDK.dll",
-        "selenium.cs.sdk.2.16.1.nupkg.sha512",
+        "selenium.cs.sdk.2.19.1.nupkg.sha512",
         "selenium.cs.sdk.nuspec"
       ]
     },
@@ -2683,7 +2683,7 @@
       "Microsoft.NET.Test.Sdk >= 17.7.1",
       "NUnit >= 4.3.2",
       "NUnit3TestAdapter >= 5.0.0",
-      "Selenium.CS.SDK >= 2.16.1",
+      "Selenium.CS.SDK >= 2.19.1",
       "Selenium.Support >= 4.31.0",
       "Selenium.WebDriver >= 4.31.0",
       "coverlet.collector >= 3.2.0"
@@ -2749,7 +2749,7 @@
           },
           "Selenium.CS.SDK": {
             "target": "Package",
-            "version": "[2.16.1, )"
+            "version": "[2.19.1, )"
           },
           "Selenium.Support": {
             "target": "Package",

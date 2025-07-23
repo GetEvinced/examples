@@ -15,13 +15,7 @@
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/evinced-dot-net.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/evinced-dot-net.pdb
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.ApplicationInsights.dll
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.Bcl.AsyncInterfaces.dll
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.Bcl.TimeProvider.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.Testing.Extensions.Telemetry.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.Testing.Extensions.TrxReport.Abstractions.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.Testing.Extensions.VSTestBridge.dll
@@ -42,7 +36,6 @@
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Selenium.CS.SDK.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/WebDriver.Support.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/WebDriver.dll
-/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/System.Text.Encodings.Web.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/System.Text.Json.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/cs/Microsoft.Testing.Extensions.Telemetry.resources.dll
@@ -188,4 +181,11 @@
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.pdb
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/evinced-dot-net.genruntimeconfig.cache
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/obj/Debug/net7.0/ref/evinced-dot-net.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.Bcl.AsyncInterfaces.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.Bcl.TimeProvider.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/shane/Documents/support-golden-examples/evinced-dot-net/bin/Debug/net7.0/System.IO.Pipelines.dll
