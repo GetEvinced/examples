@@ -1,12 +1,7 @@
-import { mkdtempSync } from 'fs';
-import { tmpdir } from 'os';
-import { join } from 'path';
 import EvincedService from "@evinced/webdriverio-sdk";
 // This is an expect line to ignore
 // @ts-ignore
 const Evinced = EvincedService.default;
-
-const uniqueUserDataDir = mkdtempSync(join(tmpdir(), 'chrome-profile-'));
 
 export const config: WebdriverIO.Config = {
   before: async function () {
@@ -65,11 +60,11 @@ export const config: WebdriverIO.Config = {
       browserVersion: "stable",
       "goog:chromeOptions": {
         args: [
+          "--headless",
           "--no-sandbox",
           "--disable-dev-shm-usage",
           "--window-size=1920,1080",
           "--disable-extensions",
-          `--user-data-dir=${uniqueUserDataDir}`
         ],
       },
     },
