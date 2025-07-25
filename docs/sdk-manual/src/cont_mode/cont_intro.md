@@ -15,15 +15,9 @@ With Evinced's Continuous Mode you do not have to manually invoke anything! Turn
 ### Web
 Typically the method name is `evStart()`. This is the point in time where the Evinced SDK will start "watching" the browser for changes.
 
-### Mobile
-
-
 ## Ending the Continuous Scanning
 
 ### Web
 `evStop()` is the method that will halt the scanning and immediately attempt to return a Report. This report is typically best thought of as an array of Accessibility Issues found during the test. Each Issue consists of IDs, Criticality, and other useful pieces of information. Read more in the page about [Reporting](../the-report.md).
-
-### Mobile
-
 
 {{#include ../snippets/official_docs.md}}
