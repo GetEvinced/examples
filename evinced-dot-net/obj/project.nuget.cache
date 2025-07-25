@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RNKxYpHpVrmixiswxIiMXWiZ8oC/SitmIe4AXbkl457r6G9TBUVaO+rST/PqbibenbTNkIruRiJ9R7d9iE/YNg==",
+  "dgSpecHash": "7fIVuBrNFwZvhoNH0RDOx4lSHl3HOkyh4Mi41DeyiRSFb+ug7reocU6j/zGqumgxXhGAqwApeosPm4A9eGhgOQ==",
   "success": true,
   "projectFilePath": "/Users/shane/Documents/support-golden-examples/evinced-dot-net/evinced-dot-net.csproj",
   "expectedPackageFiles": [
@@ -27,7 +27,7 @@
     "/Users/shane/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/shane/.nuget/packages/nunit/4.3.2/nunit.4.3.2.nupkg.sha512",
     "/Users/shane/.nuget/packages/nunit3testadapter/5.0.0/nunit3testadapter.5.0.0.nupkg.sha512",
-    "/Users/shane/.nuget/packages/selenium.cs.sdk/2.16.1/selenium.cs.sdk.2.16.1.nupkg.sha512",
+    "/Users/shane/.nuget/packages/selenium.cs.sdk/2.19.1/selenium.cs.sdk.2.19.1.nupkg.sha512",
     "/Users/shane/.nuget/packages/selenium.support/4.31.0/selenium.support.4.31.0.nupkg.sha512",
     "/Users/shane/.nuget/packages/selenium.webdriver/4.31.0/selenium.webdriver.4.31.0.nupkg.sha512",
     "/Users/shane/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",

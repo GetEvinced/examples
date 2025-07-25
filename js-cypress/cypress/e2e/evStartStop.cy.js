@@ -2,6 +2,11 @@ context("Evinced Demo Site tests", () => {
   it("Search Test", () => {
     cy.visit("https://demo.evinced.com/");
 
+    cy.addLabel({
+      testName: Cypress.currentTest.title,
+      environment: "Cypress Pipeline",
+    });
+
     // Start the Evinced engine
     cy.evStart();
 
@@ -17,7 +22,7 @@ context("Evinced Demo Site tests", () => {
     // cy.get(EAST_COST_OPTION).click();
 
     // Conclude the scan, print issues to cy.log with logIssues and print the report JSON object to browser's console
-    cy.evStop({ logIssues: true }).should((issues) => {
+    cy.evStop({ logIssues: true, uploadToPlatform: true }).should((issues) => {
       console.log(JSON.stringify(issues, null, 2));
     });
   });
