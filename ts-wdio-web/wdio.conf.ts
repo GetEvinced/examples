@@ -25,6 +25,7 @@ export const config: WebdriverIO.Config = {
     // })
   },
   runner: "local",
+  // @ts-expect-error
   tsConfigPath: "./tsconfig.json",
   specs: ["./test/specs/**/*.ts"],
   // Patterns to exclude.
@@ -59,8 +60,6 @@ export const config: WebdriverIO.Config = {
       browserVersion: "stable",
       "goog:chromeOptions": {
         args: [
-          "--headless",
-          "--disable-gpu",
           "--no-sandbox",
           "--disable-dev-shm-usage",
           "--window-size=1920,1080",
