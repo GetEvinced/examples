@@ -4,7 +4,7 @@ const Evinced = EvincedService.default;
 export const config = {
   before: async function (capabilities, specs) {
     if (!process.env.EVINCED_SERVICE_ID || !process.env.EVINCED_API_KEY) {
-      console.error("no EVINCED_SERVICE_ID or EVINCED_API_KEY")
+      console.error("no EVINCED_SERVICE_ID or EVINCED_API_KEY");
       return;
     }
     // Using a before hook, you can authenticate your SDK with your credentials by storing them in your environment variables
@@ -14,13 +14,13 @@ export const config = {
       secret: process.env.EVINCED_API_KEY,
     });
 
-      // If provided a JSON Web Token by Evinced use 
-      // the `token` keyword for Offline Authentication
-      // token: process.env.EVINCED_JWT
-      // await Evinced.setOfflineCredentials({
-      //   serviceId: process.env.EVINCED_SERVICE_ID,
-      //   token: process.env.EVINCED_AUTH_TOKEN,
-      // })
+    // If provided a JSON Web Token by Evinced use
+    // the `token` keyword for Offline Authentication
+    // token: process.env.EVINCED_JWT
+    // await Evinced.setOfflineCredentials({
+    //   serviceId: process.env.EVINCED_SERVICE_ID,
+    //   token: process.env.EVINCED_AUTH_TOKEN,
+    // })
   },
   runner: "local",
   specs: ["./test/specs/**/*.js"],
@@ -41,7 +41,6 @@ export const config = {
       "goog:chromeOptions": {
         args: [
           "--headless",
-          "--disable-gpu",
           "--no-sandbox",
           "--disable-dev-shm-usage",
           "--window-size=1920,1080",
