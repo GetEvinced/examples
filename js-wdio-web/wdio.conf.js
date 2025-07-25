@@ -40,8 +40,6 @@ export const config = {
       browserVersion: "stable",
       "goog:chromeOptions": {
         args: [
-          "--headless",
-          "--disable-gpu",
           "--no-sandbox",
           "--disable-dev-shm-usage",
           "--window-size=1920,1080",
@@ -58,7 +56,7 @@ export const config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "debug",
+  logLevel: "info",
   //
   // Set specific log levels per logger
   // loggers:
