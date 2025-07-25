@@ -3,9 +3,7 @@ package com.evinced.example.playwright;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.LoadState;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import java.util.List;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
