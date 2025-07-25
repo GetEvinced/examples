@@ -9,6 +9,8 @@ describe("Using the Evinced WDIO SDK", () => {
 
   afterEach(async () => {
     const issues = await browser.evStop();
+    console.log("Issues found =", issues);
+    console.log(`There were ${issues.length} issues found 🚨`);
     // Save issues to a report file, available in JSON, CSV, HTML
     // await browser.evSaveFile(issues, "json", "./test/issues.json");
     // await browser.evSaveFile(issues, "sarif", "./test/issues.sarif.json");
@@ -35,11 +37,8 @@ describe("Using the Evinced WDIO SDK", () => {
     await $(EAST_COST_OPTION).click();
     await $(SUBMIT_BUTTON).click();
     expect(browser).toHaveUrl(expect.stringContaining("/results"));
-    // Add a command to stop recording and retrieve issues list
-    console.log("ISSUES =", issues.length);
-    // Note we know there are issues, but we want the test to pass
-    expect(issues.length).toBeGreaterThan(0);
-    // Save issues to a report file
+
+    // Save issues to a report file, these are your options
     // await browser.evSaveFile(issues, "json", "./test/issues.json");
     // await browser.evSaveFile(issues, "sarif", "./test/issues.sarif.json");
     // await browser.evSaveFile(issues, "html", "./test/noHookIssues.html");
