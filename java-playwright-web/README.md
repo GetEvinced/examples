@@ -7,7 +7,7 @@ This repository demonstrates the use of the Evinced Java Playwright SDK with exa
 | File | Description |
 |------|-------------|
 | [FirstTest.java](src/test/java/com/evinced/example/playwright/FirstTest.java) | Sample test without Evinced SDK |
-| [SingleRunTest.java](src/test/java/com/evinced/example/playwright/SingleRunTest.java) | Sample test using Evinced in Single Run Mode |
+| [EvincedSingleRunTest.java](src/test/java/com/evinced/example/playwright/EvincedSingleRunTest.java) | Sample test using Evinced in Single Run Mode |
 | [EvincedContinuousTest.java](src/test/java/com/evinced/example/playwright/EvincedContinuousTest.java) | Sample test using Evinced in Continuous Mode |
 
 ## Setup
