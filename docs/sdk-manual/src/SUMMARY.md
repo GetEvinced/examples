@@ -18,7 +18,7 @@
 - [Analyze](./analyze_mode.md)
 
 # Reporting
-- [The Evinced Report](./the-report.md)
+- [Anatomy of the Evinced Report](./the-report.md)
     - [Aggregrated Reporting](./aggr_reporting.md)
     - [Filtering](./filtering_reports.md)
 

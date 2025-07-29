@@ -1,6 +1,9 @@
 # Contributing
+Mdbook guide in mdbook: https://rust-lang.github.io/mdBook/index.html. 
 
-Using MDBOOK https://rust-lang.github.io/mdBook/index.html. 
+## Structure
+All written work is in the /src file. For a high level structure see SUMMARY.md. These are the capters. 
+
 ## To build and open the book in a browser
 
 `mdbook build ./docs/sdk-manual --open` 
