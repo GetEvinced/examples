@@ -11,6 +11,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@shoelace-style/shoelace": "^2.20.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
