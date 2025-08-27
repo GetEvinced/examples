@@ -1,0 +1,16 @@
+[2025-08-26T15:43:58.203] [ERROR] default - authData environment variable is not defined or is not a valid string
+[2025-08-26T15:43:58.203] [ERROR] default - Failed to upload issues to platform: Error: authData environment variable is not defined or is not a valid string
+[2025-08-26T15:44:00.396] [ERROR] default - authData environment variable is not defined or is not a valid string
+[2025-08-26T15:44:00.396] [ERROR] default - Failed to upload issues to platform: Error: authData environment variable is not defined or is not a valid string
+[2025-08-26T15:44:02.417] [ERROR] default - authData environment variable is not defined or is not a valid string
+[2025-08-26T15:44:02.417] [ERROR] default - Failed to upload issues to platform: Error: authData environment variable is not defined or is not a valid string
+[2025-08-26T15:44:04.975] [ERROR] default - authData environment variable is not defined or is not a valid string
+[2025-08-26T15:44:04.975] [ERROR] default - Failed to upload issues to platform: Error: authData environment variable is not defined or is not a valid string
+[2025-08-26T15:49:12.646] [ERROR] default - authData environment variable is not defined or is not a valid string
+[2025-08-26T15:49:12.646] [ERROR] default - Failed to upload issues to platform: Error: authData environment variable is not defined or is not a valid string
+[2025-08-26T15:49:14.682] [ERROR] default - authData environment variable is not defined or is not a valid string
+[2025-08-26T15:49:14.682] [ERROR] default - Failed to upload issues to platform: Error: authData environment variable is not defined or is not a valid string
+[2025-08-26T15:49:17.121] [ERROR] default - authData environment variable is not defined or is not a valid string
+[2025-08-26T15:49:17.121] [ERROR] default - Failed to upload issues to platform: Error: authData environment variable is not defined or is not a valid string
+[2025-08-26T15:49:19.303] [ERROR] default - authData environment variable is not defined or is not a valid string
+[2025-08-26T15:49:19.303] [ERROR] default - Failed to upload issues to platform: Error: authData environment variable is not defined or is not a valid string
