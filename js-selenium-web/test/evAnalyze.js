@@ -1,6 +1,6 @@
 import { Builder } from "selenium-webdriver";
 import * as chrome from "selenium-webdriver/chrome.js";
-import chromedriver from "chromedriver"; // new
+import chromedriver from "chromedriver";
 import assert from "assert";
 import pkg from "@evinced/js-selenium-sdk";
 const { EvincedSDK, setCredentials } = pkg;
