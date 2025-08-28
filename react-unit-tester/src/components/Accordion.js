@@ -5,6 +5,7 @@ const Accordion = ({ id, sections }) => {
 
   return (
     <section id={id}>
+
       <div className="accordion">
         {sections.map((section, index) => {
           const toggleAccordion = () => {

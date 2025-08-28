@@ -1,0 +1,21 @@
+{
+  "axeConfig": {
+    "rules": {
+      "link-name": {
+        "enabled": false
+      }
+    }
+  },
+  "enableScreenshots": false,
+  "skipValidations": [],
+  "toggles": {},
+  "reporterOptions": {
+    "outputDir": "./evincedReports"
+  },
+  "sdkLogging": {
+    "enable": true,
+    "level": "debug",
+    "systemInformationLoggingEnabled": true,
+    "performance": false
+  }
+}
