@@ -14,7 +14,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@evinced/js-selenium-sdk": "2.3.0",
+    "@evinced/js-selenium-sdk": "2.6.0",
     "chromedriver": "^139.0.2",
     "mocha": "^11.1.0",
     "selenium-webdriver": "^4.29.0"
