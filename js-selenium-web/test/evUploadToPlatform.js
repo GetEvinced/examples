@@ -1,5 +1,6 @@
 import assert from "assert";
 import { By, Builder } from "selenium-webdriver";
+import * as chrome from "selenium-webdriver/chrome.js";
 import pkg from "@evinced/js-selenium-sdk";
 const {
   EvincedSDK,
@@ -10,6 +11,8 @@ const {
 
 describe("Simple Upload Test", () => {
   let driver;
+  const options = new chrome.Options();
+  options.addArguments("--headless");
 
   before(() => {
     // Set credentials for analysis
@@ -20,7 +23,10 @@ describe("Simple Upload Test", () => {
   });
 
   beforeEach(async () => {
-    driver = await new Builder().forBrowser("chrome").build();
+    driver = await new Builder()
+      .forBrowser("chrome")
+      .setChromeOptions(options)
+      .build();
   });
 
   afterEach(async () => {
