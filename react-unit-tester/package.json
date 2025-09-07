@@ -37,6 +37,6 @@
     ]
   },
   "devDependencies": {
-    "@evinced/unit-tester": "file:/Users/yoelaharoni/Documents/projects/unit-tester/evinced-unit-tester-2.23.1-yoell.tgz"
+    "@evinced/unit-tester": "^2.13.0"
   }
 }
