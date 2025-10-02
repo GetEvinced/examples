@@ -7,6 +7,7 @@ export default defineConfig({
       // This is how you should upload to platform with Cypress
       on("task", {
         uploadToPlatform: Evinced.cyTaskUploadToPlatform,
+        evTask: Evinced.cyEvTask
       });
     },
   },

@@ -18,9 +18,9 @@ test('has title', async ({ page, evincedContMode }) => {
 });
 
 test('Main page loads', async ({ page, evincedContMode }) => {
-  await page.goto('https://evinced.com');
+  await page.goto('https://demo.evinced.com/');
 });
 
 test('Blog', async ({ page, evincedContMode }) => {
-  await page.goto('https://evinced.com/blog');
+  await page.goto('https://demo.evinced.com/');
 });
