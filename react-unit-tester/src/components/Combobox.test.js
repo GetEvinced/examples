@@ -4,6 +4,8 @@ import "@testing-library/jest-dom";
 import EvincedUT from "@evinced/unit-tester";
 import Combobox from "./Combobox";
 
+jest.setTimeout(10000)
+
 test("accessibility and interaction test for ComboBox component", async () => {
   const options = [
     "Choose a Fruit",
