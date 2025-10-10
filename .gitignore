@@ -10,6 +10,7 @@ js-wdio-mobile/evinced-reports
 evinced-dot-net/sdk
 evinced-dot-net/bin
 playwright-bdd/evinced-reports
+js-selenium-web/logs
 
 # For Java projects
 target/
