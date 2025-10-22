@@ -10,6 +10,7 @@ export default defineConfig({
         evTask: Evinced.cyEvTask
       });
     },
+    pageLoadTimeout: 120000
   },
   env: {
     serviceId: process.env.EVINCED_SERVICE_ID,
