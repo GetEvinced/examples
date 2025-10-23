@@ -69,7 +69,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: selenium-test-reports-jdk-${{ matrix.java-version }}
-        path: examples/java-selenium-web/target/surefire-reports/
+        path: java-selenium-web/target/surefire-reports/
         retention-days: 30
 
     - name: Upload Evinced reports
