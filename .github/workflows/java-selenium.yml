@@ -46,14 +46,14 @@ jobs:
         JFROG_PW: ${{ secrets.JFROG_PW }}
 
     - name: Build with Maven
-      working-directory: examples/java-selenium-web
+      working-directory: java-selenium-web
       run: mvn clean compile -B
       env:
         JFROG_USER: ${{ secrets.JFROG_USER }}
         JFROG_PW: ${{ secrets.JFROG_PW }}
 
     - name: Run tests
-      working-directory: examples/java-selenium-web
+      working-directory: java-selenium-web
       run: mvn test -B
       env:
         JFROG_USER: ${{ secrets.JFROG_USER }}
@@ -78,6 +78,6 @@ jobs:
       with:
         name: selenium-evinced-reports-jdk-${{ matrix.java-version }}
         path: |
-          examples/java-selenium-web/evinced-report/
-          examples/java-selenium-web/target/logs/evinced/
+          java-selenium-web/evinced-report/
+          java-selenium-web/target/logs/evinced/
         retention-days: 30
